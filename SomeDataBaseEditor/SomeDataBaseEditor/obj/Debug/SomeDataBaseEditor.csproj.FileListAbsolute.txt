@@ -1,0 +1,8 @@
+D:\Work\GitHubProjects\SomeDataBaseEditorForMySimleWork\SomeDataBaseEditor\SomeDataBaseEditor\bin\Debug\SomeDataBaseEditor.exe
+D:\Work\GitHubProjects\SomeDataBaseEditorForMySimleWork\SomeDataBaseEditor\SomeDataBaseEditor\bin\Debug\SomeDataBaseEditor.pdb
+D:\Work\GitHubProjects\SomeDataBaseEditorForMySimleWork\SomeDataBaseEditor\SomeDataBaseEditor\obj\Debug\SomeDataBaseEditor.csprojResolveAssemblyReference.cache
+D:\Work\GitHubProjects\SomeDataBaseEditorForMySimleWork\SomeDataBaseEditor\SomeDataBaseEditor\obj\Debug\SomeDataBaseEditor.Form1.resources
+D:\Work\GitHubProjects\SomeDataBaseEditorForMySimleWork\SomeDataBaseEditor\SomeDataBaseEditor\obj\Debug\SomeDataBaseEditor.Properties.Resources.resources
+D:\Work\GitHubProjects\SomeDataBaseEditorForMySimleWork\SomeDataBaseEditor\SomeDataBaseEditor\obj\Debug\SomeDataBaseEditor.csproj.GenerateResource.Cache
+D:\Work\GitHubProjects\SomeDataBaseEditorForMySimleWork\SomeDataBaseEditor\SomeDataBaseEditor\obj\Debug\SomeDataBaseEditor.exe
+D:\Work\GitHubProjects\SomeDataBaseEditorForMySimleWork\SomeDataBaseEditor\SomeDataBaseEditor\obj\Debug\SomeDataBaseEditor.pdb
