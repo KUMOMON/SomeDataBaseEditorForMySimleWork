@@ -1,4 +1,4 @@
-﻿namespace SomeDataBaseEditor.GUI_DataTables
+﻿namespace SomeDataBaseEditor.GUI_DataTables.Catalogs
 {
     partial class Discipliny
     {

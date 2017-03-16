@@ -1,4 +1,4 @@
-﻿namespace SomeDataBaseEditor.GUI_DataTables_Сatalogs.Working
+﻿namespace SomeDataBaseEditor.GUI_DataTables.Working
 {
     partial class DisciplineAcademicPlaneInSemester
     {
