@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace SomeDataBaseEditor
+namespace SomeDataBaseEditor.GUI_DataTables.Catalogs
 {
     public partial class NapravleniaPodgotovki : Form
     {

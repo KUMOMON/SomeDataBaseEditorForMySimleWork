@@ -97,6 +97,7 @@
             this.button8.TabIndex = 6;
             this.button8.Text = "Профили подготовки";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button7
             // 
@@ -106,6 +107,7 @@
             this.button7.TabIndex = 5;
             this.button7.Text = "Направления подготовки";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 
@@ -151,12 +153,13 @@
             this.button10.TabIndex = 5;
             this.button10.Text = "Учебные планы";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 241);
+            this.ClientSize = new System.Drawing.Size(632, 241);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.groupBox1);
             this.Name = "MainMenu";

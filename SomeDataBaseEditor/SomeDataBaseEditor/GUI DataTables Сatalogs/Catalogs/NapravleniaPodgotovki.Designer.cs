@@ -1,4 +1,4 @@
-﻿namespace SomeDataBaseEditor
+﻿namespace SomeDataBaseEditor.GUI_DataTables.Catalogs
 {
     partial class NapravleniaPodgotovki
     {

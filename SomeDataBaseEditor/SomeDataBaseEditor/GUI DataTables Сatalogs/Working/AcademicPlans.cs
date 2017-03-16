@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace SomeDataBaseEditor.GUI_DataTables_Сatalogs.Working
+namespace SomeDataBaseEditor.GUI DataTables Сatalogs.Working
 {
     public partial class AcademicPlans : Form
     {

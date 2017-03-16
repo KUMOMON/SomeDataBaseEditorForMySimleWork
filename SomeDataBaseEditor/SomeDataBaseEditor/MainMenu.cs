@@ -25,5 +25,40 @@ namespace SomeDataBaseEditor
         {
 
         }
+
+        /// <summary>
+        /// Кнопки открывает окно с направлениями подготовки
+        /// </summary>
+        private void button7_Click(object sender, EventArgs e)
+        {
+            using (var form = new NapravleniaPodgotovki())
+            {
+                this.Hide();
+                form.ShowDialog();
+                this.Show();
+            }
+        }
+        /// <summary>
+        /// Открывает окно с профилями подготовки
+        /// </summary>
+        private void button8_Click(object sender, EventArgs e)
+        {
+            using (var form = new ProfiliPodgotovki())
+            {
+                this.Hide();
+                form.ShowDialog();
+                this.Show();
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            using (var form = new)
+            {
+                this.Hide();
+                form.ShowDialog();
+                this.Show();
+            }
+        }
     }
 }
