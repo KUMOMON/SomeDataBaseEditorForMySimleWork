@@ -18,27 +18,15 @@ namespace SomeDataBaseEditor
 
         private void conn_btn1_Click(object sender, EventArgs e)
         {
-            using (var con = new System.Data.SqlClient.SqlConnection())
+            bool loginResult = Settings.connectToServer(txtBx_ServerAddress.Text, null, null);
+
+            if (loginResult)
             {
-                con.ConnectionString = "Data Source="+txtBx_ServerAddress.Text.Trim()+";Initial Catalog=UchPlan;"
-                                    + "Integrated Security=SSPI;Pooling=False";
-                try
-                {
-                    con.Open();
-                    MessageBox.Show("Open");
-                    var ada = new System.Data.SqlClient.SqlDataAdapter();
-                    con.Close();
-                    MessageBox.Show("Close");
-                }
-                catch
-                {
-                    MessageBox.Show("Error");
-                }
-
+                DialogResult = DialogResult.Yes;
+                Close();
             }
-
-
-                
+            else
+                MessageBox.Show("Ошибка.","Параметры авторизации заданы не верно.",MessageBoxButtons.OK);
         }
     }
 }

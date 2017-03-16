@@ -16,7 +16,18 @@ namespace SomeDataBaseEditor
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            using (var logForm = new Login())
+            {
+                Application.Run(logForm);
+                if (logForm.DialogResult == DialogResult.Yes)
+                {
+                    using (var formMenu = new MainMenu())
+                        formMenu.ShowDialog();
+
+                    Settings.disconectServer();
+                }
+            }
+                
             
         }
     }
