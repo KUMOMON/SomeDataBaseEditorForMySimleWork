@@ -9,18 +9,18 @@ using System.Windows.Forms;
 
 namespace SomeDataBaseEditor
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
-        public Form1()
+        public Login()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void conn_btn1_Click(object sender, EventArgs e)
         {
             using (var con = new System.Data.SqlClient.SqlConnection())
             {
-                con.ConnectionString = "Data Source=.\\SQLEXPRESS2014;Initial Catalog=UchPlan;"
+                con.ConnectionString = "Data Source="+txtBx_ServerAddress.Text.Trim()+";Initial Catalog=UchPlan;"
                                     + "Integrated Security=SSPI;Pooling=False";
                 try
                 {
