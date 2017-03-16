@@ -86,6 +86,30 @@
     <Compile Include="GUI DataTables Сatalogs\Catalogs\Discipliny.Designer.cs">
       <DependentUpon>Discipliny.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI DataTables Сatalogs\Working\AcademicPlans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI DataTables Сatalogs\Working\AcademicPlans.Designer.cs">
+      <DependentUpon>AcademicPlans.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI DataTables Сatalogs\Working\DisciplineAcademicPlaneInSemester.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI DataTables Сatalogs\Working\DisciplineAcademicPlaneInSemester.Designer.cs">
+      <DependentUpon>DisciplineAcademicPlaneInSemester.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI DataTables Сatalogs\Working\DisciplineInAcademicPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI DataTables Сatalogs\Working\DisciplineInAcademicPlan.Designer.cs">
+      <DependentUpon>DisciplineInAcademicPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI DataTables Сatalogs\Working\Semesters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI DataTables Сatalogs\Working\Semesters.Designer.cs">
+      <DependentUpon>Semesters.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +158,18 @@
     <EmbeddedResource Include="GUI DataTables Сatalogs\Catalogs\Discipliny.resx">
       <DependentUpon>Discipliny.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI DataTables Сatalogs\Working\AcademicPlans.resx">
+      <DependentUpon>AcademicPlans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI DataTables Сatalogs\Working\DisciplineAcademicPlaneInSemester.resx">
+      <DependentUpon>DisciplineAcademicPlaneInSemester.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI DataTables Сatalogs\Working\DisciplineInAcademicPlan.resx">
+      <DependentUpon>DisciplineInAcademicPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI DataTables Сatalogs\Working\Semesters.resx">
+      <DependentUpon>Semesters.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,9 +201,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GUI DataTables Сatalogs\Working\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
