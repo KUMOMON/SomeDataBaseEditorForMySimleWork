@@ -11,8 +11,16 @@ namespace SomeDataBaseEditor.GUI_DataTables.Working
 {
     public partial class DisciplineInAcademicPlan : Form
     {
-        public DisciplineInAcademicPlan()
+        const long someIDFromAcademicPlan = 0;
+        const long someIDFromDisciplineAcademicPlan= 0;
+
+        long _academicPlanID;
+
+        public DisciplineInAcademicPlan():this(0){}
+
+        public DisciplineInAcademicPlan(long academicPlanID)
         {
+            _academicPlanID = academicPlanID;
             InitializeComponent();
         }
 
@@ -34,6 +42,16 @@ namespace SomeDataBaseEditor.GUI_DataTables.Working
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            using (var form = new GUI_DataTables.Working.DisciplineAcademicPlaneInSemester(someIDFromAcademicPlan,someIDFromDisciplineAcademicPlan))
+            {
+                this.Hide();
+                form.ShowDialog();
+                this.Show();
+            }
         }
     }
 }

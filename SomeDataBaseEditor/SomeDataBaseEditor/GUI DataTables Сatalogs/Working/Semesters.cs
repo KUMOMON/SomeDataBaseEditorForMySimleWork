@@ -11,8 +11,13 @@ namespace SomeDataBaseEditor.GUI_DataTables.Working
 {
     public partial class Semesters : Form
     {
-        public Semesters()
+        long _academicPlanId;
+
+        public Semesters():this(0){}
+
+        public Semesters(long academicPlanId)
         {
+            _academicPlanId = academicPlanId;
             InitializeComponent();
         }
     }

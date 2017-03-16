@@ -11,8 +11,14 @@ namespace SomeDataBaseEditor.GUI_DataTables.Working
 {
     public partial class DisciplineAcademicPlaneInSemester : Form
     {
-        public DisciplineAcademicPlaneInSemester()
+        long _academicPlanID;
+        long _DisciplineIDInAcademicPlan;
+
+        public DisciplineAcademicPlaneInSemester():this(0,0){}
+        public DisciplineAcademicPlaneInSemester(long academicPlan, long DisciplineIDInAcademicPlan)
         {
+            _academicPlanID = academicPlan;
+            _DisciplineIDInAcademicPlan = DisciplineIDInAcademicPlan;
             InitializeComponent();
         }
     }
