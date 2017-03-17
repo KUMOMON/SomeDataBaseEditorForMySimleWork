@@ -66,8 +66,6 @@ namespace SomeDataBaseEditor {
         
         private global::System.Data.DataRelation relationFK_Дисциплина_как_часть_учебного_плана_Учебные_планы;
         
-        private global::System.Data.DataRelation relationFK_Профили_подготовки_Направления_подготовки;
-        
         private global::System.Data.DataRelation relationFK_Реализуемые_компетенции_дисциплин_Дисциплина_как_часть_учебного_плана;
         
         private global::System.Data.DataRelation relationFK_Реализуемые_компетенции_дисциплин_Реализуемые_компетенции;
@@ -83,6 +81,8 @@ namespace SomeDataBaseEditor {
         private global::System.Data.DataRelation relationFK_Формы_Контроля_В_Семестре_Дисциплина_как_часть_семестра;
         
         private global::System.Data.DataRelation relationFK_Формы_Контроля_В_Семестре_Формы_контроля;
+        
+        private global::System.Data.DataRelation relationНаправления_подготовки_Профили_подготовки;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -566,7 +566,6 @@ namespace SomeDataBaseEditor {
             this.relationFK_Дисциплина_как_часть_учебного_плана_Дисциплины1 = this.Relations["FK_Дисциплина как часть учебного плана_Дисциплины1"];
             this.relationFK_Дисциплина_как_часть_учебного_плана_Типы_дисциплин = this.Relations["FK_Дисциплина как часть учебного плана_Типы дисциплин"];
             this.relationFK_Дисциплина_как_часть_учебного_плана_Учебные_планы = this.Relations["FK_Дисциплина как часть учебного плана_Учебные планы"];
-            this.relationFK_Профили_подготовки_Направления_подготовки = this.Relations["FK_Профили подготовки_Направления подготовки"];
             this.relationFK_Реализуемые_компетенции_дисциплин_Дисциплина_как_часть_учебного_плана = this.Relations["FK_Реализуемые компетенции дисциплин_Дисциплина как часть учебного плана"];
             this.relationFK_Реализуемые_компетенции_дисциплин_Реализуемые_компетенции = this.Relations["FK_Реализуемые компетенции дисциплин_Реализуемые компетенции"];
             this.relationFK_Семестры_Учебные_планы = this.Relations["FK_Семестры_Учебные планы"];
@@ -575,6 +574,7 @@ namespace SomeDataBaseEditor {
             this.relationFK_Учебные_планы_Формы_обучения = this.Relations["FK_Учебные планы_Формы обучения"];
             this.relationFK_Формы_Контроля_В_Семестре_Дисциплина_как_часть_семестра = this.Relations["FK_Формы Контроля В Семестре_Дисциплина как часть семестра"];
             this.relationFK_Формы_Контроля_В_Семестре_Формы_контроля = this.Relations["FK_Формы Контроля В Семестре_Формы контроля"];
+            this.relationНаправления_подготовки_Профили_подготовки = this.Relations["Направления подготовки_Профили подготовки"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -639,10 +639,6 @@ namespace SomeDataBaseEditor {
                         this.tableУчебные_планы.КодColumn}, new global::System.Data.DataColumn[] {
                         this.tableДисциплина_как_часть_учебного_плана.Код_учебного_планаColumn}, false);
             this.Relations.Add(this.relationFK_Дисциплина_как_часть_учебного_плана_Учебные_планы);
-            this.relationFK_Профили_подготовки_Направления_подготовки = new global::System.Data.DataRelation("FK_Профили подготовки_Направления подготовки", new global::System.Data.DataColumn[] {
-                        this.tableНаправления_подготовки.КодColumn}, new global::System.Data.DataColumn[] {
-                        this.tableПрофили_подготовки.Код_направления_подготовкиColumn}, false);
-            this.Relations.Add(this.relationFK_Профили_подготовки_Направления_подготовки);
             this.relationFK_Реализуемые_компетенции_дисциплин_Дисциплина_как_часть_учебного_плана = new global::System.Data.DataRelation("FK_Реализуемые компетенции дисциплин_Дисциплина как часть учебного плана", new global::System.Data.DataColumn[] {
                         this.tableДисциплина_как_часть_учебного_плана.КодColumn}, new global::System.Data.DataColumn[] {
                         this.tableРеализуемые_компетенции_дисциплин.Код_ДУПColumn}, false);
@@ -675,6 +671,10 @@ namespace SomeDataBaseEditor {
                         this.tableФормы_контроля.КодColumn}, new global::System.Data.DataColumn[] {
                         this.tableФормы_Контроля_В_Семестре.Код_Формы_контроляColumn}, false);
             this.Relations.Add(this.relationFK_Формы_Контроля_В_Семестре_Формы_контроля);
+            this.relationНаправления_подготовки_Профили_подготовки = new global::System.Data.DataRelation("Направления подготовки_Профили подготовки", new global::System.Data.DataColumn[] {
+                        this.tableНаправления_подготовки.КодColumn}, new global::System.Data.DataColumn[] {
+                        this.tableПрофили_подготовки.Код_направления_подготовкиColumn}, false);
+            this.Relations.Add(this.relationНаправления_подготовки_Профили_подготовки);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2839,14 +2839,14 @@ namespace SomeDataBaseEditor {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Профили_подготовкиRow AddПрофили_подготовкиRow(string Имя, Направления_подготовкиRow parentНаправления_подготовкиRowByFK_Профили_подготовки_Направления_подготовки) {
+            public Профили_подготовкиRow AddПрофили_подготовкиRow(string Имя, Направления_подготовкиRow parentНаправления_подготовкиRowByНаправления_подготовки_Профили_подготовки) {
                 Профили_подготовкиRow rowПрофили_подготовкиRow = ((Профили_подготовкиRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Имя,
                         null};
-                if ((parentНаправления_подготовкиRowByFK_Профили_подготовки_Направления_подготовки != null)) {
-                    columnValuesArray[2] = parentНаправления_подготовкиRowByFK_Профили_подготовки_Направления_подготовки[0];
+                if ((parentНаправления_подготовкиRowByНаправления_подготовки_Профили_подготовки != null)) {
+                    columnValuesArray[2] = parentНаправления_подготовкиRowByНаправления_подготовки_Профили_подготовки[0];
                 }
                 rowПрофили_подготовкиRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowПрофили_подготовкиRow);
@@ -5915,11 +5915,11 @@ namespace SomeDataBaseEditor {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public Профили_подготовкиRow[] GetПрофили_подготовкиRows() {
-                if ((this.Table.ChildRelations["FK_Профили подготовки_Направления подготовки"] == null)) {
+                if ((this.Table.ChildRelations["Направления подготовки_Профили подготовки"] == null)) {
                     return new Профили_подготовкиRow[0];
                 }
                 else {
-                    return ((Профили_подготовкиRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Профили подготовки_Направления подготовки"])));
+                    return ((Профили_подготовкиRow[])(base.GetChildRows(this.Table.ChildRelations["Направления подготовки_Профили подготовки"])));
                 }
             }
         }
@@ -5986,10 +5986,10 @@ namespace SomeDataBaseEditor {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public Направления_подготовкиRow Направления_подготовкиRow {
                 get {
-                    return ((Направления_подготовкиRow)(this.GetParentRow(this.Table.ParentRelations["FK_Профили подготовки_Направления подготовки"])));
+                    return ((Направления_подготовкиRow)(this.GetParentRow(this.Table.ParentRelations["Направления подготовки_Профили подготовки"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Профили подготовки_Направления подготовки"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["Направления подготовки_Профили подготовки"]);
                 }
             }
             
@@ -9246,13 +9246,9 @@ SELECT Код, Имя, [Срок обучения] FROM Квалификации
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Профили подготовки] WHERE (([Код] = @Original_Код) AND ((@IsNull_Имя = 1 AND [Имя] IS NULL) OR ([Имя] = @Original_Имя)) AND ((@IsNull_Код_направления_подготовки = 1 AND [Код направления подготовки] IS NULL) OR ([Код направления подготовки] = @Original_Код_направления_подготовки)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Профили подготовки]\r\nWHERE        (Код = @ID)";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Имя", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Имя", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Имя", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Имя", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Код_направления_подготовки", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код направления подготовки", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_направления_подготовки", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код направления подготовки", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Профили подготовки] ([Имя], [Код направления подготовки]) VALU" +
@@ -9263,17 +9259,12 @@ SELECT Код, Имя, [Срок обучения] FROM Квалификации
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код_направления_подготовки", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код направления подготовки", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Профили подготовки] SET [Имя] = @Имя, [Код направления подготовки] = @Код_направления_подготовки WHERE (([Код] = @Original_Код) AND ((@IsNull_Имя = 1 AND [Имя] IS NULL) OR ([Имя] = @Original_Имя)) AND ((@IsNull_Код_направления_подготовки = 1 AND [Код направления подготовки] IS NULL) OR ([Код направления подготовки] = @Original_Код_направления_подготовки)));
-SELECT Код, Имя, [Код направления подготовки] FROM [Профили подготовки] WHERE (Код = @Код)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE       [Профили подготовки]\r\nSET                Имя = @newName, [Код направ" +
+                "ления подготовки] = @newNaprCode\r\nWHERE        (Код = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Имя", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Имя", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код_направления_подготовки", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код направления подготовки", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Имя", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Имя", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Имя", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Имя", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Код_направления_подготовки", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код направления подготовки", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_направления_подготовки", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код направления подготовки", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@newName", global::System.Data.SqlDbType.NChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Имя", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@newNaprCode", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код направления подготовки", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9286,11 +9277,18 @@ SELECT Код, Имя, [Код направления подготовки] FROM
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Код, Имя, [Код направления подготовки] FROM dbo.[Профили подготовки]";
+            this._commandCollection[0].CommandText = "SELECT        Код, Имя, [Код направления подготовки]\r\nFROM            [Профили по" +
+                "дготовки]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        [Профили подготовки].Код, [Профили подготовки].Имя, [Направления подготовки].Имя AS Направление, [Направления подготовки].Код AS [Код Направления]
+FROM            [Профили подготовки] INNER JOIN
+                         [Направления подготовки] ON [Профили подготовки].[Код направления подготовки] = [Направления подготовки].Код";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9312,6 +9310,30 @@ SELECT Код, Имя, [Код направления подготовки] FROM
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual UchPlanDataSet.Профили_подготовкиDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            UchPlanDataSet.Профили_подготовкиDataTable dataTable = new UchPlanDataSet.Профили_подготовкиDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillViaNapravleniye(UchPlanDataSet.Профили_подготовкиDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual UchPlanDataSet.Профили_подготовкиDataTable GetDataByViaNapravleniye() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
             UchPlanDataSet.Профили_подготовкиDataTable dataTable = new UchPlanDataSet.Профили_подготовкиDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -9350,24 +9372,8 @@ SELECT Код, Имя, [Код направления подготовки] FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Код, string Original_Имя, global::System.Nullable<int> Original_Код_направления_подготовки) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Код));
-            if ((Original_Имя == null)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Имя));
-            }
-            if ((Original_Код_направления_подготовки.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Код_направления_подготовки.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
+        public virtual int Delete(int ID) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9421,37 +9427,20 @@ SELECT Код, Имя, [Код направления подготовки] FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Имя, global::System.Nullable<int> Код_направления_подготовки, int Original_Код, string Original_Имя, global::System.Nullable<int> Original_Код_направления_подготовки, int Код) {
-            if ((Имя == null)) {
+        public virtual int Update(string newName, global::System.Nullable<int> newNaprCode, int ID) {
+            if ((newName == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Имя));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(newName));
             }
-            if ((Код_направления_подготовки.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Код_направления_подготовки.Value));
+            if ((newNaprCode.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(newNaprCode.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_Код));
-            if ((Original_Имя == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_Имя));
-            }
-            if ((Original_Код_направления_подготовки.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_Код_направления_подготовки.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Код));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9466,14 +9455,6 @@ SELECT Код, Имя, [Код направления подготовки] FROM
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Имя, global::System.Nullable<int> Код_направления_подготовки, int Original_Код, string Original_Имя, global::System.Nullable<int> Original_Код_направления_подготовки) {
-            return this.Update(Имя, Код_направления_подготовки, Original_Код, Original_Имя, Original_Код_направления_подготовки, Original_Код);
         }
     }
     

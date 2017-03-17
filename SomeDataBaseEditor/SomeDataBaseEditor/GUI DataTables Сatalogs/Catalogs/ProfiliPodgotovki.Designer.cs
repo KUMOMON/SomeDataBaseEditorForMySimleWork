@@ -30,79 +30,101 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btn_insert = new System.Windows.Forms.Button();
+            this.btn_update = new System.Windows.Forms.Button();
+            this.btn_delete = new System.Windows.Forms.Button();
+            this.txtBx = new System.Windows.Forms.TextBox();
+            this.cmbBx = new System.Windows.Forms.ComboBox();
+            this.направленияПодготовкиBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uchPlanDataSet1 = new SomeDataBaseEditor.UchPlanDataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.uchPlanDataSet = new SomeDataBaseEditor.UchPlanDataSet();
+            this.fKУчебныеПланыПрофилиПодготовкиBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.профилиПодготовкиBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.профили_подготовкиTableAdapter = new SomeDataBaseEditor.UchPlanDataSetTableAdapters.Профили_подготовкиTableAdapter();
-            this.кодDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.имяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.кодНаправленияПодготовкиDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uchPlanDataSet = new SomeDataBaseEditor.UchPlanDataSet();
+            this.fKУчебныеПланыПрофилиПодготовкиBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.профили_подготовкиTableAdapter1 = new SomeDataBaseEditor.UchPlanDataSetTableAdapters.Профили_подготовкиTableAdapter();
+            this.учебные_планыTableAdapter = new SomeDataBaseEditor.UchPlanDataSetTableAdapters.Учебные_планыTableAdapter();
+            this.направления_подготовкиTableAdapter = new SomeDataBaseEditor.UchPlanDataSetTableAdapters.Направления_подготовкиTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.направленияПодготовкиBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKУчебныеПланыПрофилиПодготовкиBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.профилиПодготовкиBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKУчебныеПланыПрофилиПодготовкиBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.кодDataGridViewTextBoxColumn,
-            this.имяDataGridViewTextBoxColumn,
-            this.кодНаправленияПодготовкиDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.профилиПодготовкиBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(531, 243);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
-            // button1
+            // btn_insert
             // 
-            this.button1.Location = new System.Drawing.Point(468, 266);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 31);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "indert";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_insert.Location = new System.Drawing.Point(468, 266);
+            this.btn_insert.Name = "btn_insert";
+            this.btn_insert.Size = new System.Drawing.Size(75, 31);
+            this.btn_insert.TabIndex = 1;
+            this.btn_insert.Text = "insert";
+            this.btn_insert.UseVisualStyleBackColor = true;
+            this.btn_insert.Click += new System.EventHandler(this.btn_insert_Click);
             // 
-            // button2
+            // btn_update
             // 
-            this.button2.Location = new System.Drawing.Point(468, 306);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 31);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "update";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_update.Location = new System.Drawing.Point(468, 306);
+            this.btn_update.Name = "btn_update";
+            this.btn_update.Size = new System.Drawing.Size(75, 31);
+            this.btn_update.TabIndex = 2;
+            this.btn_update.Text = "update";
+            this.btn_update.UseVisualStyleBackColor = true;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
-            // button3
+            // btn_delete
             // 
-            this.button3.Location = new System.Drawing.Point(468, 343);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 31);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "delete";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_delete.Location = new System.Drawing.Point(468, 343);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(75, 31);
+            this.btn_delete.TabIndex = 3;
+            this.btn_delete.Text = "delete";
+            this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
-            // textBox1
+            // txtBx
             // 
-            this.textBox1.Location = new System.Drawing.Point(13, 277);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(449, 20);
-            this.textBox1.TabIndex = 4;
+            this.txtBx.Location = new System.Drawing.Point(13, 277);
+            this.txtBx.Name = "txtBx";
+            this.txtBx.Size = new System.Drawing.Size(449, 20);
+            this.txtBx.TabIndex = 4;
             // 
-            // comboBox1
+            // cmbBx
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(13, 322);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(449, 21);
-            this.comboBox1.TabIndex = 5;
+            this.cmbBx.DataSource = this.направленияПодготовкиBindingSource;
+            this.cmbBx.DisplayMember = "Имя";
+            this.cmbBx.FormattingEnabled = true;
+            this.cmbBx.Location = new System.Drawing.Point(13, 322);
+            this.cmbBx.Name = "cmbBx";
+            this.cmbBx.Size = new System.Drawing.Size(449, 21);
+            this.cmbBx.TabIndex = 5;
+            this.cmbBx.ValueMember = "Код";
+            // 
+            // направленияПодготовкиBindingSource
+            // 
+            this.направленияПодготовкиBindingSource.DataMember = "Направления подготовки";
+            this.направленияПодготовкиBindingSource.DataSource = this.uchPlanDataSet1;
+            // 
+            // uchPlanDataSet1
+            // 
+            this.uchPlanDataSet1.DataSetName = "UchPlanDataSet";
+            this.uchPlanDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -122,38 +144,37 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Направление подготовки";
             // 
-            // uchPlanDataSet
+            // fKУчебныеПланыПрофилиПодготовкиBindingSource
             // 
-            this.uchPlanDataSet.DataSetName = "UchPlanDataSet";
-            this.uchPlanDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.fKУчебныеПланыПрофилиПодготовкиBindingSource.DataMember = "FK_Учебные планы_Профили подготовки";
+            this.fKУчебныеПланыПрофилиПодготовкиBindingSource.DataSource = this.профилиПодготовкиBindingSource;
             // 
             // профилиПодготовкиBindingSource
             // 
             this.профилиПодготовкиBindingSource.DataMember = "Профили подготовки";
             this.профилиПодготовкиBindingSource.DataSource = this.uchPlanDataSet;
             // 
-            // профили_подготовкиTableAdapter
+            // uchPlanDataSet
             // 
-            this.профили_подготовкиTableAdapter.ClearBeforeFill = true;
+            this.uchPlanDataSet.DataSetName = "UchPlanDataSet";
+            this.uchPlanDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // кодDataGridViewTextBoxColumn
+            // fKУчебныеПланыПрофилиПодготовкиBindingSource1
             // 
-            this.кодDataGridViewTextBoxColumn.DataPropertyName = "Код";
-            this.кодDataGridViewTextBoxColumn.HeaderText = "Код";
-            this.кодDataGridViewTextBoxColumn.Name = "кодDataGridViewTextBoxColumn";
-            this.кодDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fKУчебныеПланыПрофилиПодготовкиBindingSource1.DataMember = "FK_Учебные планы_Профили подготовки";
+            this.fKУчебныеПланыПрофилиПодготовкиBindingSource1.DataSource = this.профилиПодготовкиBindingSource;
             // 
-            // имяDataGridViewTextBoxColumn
+            // профили_подготовкиTableAdapter1
             // 
-            this.имяDataGridViewTextBoxColumn.DataPropertyName = "Имя";
-            this.имяDataGridViewTextBoxColumn.HeaderText = "Имя";
-            this.имяDataGridViewTextBoxColumn.Name = "имяDataGridViewTextBoxColumn";
+            this.профили_подготовкиTableAdapter1.ClearBeforeFill = true;
             // 
-            // кодНаправленияПодготовкиDataGridViewTextBoxColumn
+            // учебные_планыTableAdapter
             // 
-            this.кодНаправленияПодготовкиDataGridViewTextBoxColumn.DataPropertyName = "Код направления подготовки";
-            this.кодНаправленияПодготовкиDataGridViewTextBoxColumn.HeaderText = "Код направления подготовки";
-            this.кодНаправленияПодготовкиDataGridViewTextBoxColumn.Name = "кодНаправленияПодготовкиDataGridViewTextBoxColumn";
+            this.учебные_планыTableAdapter.ClearBeforeFill = true;
+            // 
+            // направления_подготовкиTableAdapter
+            // 
+            this.направления_подготовкиTableAdapter.ClearBeforeFill = true;
             // 
             // ProfiliPodgotovki
             // 
@@ -162,18 +183,22 @@
             this.ClientSize = new System.Drawing.Size(555, 388);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cmbBx);
+            this.Controls.Add(this.txtBx);
+            this.Controls.Add(this.btn_delete);
+            this.Controls.Add(this.btn_update);
+            this.Controls.Add(this.btn_insert);
             this.Controls.Add(this.dataGridView1);
             this.Name = "ProfiliPodgotovki";
             this.Text = "Профили подготовки";
             this.Load += new System.EventHandler(this.ProfiliPodgotovki_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.направленияПодготовкиBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKУчебныеПланыПрофилиПодготовкиBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.профилиПодготовкиBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKУчебныеПланыПрофилиПодготовкиBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,18 +207,22 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btn_insert;
+        private System.Windows.Forms.Button btn_update;
+        private System.Windows.Forms.Button btn_delete;
+        private System.Windows.Forms.TextBox txtBx;
+        private System.Windows.Forms.ComboBox cmbBx;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private UchPlanDataSet uchPlanDataSet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn направлениеПодготовкиDataGridViewTextBoxColumn;
+        private UchPlanDataSetTableAdapters.Профили_подготовкиTableAdapter профили_подготовкиTableAdapter1;
         private System.Windows.Forms.BindingSource профилиПодготовкиBindingSource;
-        private UchPlanDataSetTableAdapters.Профили_подготовкиTableAdapter профили_подготовкиTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn имяDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn кодНаправленияПодготовкиDataGridViewTextBoxColumn;
+        private UchPlanDataSet uchPlanDataSet;
+        private System.Windows.Forms.BindingSource fKУчебныеПланыПрофилиПодготовкиBindingSource;
+        private UchPlanDataSetTableAdapters.Учебные_планыTableAdapter учебные_планыTableAdapter;
+        private System.Windows.Forms.BindingSource fKУчебныеПланыПрофилиПодготовкиBindingSource1;
+        private UchPlanDataSet uchPlanDataSet1;
+        private System.Windows.Forms.BindingSource направленияПодготовкиBindingSource;
+        private UchPlanDataSetTableAdapters.Направления_подготовкиTableAdapter направления_подготовкиTableAdapter;
     }
 }
