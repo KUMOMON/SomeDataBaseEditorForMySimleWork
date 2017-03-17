@@ -53,5 +53,12 @@ namespace SomeDataBaseEditor.GUI_DataTables.Working
                 this.Show();
             }
         }
+
+        private void DisciplineInAcademicPlan_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "uchPlanDataSet.Дисциплина_как_часть_учебного_плана". При необходимости она может быть перемещена или удалена.
+            this.дисциплина_как_часть_учебного_планаTableAdapter.Fill(this.uchPlanDataSet.Дисциплина_как_часть_учебного_плана);
+
+        }
     }
 }

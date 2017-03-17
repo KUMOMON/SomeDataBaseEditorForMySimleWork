@@ -28,31 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.uchPlanDataSet = new SomeDataBaseEditor.UchPlanDataSet();
+            this.дисциплинаКакЧастьСеместраBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.дисциплина_как_часть_семестраTableAdapter = new SomeDataBaseEditor.UchPlanDataSetTableAdapters.Дисциплина_как_часть_семестраTableAdapter();
+            this.кодDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.кодСеместраDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.кодДисциплиныDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.часыЛекцийDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.часыПрактикиDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.часыКСРDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.дисциплинаКакЧастьСеместраBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.кодDataGridViewTextBoxColumn,
+            this.кодСеместраDataGridViewTextBoxColumn,
+            this.кодДисциплиныDataGridViewTextBoxColumn,
+            this.часыЛекцийDataGridViewTextBoxColumn,
+            this.часыПрактикиDataGridViewTextBoxColumn,
+            this.часыКСРDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.дисциплинаКакЧастьСеместраBindingSource;
             this.dataGridView2.Location = new System.Drawing.Point(12, 12);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(252, 150);
@@ -107,23 +128,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Часы";
             // 
-            // label1
+            // numericUpDown3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Лекций";
+            this.numericUpDown3.Location = new System.Drawing.Point(168, 70);
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(73, 20);
+            this.numericUpDown3.TabIndex = 5;
             // 
-            // label2
+            // numericUpDown2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 46);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Практики";
+            this.numericUpDown2.Location = new System.Drawing.Point(168, 44);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(73, 20);
+            this.numericUpDown2.TabIndex = 4;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(168, 18);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(73, 20);
+            this.numericUpDown1.TabIndex = 3;
             // 
             // label3
             // 
@@ -134,26 +158,23 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Контрольно-срезовые \r\nработ";
             // 
-            // numericUpDown1
+            // label2
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(168, 18);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(73, 20);
-            this.numericUpDown1.TabIndex = 3;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Практики";
             // 
-            // numericUpDown2
+            // label1
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(168, 44);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(73, 20);
-            this.numericUpDown2.TabIndex = 4;
-            // 
-            // numericUpDown3
-            // 
-            this.numericUpDown3.Location = new System.Drawing.Point(168, 70);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(73, 20);
-            this.numericUpDown3.TabIndex = 5;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Лекций";
             // 
             // button1
             // 
@@ -182,6 +203,57 @@
             this.button3.Text = "delete";
             this.button3.UseVisualStyleBackColor = true;
             // 
+            // uchPlanDataSet
+            // 
+            this.uchPlanDataSet.DataSetName = "UchPlanDataSet";
+            this.uchPlanDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // дисциплинаКакЧастьСеместраBindingSource
+            // 
+            this.дисциплинаКакЧастьСеместраBindingSource.DataMember = "Дисциплина как часть семестра";
+            this.дисциплинаКакЧастьСеместраBindingSource.DataSource = this.uchPlanDataSet;
+            // 
+            // дисциплина_как_часть_семестраTableAdapter
+            // 
+            this.дисциплина_как_часть_семестраTableAdapter.ClearBeforeFill = true;
+            // 
+            // кодDataGridViewTextBoxColumn
+            // 
+            this.кодDataGridViewTextBoxColumn.DataPropertyName = "Код";
+            this.кодDataGridViewTextBoxColumn.HeaderText = "Код";
+            this.кодDataGridViewTextBoxColumn.Name = "кодDataGridViewTextBoxColumn";
+            this.кодDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // кодСеместраDataGridViewTextBoxColumn
+            // 
+            this.кодСеместраDataGridViewTextBoxColumn.DataPropertyName = "Код семестра";
+            this.кодСеместраDataGridViewTextBoxColumn.HeaderText = "Код семестра";
+            this.кодСеместраDataGridViewTextBoxColumn.Name = "кодСеместраDataGridViewTextBoxColumn";
+            // 
+            // кодДисциплиныDataGridViewTextBoxColumn
+            // 
+            this.кодДисциплиныDataGridViewTextBoxColumn.DataPropertyName = "Код Дисциплины";
+            this.кодДисциплиныDataGridViewTextBoxColumn.HeaderText = "Код Дисциплины";
+            this.кодДисциплиныDataGridViewTextBoxColumn.Name = "кодДисциплиныDataGridViewTextBoxColumn";
+            // 
+            // часыЛекцийDataGridViewTextBoxColumn
+            // 
+            this.часыЛекцийDataGridViewTextBoxColumn.DataPropertyName = "Часы лекций";
+            this.часыЛекцийDataGridViewTextBoxColumn.HeaderText = "Часы лекций";
+            this.часыЛекцийDataGridViewTextBoxColumn.Name = "часыЛекцийDataGridViewTextBoxColumn";
+            // 
+            // часыПрактикиDataGridViewTextBoxColumn
+            // 
+            this.часыПрактикиDataGridViewTextBoxColumn.DataPropertyName = "Часы практики";
+            this.часыПрактикиDataGridViewTextBoxColumn.HeaderText = "Часы практики";
+            this.часыПрактикиDataGridViewTextBoxColumn.Name = "часыПрактикиDataGridViewTextBoxColumn";
+            // 
+            // часыКСРDataGridViewTextBoxColumn
+            // 
+            this.часыКСРDataGridViewTextBoxColumn.DataPropertyName = "Часы КСР";
+            this.часыКСРDataGridViewTextBoxColumn.HeaderText = "Часы КСР";
+            this.часыКСРDataGridViewTextBoxColumn.Name = "часыКСРDataGridViewTextBoxColumn";
+            // 
             // DisciplineAcademicPlaneInSemester
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -199,12 +271,15 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "DisciplineAcademicPlaneInSemester";
             this.Text = "Часы и контроль дисциплины";
+            this.Load += new System.EventHandler(this.DisciplineAcademicPlaneInSemester_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.дисциплинаКакЧастьСеместраBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,5 +302,14 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private UchPlanDataSet uchPlanDataSet;
+        private System.Windows.Forms.BindingSource дисциплинаКакЧастьСеместраBindingSource;
+        private UchPlanDataSetTableAdapters.Дисциплина_как_часть_семестраTableAdapter дисциплина_как_часть_семестраTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодСеместраDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодДисциплиныDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn часыЛекцийDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn часыПрактикиDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn часыКСРDataGridViewTextBoxColumn;
     }
 }

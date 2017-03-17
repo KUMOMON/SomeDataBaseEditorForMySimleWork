@@ -15,5 +15,12 @@ namespace SomeDataBaseEditor.GUI_DataTables.Catalogs
         {
             InitializeComponent();
         }
+
+        private void ProfiliPodgotovki_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "uchPlanDataSet.Профили_подготовки". При необходимости она может быть перемещена или удалена.
+            this.профили_подготовкиTableAdapter.Fill(this.uchPlanDataSet.Профили_подготовки);
+
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -36,12 +37,26 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.uchPlanDataSet = new SomeDataBaseEditor.UchPlanDataSet();
+            this.профилиПодготовкиBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.профили_подготовкиTableAdapter = new SomeDataBaseEditor.UchPlanDataSetTableAdapters.Профили_подготовкиTableAdapter();
+            this.кодDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.имяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.кодНаправленияПодготовкиDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.профилиПодготовкиBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.кодDataGridViewTextBoxColumn,
+            this.имяDataGridViewTextBoxColumn,
+            this.кодНаправленияПодготовкиDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.профилиПодготовкиBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(531, 243);
@@ -107,6 +122,39 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Направление подготовки";
             // 
+            // uchPlanDataSet
+            // 
+            this.uchPlanDataSet.DataSetName = "UchPlanDataSet";
+            this.uchPlanDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // профилиПодготовкиBindingSource
+            // 
+            this.профилиПодготовкиBindingSource.DataMember = "Профили подготовки";
+            this.профилиПодготовкиBindingSource.DataSource = this.uchPlanDataSet;
+            // 
+            // профили_подготовкиTableAdapter
+            // 
+            this.профили_подготовкиTableAdapter.ClearBeforeFill = true;
+            // 
+            // кодDataGridViewTextBoxColumn
+            // 
+            this.кодDataGridViewTextBoxColumn.DataPropertyName = "Код";
+            this.кодDataGridViewTextBoxColumn.HeaderText = "Код";
+            this.кодDataGridViewTextBoxColumn.Name = "кодDataGridViewTextBoxColumn";
+            this.кодDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // имяDataGridViewTextBoxColumn
+            // 
+            this.имяDataGridViewTextBoxColumn.DataPropertyName = "Имя";
+            this.имяDataGridViewTextBoxColumn.HeaderText = "Имя";
+            this.имяDataGridViewTextBoxColumn.Name = "имяDataGridViewTextBoxColumn";
+            // 
+            // кодНаправленияПодготовкиDataGridViewTextBoxColumn
+            // 
+            this.кодНаправленияПодготовкиDataGridViewTextBoxColumn.DataPropertyName = "Код направления подготовки";
+            this.кодНаправленияПодготовкиDataGridViewTextBoxColumn.HeaderText = "Код направления подготовки";
+            this.кодНаправленияПодготовкиDataGridViewTextBoxColumn.Name = "кодНаправленияПодготовкиDataGridViewTextBoxColumn";
+            // 
             // ProfiliPodgotovki
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -122,7 +170,10 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "ProfiliPodgotovki";
             this.Text = "Профили подготовки";
+            this.Load += new System.EventHandler(this.ProfiliPodgotovki_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.профилиПодготовкиBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,5 +189,11 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private UchPlanDataSet uchPlanDataSet;
+        private System.Windows.Forms.BindingSource профилиПодготовкиBindingSource;
+        private UchPlanDataSetTableAdapters.Профили_подготовкиTableAdapter профили_подготовкиTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn имяDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодНаправленияПодготовкиDataGridViewTextBoxColumn;
     }
 }

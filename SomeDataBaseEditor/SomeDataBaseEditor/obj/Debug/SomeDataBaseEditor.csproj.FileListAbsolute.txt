@@ -20,3 +20,4 @@ D:\Work\GitHubProjects\SomeDataBaseEditorForMySimleWork\SomeDataBaseEditor\SomeD
 D:\Work\GitHubProjects\SomeDataBaseEditorForMySimleWork\SomeDataBaseEditor\SomeDataBaseEditor\obj\Debug\SomeDataBaseEditor.GUI_DataTables.Working.Semesters.resources
 D:\Work\GitHubProjects\SomeDataBaseEditorForMySimleWork\SomeDataBaseEditor\SomeDataBaseEditor\obj\Debug\SomeDataBaseEditor.GUI_DataTables.Catalogs.NapravleniaPodgotovki.resources
 D:\Work\GitHubProjects\SomeDataBaseEditorForMySimleWork\SomeDataBaseEditor\SomeDataBaseEditor\obj\Debug\SomeDataBaseEditor.GUI_DataTables.Catalogs.ProfiliPodgotovki.resources
+D:\Work\GitHubProjects\SomeDataBaseEditorForMySimleWork\SomeDataBaseEditor\SomeDataBaseEditor\bin\Debug\SomeDataBaseEditor.exe.config

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -46,6 +47,18 @@
             this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
+            this.uchPlanDataSet = new SomeDataBaseEditor.UchPlanDataSet();
+            this.семестрыBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.семестрыTableAdapter = new SomeDataBaseEditor.UchPlanDataSetTableAdapters.СеместрыTableAdapter();
+            this.кодDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.кодУчебногоПланаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.номерDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ковоНедельDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.обязательныхЧасовФизкультурыВНеделяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.обязательныхЭкзаменовDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.обязательныхКурсовыхРаботDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.обязательныхЗачетовDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.обязательныхКурсовыхПроектовDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -54,11 +67,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.семестрыBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.кодDataGridViewTextBoxColumn,
+            this.кодУчебногоПланаDataGridViewTextBoxColumn,
+            this.номерDataGridViewTextBoxColumn,
+            this.ковоНедельDataGridViewTextBoxColumn,
+            this.обязательныхЧасовФизкультурыВНеделяDataGridViewTextBoxColumn,
+            this.обязательныхЭкзаменовDataGridViewTextBoxColumn,
+            this.обязательныхКурсовыхРаботDataGridViewTextBoxColumn,
+            this.обязательныхЗачетовDataGridViewTextBoxColumn,
+            this.обязательныхКурсовыхПроектовDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.семестрыBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(484, 168);
@@ -203,6 +230,75 @@
             this.numericUpDown7.Size = new System.Drawing.Size(44, 20);
             this.numericUpDown7.TabIndex = 16;
             // 
+            // uchPlanDataSet
+            // 
+            this.uchPlanDataSet.DataSetName = "UchPlanDataSet";
+            this.uchPlanDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // семестрыBindingSource
+            // 
+            this.семестрыBindingSource.DataMember = "Семестры";
+            this.семестрыBindingSource.DataSource = this.uchPlanDataSet;
+            // 
+            // семестрыTableAdapter
+            // 
+            this.семестрыTableAdapter.ClearBeforeFill = true;
+            // 
+            // кодDataGridViewTextBoxColumn
+            // 
+            this.кодDataGridViewTextBoxColumn.DataPropertyName = "Код";
+            this.кодDataGridViewTextBoxColumn.HeaderText = "Код";
+            this.кодDataGridViewTextBoxColumn.Name = "кодDataGridViewTextBoxColumn";
+            this.кодDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // кодУчебногоПланаDataGridViewTextBoxColumn
+            // 
+            this.кодУчебногоПланаDataGridViewTextBoxColumn.DataPropertyName = "Код учебного плана";
+            this.кодУчебногоПланаDataGridViewTextBoxColumn.HeaderText = "Код учебного плана";
+            this.кодУчебногоПланаDataGridViewTextBoxColumn.Name = "кодУчебногоПланаDataGridViewTextBoxColumn";
+            // 
+            // номерDataGridViewTextBoxColumn
+            // 
+            this.номерDataGridViewTextBoxColumn.DataPropertyName = "Номер";
+            this.номерDataGridViewTextBoxColumn.HeaderText = "Номер";
+            this.номерDataGridViewTextBoxColumn.Name = "номерDataGridViewTextBoxColumn";
+            // 
+            // ковоНедельDataGridViewTextBoxColumn
+            // 
+            this.ковоНедельDataGridViewTextBoxColumn.DataPropertyName = "Ко-во недель";
+            this.ковоНедельDataGridViewTextBoxColumn.HeaderText = "Ко-во недель";
+            this.ковоНедельDataGridViewTextBoxColumn.Name = "ковоНедельDataGridViewTextBoxColumn";
+            // 
+            // обязательныхЧасовФизкультурыВНеделяDataGridViewTextBoxColumn
+            // 
+            this.обязательныхЧасовФизкультурыВНеделяDataGridViewTextBoxColumn.DataPropertyName = "Обязательных часов физкультуры в неделя";
+            this.обязательныхЧасовФизкультурыВНеделяDataGridViewTextBoxColumn.HeaderText = "Обязательных часов физкультуры в неделя";
+            this.обязательныхЧасовФизкультурыВНеделяDataGridViewTextBoxColumn.Name = "обязательныхЧасовФизкультурыВНеделяDataGridViewTextBoxColumn";
+            // 
+            // обязательныхЭкзаменовDataGridViewTextBoxColumn
+            // 
+            this.обязательныхЭкзаменовDataGridViewTextBoxColumn.DataPropertyName = "Обязательных экзаменов";
+            this.обязательныхЭкзаменовDataGridViewTextBoxColumn.HeaderText = "Обязательных экзаменов";
+            this.обязательныхЭкзаменовDataGridViewTextBoxColumn.Name = "обязательныхЭкзаменовDataGridViewTextBoxColumn";
+            // 
+            // обязательныхКурсовыхРаботDataGridViewTextBoxColumn
+            // 
+            this.обязательныхКурсовыхРаботDataGridViewTextBoxColumn.DataPropertyName = "Обязательных курсовых работ";
+            this.обязательныхКурсовыхРаботDataGridViewTextBoxColumn.HeaderText = "Обязательных курсовых работ";
+            this.обязательныхКурсовыхРаботDataGridViewTextBoxColumn.Name = "обязательныхКурсовыхРаботDataGridViewTextBoxColumn";
+            // 
+            // обязательныхЗачетовDataGridViewTextBoxColumn
+            // 
+            this.обязательныхЗачетовDataGridViewTextBoxColumn.DataPropertyName = "Обязательных зачетов";
+            this.обязательныхЗачетовDataGridViewTextBoxColumn.HeaderText = "Обязательных зачетов";
+            this.обязательныхЗачетовDataGridViewTextBoxColumn.Name = "обязательныхЗачетовDataGridViewTextBoxColumn";
+            // 
+            // обязательныхКурсовыхПроектовDataGridViewTextBoxColumn
+            // 
+            this.обязательныхКурсовыхПроектовDataGridViewTextBoxColumn.DataPropertyName = "Обязательных курсовых проектов";
+            this.обязательныхКурсовыхПроектовDataGridViewTextBoxColumn.HeaderText = "Обязательных курсовых проектов";
+            this.обязательныхКурсовыхПроектовDataGridViewTextBoxColumn.Name = "обязательныхКурсовыхПроектовDataGridViewTextBoxColumn";
+            // 
             // Semesters
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -228,6 +324,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "Semesters";
             this.Text = "Semesters";
+            this.Load += new System.EventHandler(this.Semesters_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
@@ -236,6 +333,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.семестрыBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,5 +360,17 @@
         private System.Windows.Forms.NumericUpDown numericUpDown6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown numericUpDown7;
+        private UchPlanDataSet uchPlanDataSet;
+        private System.Windows.Forms.BindingSource семестрыBindingSource;
+        private UchPlanDataSetTableAdapters.СеместрыTableAdapter семестрыTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодУчебногоПланаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn номерDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ковоНедельDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn обязательныхЧасовФизкультурыВНеделяDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn обязательныхЭкзаменовDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn обязательныхКурсовыхРаботDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn обязательныхЗачетовDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn обязательныхКурсовыхПроектовDataGridViewTextBoxColumn;
     }
 }

@@ -21,5 +21,12 @@ namespace SomeDataBaseEditor.GUI_DataTables.Working
             _DisciplineIDInAcademicPlan = DisciplineIDInAcademicPlan;
             InitializeComponent();
         }
+
+        private void DisciplineAcademicPlaneInSemester_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "uchPlanDataSet.Дисциплина_как_часть_семестра". При необходимости она может быть перемещена или удалена.
+            this.дисциплина_как_часть_семестраTableAdapter.Fill(this.uchPlanDataSet.Дисциплина_как_часть_семестра);
+
+        }
     }
 }
