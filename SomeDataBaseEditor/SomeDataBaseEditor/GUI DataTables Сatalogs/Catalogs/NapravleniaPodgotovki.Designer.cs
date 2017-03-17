@@ -28,17 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.uchPlanDataSet = new SomeDataBaseEditor.UchPlanDataSet();
+            this.направленияПодготовкиBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.направления_подготовкиTableAdapter = new SomeDataBaseEditor.UchPlanDataSetTableAdapters.Направления_подготовкиTableAdapter();
+            this.кодDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.имяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.направленияПодготовкиBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.кодDataGridViewTextBoxColumn,
+            this.имяDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.направленияПодготовкиBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(416, 332);
@@ -78,6 +91,33 @@
             this.button3.Text = "Delete";
             this.button3.UseVisualStyleBackColor = true;
             // 
+            // uchPlanDataSet
+            // 
+            this.uchPlanDataSet.DataSetName = "UchPlanDataSet";
+            this.uchPlanDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // направленияПодготовкиBindingSource
+            // 
+            this.направленияПодготовкиBindingSource.DataMember = "Направления подготовки";
+            this.направленияПодготовкиBindingSource.DataSource = this.uchPlanDataSet;
+            // 
+            // направления_подготовкиTableAdapter
+            // 
+            this.направления_подготовкиTableAdapter.ClearBeforeFill = true;
+            // 
+            // кодDataGridViewTextBoxColumn
+            // 
+            this.кодDataGridViewTextBoxColumn.DataPropertyName = "Код";
+            this.кодDataGridViewTextBoxColumn.HeaderText = "Код";
+            this.кодDataGridViewTextBoxColumn.Name = "кодDataGridViewTextBoxColumn";
+            this.кодDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // имяDataGridViewTextBoxColumn
+            // 
+            this.имяDataGridViewTextBoxColumn.DataPropertyName = "Имя";
+            this.имяDataGridViewTextBoxColumn.HeaderText = "Имя";
+            this.имяDataGridViewTextBoxColumn.Name = "имяDataGridViewTextBoxColumn";
+            // 
             // NapravleniaPodgotovki
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -90,7 +130,10 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "NapravleniaPodgotovki";
             this.Text = "Направления подготовки";
+            this.Load += new System.EventHandler(this.NapravleniaPodgotovki_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.направленияПодготовкиBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -103,5 +146,10 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private UchPlanDataSet uchPlanDataSet;
+        private System.Windows.Forms.BindingSource направленияПодготовкиBindingSource;
+        private UchPlanDataSetTableAdapters.Направления_подготовкиTableAdapter направления_подготовкиTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn имяDataGridViewTextBoxColumn;
     }
 }

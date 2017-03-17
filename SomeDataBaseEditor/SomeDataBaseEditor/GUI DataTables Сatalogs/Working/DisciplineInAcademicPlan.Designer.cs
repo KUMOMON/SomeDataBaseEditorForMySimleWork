@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,16 +49,42 @@
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.uchPlanDataSet = new SomeDataBaseEditor.UchPlanDataSet();
+            this.дисциплинаКакЧастьУчебногоПланаBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.дисциплина_как_часть_учебного_планаTableAdapter = new SomeDataBaseEditor.UchPlanDataSetTableAdapters.Дисциплина_как_часть_учебного_планаTableAdapter();
+            this.кодDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.кодДисциплиныDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.кодУчебногоПланаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.кодовоеОбозначениеДисциплиныDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.кодКафедрыDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.кодТипДисциплиныDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.часыАудиторныеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.часыСамостоятельныеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.всегоЗЕТDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.дисциплинаКакЧастьУчебногоПланаBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.кодDataGridViewTextBoxColumn,
+            this.кодДисциплиныDataGridViewTextBoxColumn,
+            this.кодУчебногоПланаDataGridViewTextBoxColumn,
+            this.кодовоеОбозначениеДисциплиныDataGridViewTextBoxColumn,
+            this.кодКафедрыDataGridViewTextBoxColumn,
+            this.кодТипДисциплиныDataGridViewTextBoxColumn,
+            this.часыАудиторныеDataGridViewTextBoxColumn,
+            this.часыСамостоятельныеDataGridViewTextBoxColumn,
+            this.всегоЗЕТDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.дисциплинаКакЧастьУчебногоПланаBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(587, 344);
@@ -234,6 +261,75 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // uchPlanDataSet
+            // 
+            this.uchPlanDataSet.DataSetName = "UchPlanDataSet";
+            this.uchPlanDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // дисциплинаКакЧастьУчебногоПланаBindingSource
+            // 
+            this.дисциплинаКакЧастьУчебногоПланаBindingSource.DataMember = "Дисциплина как часть учебного плана";
+            this.дисциплинаКакЧастьУчебногоПланаBindingSource.DataSource = this.uchPlanDataSet;
+            // 
+            // дисциплина_как_часть_учебного_планаTableAdapter
+            // 
+            this.дисциплина_как_часть_учебного_планаTableAdapter.ClearBeforeFill = true;
+            // 
+            // кодDataGridViewTextBoxColumn
+            // 
+            this.кодDataGridViewTextBoxColumn.DataPropertyName = "Код";
+            this.кодDataGridViewTextBoxColumn.HeaderText = "Код";
+            this.кодDataGridViewTextBoxColumn.Name = "кодDataGridViewTextBoxColumn";
+            this.кодDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // кодДисциплиныDataGridViewTextBoxColumn
+            // 
+            this.кодДисциплиныDataGridViewTextBoxColumn.DataPropertyName = "Код дисциплины";
+            this.кодДисциплиныDataGridViewTextBoxColumn.HeaderText = "Код дисциплины";
+            this.кодДисциплиныDataGridViewTextBoxColumn.Name = "кодДисциплиныDataGridViewTextBoxColumn";
+            // 
+            // кодУчебногоПланаDataGridViewTextBoxColumn
+            // 
+            this.кодУчебногоПланаDataGridViewTextBoxColumn.DataPropertyName = "Код учебного плана";
+            this.кодУчебногоПланаDataGridViewTextBoxColumn.HeaderText = "Код учебного плана";
+            this.кодУчебногоПланаDataGridViewTextBoxColumn.Name = "кодУчебногоПланаDataGridViewTextBoxColumn";
+            // 
+            // кодовоеОбозначениеДисциплиныDataGridViewTextBoxColumn
+            // 
+            this.кодовоеОбозначениеДисциплиныDataGridViewTextBoxColumn.DataPropertyName = "Кодовое обозначение дисциплины";
+            this.кодовоеОбозначениеДисциплиныDataGridViewTextBoxColumn.HeaderText = "Кодовое обозначение дисциплины";
+            this.кодовоеОбозначениеДисциплиныDataGridViewTextBoxColumn.Name = "кодовоеОбозначениеДисциплиныDataGridViewTextBoxColumn";
+            // 
+            // кодКафедрыDataGridViewTextBoxColumn
+            // 
+            this.кодКафедрыDataGridViewTextBoxColumn.DataPropertyName = "Код кафедры";
+            this.кодКафедрыDataGridViewTextBoxColumn.HeaderText = "Код кафедры";
+            this.кодКафедрыDataGridViewTextBoxColumn.Name = "кодКафедрыDataGridViewTextBoxColumn";
+            // 
+            // кодТипДисциплиныDataGridViewTextBoxColumn
+            // 
+            this.кодТипДисциплиныDataGridViewTextBoxColumn.DataPropertyName = "Код Тип Дисциплины";
+            this.кодТипДисциплиныDataGridViewTextBoxColumn.HeaderText = "Код Тип Дисциплины";
+            this.кодТипДисциплиныDataGridViewTextBoxColumn.Name = "кодТипДисциплиныDataGridViewTextBoxColumn";
+            // 
+            // часыАудиторныеDataGridViewTextBoxColumn
+            // 
+            this.часыАудиторныеDataGridViewTextBoxColumn.DataPropertyName = "Часы аудиторные";
+            this.часыАудиторныеDataGridViewTextBoxColumn.HeaderText = "Часы аудиторные";
+            this.часыАудиторныеDataGridViewTextBoxColumn.Name = "часыАудиторныеDataGridViewTextBoxColumn";
+            // 
+            // часыСамостоятельныеDataGridViewTextBoxColumn
+            // 
+            this.часыСамостоятельныеDataGridViewTextBoxColumn.DataPropertyName = "Часы Самостоятельные";
+            this.часыСамостоятельныеDataGridViewTextBoxColumn.HeaderText = "Часы Самостоятельные";
+            this.часыСамостоятельныеDataGridViewTextBoxColumn.Name = "часыСамостоятельныеDataGridViewTextBoxColumn";
+            // 
+            // всегоЗЕТDataGridViewTextBoxColumn
+            // 
+            this.всегоЗЕТDataGridViewTextBoxColumn.DataPropertyName = "Всего ЗЕТ";
+            this.всегоЗЕТDataGridViewTextBoxColumn.HeaderText = "Всего ЗЕТ";
+            this.всегоЗЕТDataGridViewTextBoxColumn.Name = "всегоЗЕТDataGridViewTextBoxColumn";
+            // 
             // DisciplineInAcademicPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,12 +351,15 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "DisciplineInAcademicPlan";
             this.Text = "Дисциплины учебного плана";
+            this.Load += new System.EventHandler(this.DisciplineInAcademicPlan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.дисциплинаКакЧастьУчебногоПланаBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,5 +387,17 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button4;
+        private UchPlanDataSet uchPlanDataSet;
+        private System.Windows.Forms.BindingSource дисциплинаКакЧастьУчебногоПланаBindingSource;
+        private UchPlanDataSetTableAdapters.Дисциплина_как_часть_учебного_планаTableAdapter дисциплина_как_часть_учебного_планаTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодДисциплиныDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодУчебногоПланаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодовоеОбозначениеДисциплиныDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодКафедрыDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодТипДисциплиныDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn часыАудиторныеDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn часыСамостоятельныеDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn всегоЗЕТDataGridViewTextBoxColumn;
     }
 }

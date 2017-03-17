@@ -28,12 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.uchPlanDataSet = new SomeDataBaseEditor.UchPlanDataSet();
+            this.формыКонтроляBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.формы_контроляTableAdapter = new SomeDataBaseEditor.UchPlanDataSetTableAdapters.Формы_контроляTableAdapter();
+            this.кодDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.имяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.формыКонтроляBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button3
@@ -72,11 +80,43 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.кодDataGridViewTextBoxColumn,
+            this.имяDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.формыКонтроляBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(352, 332);
             this.dataGridView1.TabIndex = 11;
+            // 
+            // uchPlanDataSet
+            // 
+            this.uchPlanDataSet.DataSetName = "UchPlanDataSet";
+            this.uchPlanDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // формыКонтроляBindingSource
+            // 
+            this.формыКонтроляBindingSource.DataMember = "Формы контроля";
+            this.формыКонтроляBindingSource.DataSource = this.uchPlanDataSet;
+            // 
+            // формы_контроляTableAdapter
+            // 
+            this.формы_контроляTableAdapter.ClearBeforeFill = true;
+            // 
+            // кодDataGridViewTextBoxColumn
+            // 
+            this.кодDataGridViewTextBoxColumn.DataPropertyName = "Код";
+            this.кодDataGridViewTextBoxColumn.HeaderText = "Код";
+            this.кодDataGridViewTextBoxColumn.Name = "кодDataGridViewTextBoxColumn";
+            this.кодDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // имяDataGridViewTextBoxColumn
+            // 
+            this.имяDataGridViewTextBoxColumn.DataPropertyName = "Имя";
+            this.имяDataGridViewTextBoxColumn.HeaderText = "Имя";
+            this.имяDataGridViewTextBoxColumn.Name = "имяDataGridViewTextBoxColumn";
             // 
             // FormControlDisciplinInSevestr
             // 
@@ -90,7 +130,10 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormControlDisciplinInSevestr";
             this.Text = "FormControlDisciplinInSevestr";
+            this.Load += new System.EventHandler(this.FormControlDisciplinInSevestr_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.формыКонтроляBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -103,5 +146,10 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private UchPlanDataSet uchPlanDataSet;
+        private System.Windows.Forms.BindingSource формыКонтроляBindingSource;
+        private UchPlanDataSetTableAdapters.Формы_контроляTableAdapter формы_контроляTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn имяDataGridViewTextBoxColumn;
     }
 }

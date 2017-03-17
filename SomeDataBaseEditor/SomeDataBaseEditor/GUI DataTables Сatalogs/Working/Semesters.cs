@@ -20,5 +20,12 @@ namespace SomeDataBaseEditor.GUI_DataTables.Working
             _academicPlanId = academicPlanId;
             InitializeComponent();
         }
+
+        private void Semesters_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "uchPlanDataSet.Семестры". При необходимости она может быть перемещена или удалена.
+            this.семестрыTableAdapter.Fill(this.uchPlanDataSet.Семестры);
+
+        }
     }
 }

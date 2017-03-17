@@ -15,5 +15,12 @@ namespace SomeDataBaseEditor.GUI_DataTables.Catalogs
         {
             InitializeComponent();
         }
+
+        private void Kvalifikacii_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "uchPlanDataSet.Квалификации". При необходимости она может быть перемещена или удалена.
+            this.квалификацииTableAdapter.Fill(this.uchPlanDataSet.Квалификации);
+
+        }
     }
 }
