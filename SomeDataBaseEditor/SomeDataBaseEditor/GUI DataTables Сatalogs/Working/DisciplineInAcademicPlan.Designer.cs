@@ -29,247 +29,277 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.label7 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.cmbBx_nameDiscipline = new System.Windows.Forms.ComboBox();
+            this.lbl_nameDiscipline = new System.Windows.Forms.Label();
+            this.txtBx_shifrDiscipline = new System.Windows.Forms.TextBox();
+            this.lbl_shifrDiscipline = new System.Windows.Forms.Label();
+            this.cmbBx_kafedra = new System.Windows.Forms.ComboBox();
+            this.lbl_kafedra = new System.Windows.Forms.Label();
+            this.lbl_typeDiscipline = new System.Windows.Forms.Label();
+            this.cmbBx_typeDiscipline = new System.Windows.Forms.ComboBox();
+            this.lbl_hoursAuditor = new System.Windows.Forms.Label();
+            this.numUpDwn_hoursAuditor = new System.Windows.Forms.NumericUpDown();
+            this.numUpDwn_hoursSamost = new System.Windows.Forms.NumericUpDown();
+            this.lbl_hoursSamost = new System.Windows.Forms.Label();
+            this.numUpDwn_vsegoZet = new System.Windows.Forms.NumericUpDown();
+            this.lbl_vsegoZet = new System.Windows.Forms.Label();
+            this.btn_insert = new System.Windows.Forms.Button();
+            this.btn_delete = new System.Windows.Forms.Button();
+            this.btn_update = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.uchPlanDataSet = new SomeDataBaseEditor.UchPlanDataSet();
+            this.btn_go_semesters = new System.Windows.Forms.Button();
+            this.dtGrdVw = new System.Windows.Forms.DataGridView();
             this.дисциплинаКакЧастьУчебногоПланаBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uchPlanDataSet = new SomeDataBaseEditor.UchPlanDataSet();
             this.дисциплина_как_часть_учебного_планаTableAdapter = new SomeDataBaseEditor.UchPlanDataSetTableAdapters.Дисциплина_как_часть_учебного_планаTableAdapter();
             this.кодDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.кодДисциплиныDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.кодУчебногоПланаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.кодовоеОбозначениеДисциплиныDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.кодКафедрыDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.кодДисциплиныDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.кодТипДисциплиныDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.кодовоеОбозначениеДисциплиныDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.кодКафедрыDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.часыАудиторныеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.часыСамостоятельныеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.всегоЗЕТDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            this.дисциплиныBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.дисциплиныTableAdapter = new SomeDataBaseEditor.UchPlanDataSetTableAdapters.ДисциплиныTableAdapter();
+            this.типыДисциплинBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.типы_дисциплинTableAdapter = new SomeDataBaseEditor.UchPlanDataSetTableAdapters.Типы_дисциплинTableAdapter();
+            this.кафедрыBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.кафедрыTableAdapter = new SomeDataBaseEditor.UchPlanDataSetTableAdapters.КафедрыTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_hoursAuditor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_hoursSamost)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_vsegoZet)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGrdVw)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.дисциплинаКакЧастьУчебногоПланаBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.дисциплиныBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.типыДисциплинBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.кафедрыBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // cmbBx_nameDiscipline
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.кодDataGridViewTextBoxColumn,
-            this.кодДисциплиныDataGridViewTextBoxColumn,
-            this.кодУчебногоПланаDataGridViewTextBoxColumn,
-            this.кодовоеОбозначениеДисциплиныDataGridViewTextBoxColumn,
-            this.кодКафедрыDataGridViewTextBoxColumn,
-            this.кодТипДисциплиныDataGridViewTextBoxColumn,
-            this.часыАудиторныеDataGridViewTextBoxColumn,
-            this.часыСамостоятельныеDataGridViewTextBoxColumn,
-            this.всегоЗЕТDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.дисциплинаКакЧастьУчебногоПланаBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(587, 344);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.cmbBx_nameDiscipline.DataSource = this.дисциплиныBindingSource;
+            this.cmbBx_nameDiscipline.DisplayMember = "Имя";
+            this.cmbBx_nameDiscipline.FormattingEnabled = true;
+            this.cmbBx_nameDiscipline.Location = new System.Drawing.Point(12, 379);
+            this.cmbBx_nameDiscipline.Name = "cmbBx_nameDiscipline";
+            this.cmbBx_nameDiscipline.Size = new System.Drawing.Size(238, 21);
+            this.cmbBx_nameDiscipline.TabIndex = 1;
+            this.cmbBx_nameDiscipline.ValueMember = "Код";
             // 
-            // comboBox1
+            // lbl_nameDiscipline
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 379);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(238, 21);
-            this.comboBox1.TabIndex = 1;
+            this.lbl_nameDiscipline.AutoSize = true;
+            this.lbl_nameDiscipline.Location = new System.Drawing.Point(11, 363);
+            this.lbl_nameDiscipline.Name = "lbl_nameDiscipline";
+            this.lbl_nameDiscipline.Size = new System.Drawing.Size(70, 13);
+            this.lbl_nameDiscipline.TabIndex = 2;
+            this.lbl_nameDiscipline.Text = "Дисциплина";
             // 
-            // label1
+            // txtBx_shifrDiscipline
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 363);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Дисциплина";
+            this.txtBx_shifrDiscipline.Location = new System.Drawing.Point(145, 423);
+            this.txtBx_shifrDiscipline.Name = "txtBx_shifrDiscipline";
+            this.txtBx_shifrDiscipline.Size = new System.Drawing.Size(115, 20);
+            this.txtBx_shifrDiscipline.TabIndex = 3;
             // 
-            // textBox1
+            // lbl_shifrDiscipline
             // 
-            this.textBox1.Location = new System.Drawing.Point(145, 423);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(115, 20);
-            this.textBox1.TabIndex = 3;
+            this.lbl_shifrDiscipline.AutoSize = true;
+            this.lbl_shifrDiscipline.Location = new System.Drawing.Point(142, 407);
+            this.lbl_shifrDiscipline.Name = "lbl_shifrDiscipline";
+            this.lbl_shifrDiscipline.Size = new System.Drawing.Size(118, 13);
+            this.lbl_shifrDiscipline.TabIndex = 4;
+            this.lbl_shifrDiscipline.Text = "Кодовое обозначение";
             // 
-            // label2
+            // cmbBx_kafedra
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(142, 407);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Кодовое обозначение";
+            this.cmbBx_kafedra.DataSource = this.кафедрыBindingSource;
+            this.cmbBx_kafedra.DisplayMember = "Имя";
+            this.cmbBx_kafedra.FormattingEnabled = true;
+            this.cmbBx_kafedra.Location = new System.Drawing.Point(15, 472);
+            this.cmbBx_kafedra.Name = "cmbBx_kafedra";
+            this.cmbBx_kafedra.Size = new System.Drawing.Size(194, 21);
+            this.cmbBx_kafedra.TabIndex = 5;
+            this.cmbBx_kafedra.ValueMember = "Код";
             // 
-            // comboBox2
+            // lbl_kafedra
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(15, 472);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(194, 21);
-            this.comboBox2.TabIndex = 5;
+            this.lbl_kafedra.AutoSize = true;
+            this.lbl_kafedra.Location = new System.Drawing.Point(12, 455);
+            this.lbl_kafedra.Name = "lbl_kafedra";
+            this.lbl_kafedra.Size = new System.Drawing.Size(52, 13);
+            this.lbl_kafedra.TabIndex = 6;
+            this.lbl_kafedra.Text = "Кафедра";
             // 
-            // label3
+            // lbl_typeDiscipline
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 455);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Кафедра";
+            this.lbl_typeDiscipline.AutoSize = true;
+            this.lbl_typeDiscipline.Location = new System.Drawing.Point(12, 406);
+            this.lbl_typeDiscipline.Name = "lbl_typeDiscipline";
+            this.lbl_typeDiscipline.Size = new System.Drawing.Size(26, 13);
+            this.lbl_typeDiscipline.TabIndex = 8;
+            this.lbl_typeDiscipline.Text = "Тип";
             // 
-            // label4
+            // cmbBx_typeDiscipline
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 406);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(26, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Тип";
+            this.cmbBx_typeDiscipline.DataSource = this.типыДисциплинBindingSource;
+            this.cmbBx_typeDiscipline.DisplayMember = "Тип";
+            this.cmbBx_typeDiscipline.FormattingEnabled = true;
+            this.cmbBx_typeDiscipline.Location = new System.Drawing.Point(15, 423);
+            this.cmbBx_typeDiscipline.Name = "cmbBx_typeDiscipline";
+            this.cmbBx_typeDiscipline.Size = new System.Drawing.Size(121, 21);
+            this.cmbBx_typeDiscipline.TabIndex = 7;
+            this.cmbBx_typeDiscipline.ValueMember = "Код";
             // 
-            // comboBox3
+            // lbl_hoursAuditor
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(15, 423);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 7;
+            this.lbl_hoursAuditor.AutoSize = true;
+            this.lbl_hoursAuditor.Location = new System.Drawing.Point(15, 25);
+            this.lbl_hoursAuditor.Name = "lbl_hoursAuditor";
+            this.lbl_hoursAuditor.Size = new System.Drawing.Size(68, 13);
+            this.lbl_hoursAuditor.TabIndex = 9;
+            this.lbl_hoursAuditor.Text = "Аудиторные";
             // 
-            // label5
+            // numUpDwn_hoursAuditor
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 25);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Аудиторные";
+            this.numUpDwn_hoursAuditor.Location = new System.Drawing.Point(133, 23);
+            this.numUpDwn_hoursAuditor.Name = "numUpDwn_hoursAuditor";
+            this.numUpDwn_hoursAuditor.Size = new System.Drawing.Size(61, 20);
+            this.numUpDwn_hoursAuditor.TabIndex = 10;
             // 
-            // numericUpDown1
+            // numUpDwn_hoursSamost
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(133, 23);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(61, 20);
-            this.numericUpDown1.TabIndex = 10;
+            this.numUpDwn_hoursSamost.Location = new System.Drawing.Point(133, 47);
+            this.numUpDwn_hoursSamost.Name = "numUpDwn_hoursSamost";
+            this.numUpDwn_hoursSamost.Size = new System.Drawing.Size(61, 20);
+            this.numUpDwn_hoursSamost.TabIndex = 12;
             // 
-            // numericUpDown2
+            // lbl_hoursSamost
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(133, 47);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(61, 20);
-            this.numericUpDown2.TabIndex = 12;
-            this.numericUpDown2.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
+            this.lbl_hoursSamost.AutoSize = true;
+            this.lbl_hoursSamost.Location = new System.Drawing.Point(15, 49);
+            this.lbl_hoursSamost.Name = "lbl_hoursSamost";
+            this.lbl_hoursSamost.Size = new System.Drawing.Size(99, 13);
+            this.lbl_hoursSamost.TabIndex = 11;
+            this.lbl_hoursSamost.Text = "самостоятельные";
             // 
-            // label6
+            // numUpDwn_vsegoZet
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(15, 49);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(99, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "самостоятельные";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.numUpDwn_vsegoZet.Location = new System.Drawing.Point(133, 73);
+            this.numUpDwn_vsegoZet.Name = "numUpDwn_vsegoZet";
+            this.numUpDwn_vsegoZet.Size = new System.Drawing.Size(61, 20);
+            this.numUpDwn_vsegoZet.TabIndex = 14;
             // 
-            // numericUpDown3
+            // lbl_vsegoZet
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(133, 73);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(61, 20);
-            this.numericUpDown3.TabIndex = 14;
+            this.lbl_vsegoZet.AutoSize = true;
+            this.lbl_vsegoZet.Location = new System.Drawing.Point(15, 75);
+            this.lbl_vsegoZet.Name = "lbl_vsegoZet";
+            this.lbl_vsegoZet.Size = new System.Drawing.Size(61, 13);
+            this.lbl_vsegoZet.TabIndex = 13;
+            this.lbl_vsegoZet.Text = "Всего ЗЕТ";
             // 
-            // label7
+            // btn_insert
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(15, 75);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(61, 13);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Всего ЗЕТ";
+            this.btn_insert.Location = new System.Drawing.Point(508, 363);
+            this.btn_insert.Name = "btn_insert";
+            this.btn_insert.Size = new System.Drawing.Size(91, 32);
+            this.btn_insert.TabIndex = 15;
+            this.btn_insert.Text = "Insert";
+            this.btn_insert.UseVisualStyleBackColor = true;
+            this.btn_insert.Click += new System.EventHandler(this.btn_insert_Click);
             // 
-            // button1
+            // btn_delete
             // 
-            this.button1.Location = new System.Drawing.Point(508, 363);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 32);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Insert";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_delete.Location = new System.Drawing.Point(508, 439);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(91, 32);
+            this.btn_delete.TabIndex = 16;
+            this.btn_delete.Text = "Delete";
+            this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
-            // button2
+            // btn_update
             // 
-            this.button2.Location = new System.Drawing.Point(508, 439);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(91, 32);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Delete";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(508, 401);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(91, 32);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Update";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_update.Location = new System.Drawing.Point(508, 401);
+            this.btn_update.Name = "btn_update";
+            this.btn_update.Size = new System.Drawing.Size(91, 32);
+            this.btn_update.TabIndex = 17;
+            this.btn_update.Text = "Update";
+            this.btn_update.UseVisualStyleBackColor = true;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.numericUpDown3);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.numericUpDown2);
-            this.groupBox2.Controls.Add(this.numericUpDown1);
-            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.numUpDwn_vsegoZet);
+            this.groupBox2.Controls.Add(this.lbl_vsegoZet);
+            this.groupBox2.Controls.Add(this.lbl_hoursSamost);
+            this.groupBox2.Controls.Add(this.numUpDwn_hoursSamost);
+            this.groupBox2.Controls.Add(this.numUpDwn_hoursAuditor);
+            this.groupBox2.Controls.Add(this.lbl_hoursAuditor);
             this.groupBox2.Location = new System.Drawing.Point(292, 379);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 107);
             this.groupBox2.TabIndex = 24;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Расчасовка";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // button4
+            // btn_go_semesters
             // 
-            this.button4.Location = new System.Drawing.Point(508, 477);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(91, 32);
-            this.button4.TabIndex = 25;
-            this.button4.Text = "По семестрам";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btn_go_semesters.Location = new System.Drawing.Point(508, 477);
+            this.btn_go_semesters.Name = "btn_go_semesters";
+            this.btn_go_semesters.Size = new System.Drawing.Size(91, 32);
+            this.btn_go_semesters.TabIndex = 25;
+            this.btn_go_semesters.Text = "По семестрам";
+            this.btn_go_semesters.UseVisualStyleBackColor = true;
+            this.btn_go_semesters.Click += new System.EventHandler(this.button4_Click);
             // 
-            // uchPlanDataSet
+            // dtGrdVw
             // 
-            this.uchPlanDataSet.DataSetName = "UchPlanDataSet";
-            this.uchPlanDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dtGrdVw.AllowUserToAddRows = false;
+            this.dtGrdVw.AllowUserToDeleteRows = false;
+            this.dtGrdVw.AutoGenerateColumns = false;
+            this.dtGrdVw.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dtGrdVw.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtGrdVw.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.кодDataGridViewTextBoxColumn,
+            this.кодУчебногоПланаDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn1,
+            this.кодДисциплиныDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn2,
+            this.кодТипДисциплиныDataGridViewTextBoxColumn,
+            this.кодовоеОбозначениеДисциплиныDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn3,
+            this.кодКафедрыDataGridViewTextBoxColumn,
+            this.часыАудиторныеDataGridViewTextBoxColumn,
+            this.часыСамостоятельныеDataGridViewTextBoxColumn,
+            this.всегоЗЕТDataGridViewTextBoxColumn});
+            this.dtGrdVw.DataSource = this.дисциплинаКакЧастьУчебногоПланаBindingSource;
+            this.dtGrdVw.Location = new System.Drawing.Point(10, 12);
+            this.dtGrdVw.MultiSelect = false;
+            this.dtGrdVw.Name = "dtGrdVw";
+            this.dtGrdVw.ReadOnly = true;
+            this.dtGrdVw.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtGrdVw.Size = new System.Drawing.Size(584, 345);
+            this.dtGrdVw.TabIndex = 26;
+            this.dtGrdVw.SelectionChanged += new System.EventHandler(this.dtGrdVw_SelectionChanged);
             // 
             // дисциплинаКакЧастьУчебногоПланаBindingSource
             // 
             this.дисциплинаКакЧастьУчебногоПланаBindingSource.DataMember = "Дисциплина как часть учебного плана";
             this.дисциплинаКакЧастьУчебногоПланаBindingSource.DataSource = this.uchPlanDataSet;
+            // 
+            // uchPlanDataSet
+            // 
+            this.uchPlanDataSet.DataSetName = "UchPlanDataSet";
+            this.uchPlanDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // дисциплина_как_часть_учебного_планаTableAdapter
             // 
@@ -281,123 +311,207 @@
             this.кодDataGridViewTextBoxColumn.HeaderText = "Код";
             this.кодDataGridViewTextBoxColumn.Name = "кодDataGridViewTextBoxColumn";
             this.кодDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // кодДисциплиныDataGridViewTextBoxColumn
-            // 
-            this.кодДисциплиныDataGridViewTextBoxColumn.DataPropertyName = "Код дисциплины";
-            this.кодДисциплиныDataGridViewTextBoxColumn.HeaderText = "Код дисциплины";
-            this.кодДисциплиныDataGridViewTextBoxColumn.Name = "кодДисциплиныDataGridViewTextBoxColumn";
+            this.кодDataGridViewTextBoxColumn.Visible = false;
             // 
             // кодУчебногоПланаDataGridViewTextBoxColumn
             // 
             this.кодУчебногоПланаDataGridViewTextBoxColumn.DataPropertyName = "Код учебного плана";
             this.кодУчебногоПланаDataGridViewTextBoxColumn.HeaderText = "Код учебного плана";
             this.кодУчебногоПланаDataGridViewTextBoxColumn.Name = "кодУчебногоПланаDataGridViewTextBoxColumn";
+            this.кодУчебногоПланаDataGridViewTextBoxColumn.ReadOnly = true;
+            this.кодУчебногоПланаDataGridViewTextBoxColumn.Visible = false;
             // 
-            // кодовоеОбозначениеДисциплиныDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn1
             // 
-            this.кодовоеОбозначениеДисциплиныDataGridViewTextBoxColumn.DataPropertyName = "Кодовое обозначение дисциплины";
-            this.кодовоеОбозначениеДисциплиныDataGridViewTextBoxColumn.HeaderText = "Кодовое обозначение дисциплины";
-            this.кодовоеОбозначениеДисциплиныDataGridViewTextBoxColumn.Name = "кодовоеОбозначениеДисциплиныDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Имя Дисциплины";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Имя Дисциплины";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 112;
             // 
-            // кодКафедрыDataGridViewTextBoxColumn
+            // кодДисциплиныDataGridViewTextBoxColumn
             // 
-            this.кодКафедрыDataGridViewTextBoxColumn.DataPropertyName = "Код кафедры";
-            this.кодКафедрыDataGridViewTextBoxColumn.HeaderText = "Код кафедры";
-            this.кодКафедрыDataGridViewTextBoxColumn.Name = "кодКафедрыDataGridViewTextBoxColumn";
+            this.кодДисциплиныDataGridViewTextBoxColumn.DataPropertyName = "Код дисциплины";
+            this.кодДисциплиныDataGridViewTextBoxColumn.HeaderText = "Код дисциплины";
+            this.кодДисциплиныDataGridViewTextBoxColumn.Name = "кодДисциплиныDataGridViewTextBoxColumn";
+            this.кодДисциплиныDataGridViewTextBoxColumn.ReadOnly = true;
+            this.кодДисциплиныDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Тип дисциплины";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Тип дисциплины";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 106;
             // 
             // кодТипДисциплиныDataGridViewTextBoxColumn
             // 
             this.кодТипДисциплиныDataGridViewTextBoxColumn.DataPropertyName = "Код Тип Дисциплины";
             this.кодТипДисциплиныDataGridViewTextBoxColumn.HeaderText = "Код Тип Дисциплины";
             this.кодТипДисциплиныDataGridViewTextBoxColumn.Name = "кодТипДисциплиныDataGridViewTextBoxColumn";
+            this.кодТипДисциплиныDataGridViewTextBoxColumn.ReadOnly = true;
+            this.кодТипДисциплиныDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // кодовоеОбозначениеДисциплиныDataGridViewTextBoxColumn
+            // 
+            this.кодовоеОбозначениеДисциплиныDataGridViewTextBoxColumn.DataPropertyName = "Кодовое обозначение дисциплины";
+            this.кодовоеОбозначениеДисциплиныDataGridViewTextBoxColumn.HeaderText = "Кодовое обозначение дисциплины";
+            this.кодовоеОбозначениеДисциплиныDataGridViewTextBoxColumn.Name = "кодовоеОбозначениеДисциплиныDataGridViewTextBoxColumn";
+            this.кодовоеОбозначениеДисциплиныDataGridViewTextBoxColumn.ReadOnly = true;
+            this.кодовоеОбозначениеДисциплиныDataGridViewTextBoxColumn.Width = 133;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Имя кафедры";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Имя кафедры";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 95;
+            // 
+            // кодКафедрыDataGridViewTextBoxColumn
+            // 
+            this.кодКафедрыDataGridViewTextBoxColumn.DataPropertyName = "Код кафедры";
+            this.кодКафедрыDataGridViewTextBoxColumn.HeaderText = "Код кафедры";
+            this.кодКафедрыDataGridViewTextBoxColumn.Name = "кодКафедрыDataGridViewTextBoxColumn";
+            this.кодКафедрыDataGridViewTextBoxColumn.ReadOnly = true;
+            this.кодКафедрыDataGridViewTextBoxColumn.Visible = false;
             // 
             // часыАудиторныеDataGridViewTextBoxColumn
             // 
             this.часыАудиторныеDataGridViewTextBoxColumn.DataPropertyName = "Часы аудиторные";
             this.часыАудиторныеDataGridViewTextBoxColumn.HeaderText = "Часы аудиторные";
             this.часыАудиторныеDataGridViewTextBoxColumn.Name = "часыАудиторныеDataGridViewTextBoxColumn";
+            this.часыАудиторныеDataGridViewTextBoxColumn.ReadOnly = true;
+            this.часыАудиторныеDataGridViewTextBoxColumn.Width = 113;
             // 
             // часыСамостоятельныеDataGridViewTextBoxColumn
             // 
             this.часыСамостоятельныеDataGridViewTextBoxColumn.DataPropertyName = "Часы Самостоятельные";
             this.часыСамостоятельныеDataGridViewTextBoxColumn.HeaderText = "Часы Самостоятельные";
             this.часыСамостоятельныеDataGridViewTextBoxColumn.Name = "часыСамостоятельныеDataGridViewTextBoxColumn";
+            this.часыСамостоятельныеDataGridViewTextBoxColumn.ReadOnly = true;
+            this.часыСамостоятельныеDataGridViewTextBoxColumn.Width = 142;
             // 
             // всегоЗЕТDataGridViewTextBoxColumn
             // 
             this.всегоЗЕТDataGridViewTextBoxColumn.DataPropertyName = "Всего ЗЕТ";
             this.всегоЗЕТDataGridViewTextBoxColumn.HeaderText = "Всего ЗЕТ";
             this.всегоЗЕТDataGridViewTextBoxColumn.Name = "всегоЗЕТDataGridViewTextBoxColumn";
+            this.всегоЗЕТDataGridViewTextBoxColumn.ReadOnly = true;
+            this.всегоЗЕТDataGridViewTextBoxColumn.Width = 79;
+            // 
+            // дисциплиныBindingSource
+            // 
+            this.дисциплиныBindingSource.DataMember = "Дисциплины";
+            this.дисциплиныBindingSource.DataSource = this.uchPlanDataSet;
+            // 
+            // дисциплиныTableAdapter
+            // 
+            this.дисциплиныTableAdapter.ClearBeforeFill = true;
+            // 
+            // типыДисциплинBindingSource
+            // 
+            this.типыДисциплинBindingSource.DataMember = "Типы дисциплин";
+            this.типыДисциплинBindingSource.DataSource = this.uchPlanDataSet;
+            // 
+            // типы_дисциплинTableAdapter
+            // 
+            this.типы_дисциплинTableAdapter.ClearBeforeFill = true;
+            // 
+            // кафедрыBindingSource
+            // 
+            this.кафедрыBindingSource.DataMember = "Кафедры";
+            this.кафедрыBindingSource.DataSource = this.uchPlanDataSet;
+            // 
+            // кафедрыTableAdapter
+            // 
+            this.кафедрыTableAdapter.ClearBeforeFill = true;
             // 
             // DisciplineInAcademicPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(606, 515);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.dtGrdVw);
+            this.Controls.Add(this.btn_go_semesters);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btn_update);
+            this.Controls.Add(this.btn_delete);
+            this.Controls.Add(this.btn_insert);
+            this.Controls.Add(this.lbl_typeDiscipline);
+            this.Controls.Add(this.cmbBx_typeDiscipline);
+            this.Controls.Add(this.lbl_kafedra);
+            this.Controls.Add(this.cmbBx_kafedra);
+            this.Controls.Add(this.lbl_shifrDiscipline);
+            this.Controls.Add(this.txtBx_shifrDiscipline);
+            this.Controls.Add(this.lbl_nameDiscipline);
+            this.Controls.Add(this.cmbBx_nameDiscipline);
             this.Name = "DisciplineInAcademicPlan";
             this.Text = "Дисциплины учебного плана";
             this.Load += new System.EventHandler(this.DisciplineInAcademicPlan_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_hoursAuditor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_hoursSamost)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_vsegoZet)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGrdVw)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.дисциплинаКакЧастьУчебногоПланаBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.дисциплиныBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.типыДисциплинBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.кафедрыBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ComboBox cmbBx_nameDiscipline;
+        private System.Windows.Forms.Label lbl_nameDiscipline;
+        private System.Windows.Forms.TextBox txtBx_shifrDiscipline;
+        private System.Windows.Forms.Label lbl_shifrDiscipline;
+        private System.Windows.Forms.ComboBox cmbBx_kafedra;
+        private System.Windows.Forms.Label lbl_kafedra;
+        private System.Windows.Forms.Label lbl_typeDiscipline;
+        private System.Windows.Forms.ComboBox cmbBx_typeDiscipline;
+        private System.Windows.Forms.Label lbl_hoursAuditor;
+        private System.Windows.Forms.NumericUpDown numUpDwn_hoursAuditor;
+        private System.Windows.Forms.NumericUpDown numUpDwn_hoursSamost;
+        private System.Windows.Forms.Label lbl_hoursSamost;
+        private System.Windows.Forms.NumericUpDown numUpDwn_vsegoZet;
+        private System.Windows.Forms.Label lbl_vsegoZet;
+        private System.Windows.Forms.Button btn_insert;
+        private System.Windows.Forms.Button btn_delete;
+        private System.Windows.Forms.Button btn_update;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn_go_semesters;
+        private System.Windows.Forms.DataGridView dtGrdVw;
+        private System.Windows.Forms.DataGridViewTextBoxColumn имяДисциплиныDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn типДисциплиныDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn имяКафедрыDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn дисциплинаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кафедраDataGridViewTextBoxColumn;
         private UchPlanDataSet uchPlanDataSet;
         private System.Windows.Forms.BindingSource дисциплинаКакЧастьУчебногоПланаBindingSource;
         private UchPlanDataSetTableAdapters.Дисциплина_как_часть_учебного_планаTableAdapter дисциплина_как_часть_учебного_планаTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn кодДисциплиныDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn кодУчебногоПланаDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn кодовоеОбозначениеДисциплиныDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn кодКафедрыDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодДисциплиныDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn кодТипДисциплиныDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодовоеОбозначениеДисциплиныDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодКафедрыDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn часыАудиторныеDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn часыСамостоятельныеDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn всегоЗЕТDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource дисциплиныBindingSource;
+        private UchPlanDataSetTableAdapters.ДисциплиныTableAdapter дисциплиныTableAdapter;
+        private System.Windows.Forms.BindingSource типыДисциплинBindingSource;
+        private UchPlanDataSetTableAdapters.Типы_дисциплинTableAdapter типы_дисциплинTableAdapter;
+        private System.Windows.Forms.BindingSource кафедрыBindingSource;
+        private UchPlanDataSetTableAdapters.КафедрыTableAdapter кафедрыTableAdapter;
     }
 }

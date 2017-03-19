@@ -1235,6 +1235,12 @@ namespace SomeDataBaseEditor {
             
             private global::System.Data.DataColumn columnВсего_ЗЕТ;
             
+            private global::System.Data.DataColumn columnИмя_Дисциплины;
+            
+            private global::System.Data.DataColumn columnТип_дисциплины;
+            
+            private global::System.Data.DataColumn columnИмя_кафедры;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public Дисциплина_как_часть_учебного_планаDataTable() {
@@ -1342,6 +1348,30 @@ namespace SomeDataBaseEditor {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Имя_ДисциплиныColumn {
+                get {
+                    return this.columnИмя_Дисциплины;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Тип_дисциплиныColumn {
+                get {
+                    return this.columnТип_дисциплины;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Имя_кафедрыColumn {
+                get {
+                    return this.columnИмя_кафедры;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1377,7 +1407,7 @@ namespace SomeDataBaseEditor {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Дисциплина_как_часть_учебного_планаRow AddДисциплина_как_часть_учебного_планаRow(ДисциплиныRow parentДисциплиныRowByFK_Дисциплина_как_часть_учебного_плана_Дисциплины1, Учебные_планыRow parentУчебные_планыRowByFK_Дисциплина_как_часть_учебного_плана_Учебные_планы, string Кодовое_обозначение_дисциплины, КафедрыRow parentКафедрыRowByFK_Дисциплина_как_часть_учебного_плана_Дисциплины, Типы_дисциплинRow parentТипы_дисциплинRowByFK_Дисциплина_как_часть_учебного_плана_Типы_дисциплин, short Часы_аудиторные, short Часы_Самостоятельные, short Всего_ЗЕТ) {
+            public Дисциплина_как_часть_учебного_планаRow AddДисциплина_как_часть_учебного_планаRow(ДисциплиныRow parentДисциплиныRowByFK_Дисциплина_как_часть_учебного_плана_Дисциплины1, Учебные_планыRow parentУчебные_планыRowByFK_Дисциплина_как_часть_учебного_плана_Учебные_планы, string Кодовое_обозначение_дисциплины, КафедрыRow parentКафедрыRowByFK_Дисциплина_как_часть_учебного_плана_Дисциплины, Типы_дисциплинRow parentТипы_дисциплинRowByFK_Дисциплина_как_часть_учебного_плана_Типы_дисциплин, short Часы_аудиторные, short Часы_Самостоятельные, short Всего_ЗЕТ, string Имя_Дисциплины, string Тип_дисциплины, string Имя_кафедры) {
                 Дисциплина_как_часть_учебного_планаRow rowДисциплина_как_часть_учебного_планаRow = ((Дисциплина_как_часть_учебного_планаRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1388,7 +1418,10 @@ namespace SomeDataBaseEditor {
                         null,
                         Часы_аудиторные,
                         Часы_Самостоятельные,
-                        Всего_ЗЕТ};
+                        Всего_ЗЕТ,
+                        Имя_Дисциплины,
+                        Тип_дисциплины,
+                        Имя_кафедры};
                 if ((parentДисциплиныRowByFK_Дисциплина_как_часть_учебного_плана_Дисциплины1 != null)) {
                     columnValuesArray[1] = parentДисциплиныRowByFK_Дисциплина_как_часть_учебного_плана_Дисциплины1[0];
                 }
@@ -1439,6 +1472,9 @@ namespace SomeDataBaseEditor {
                 this.columnЧасы_аудиторные = base.Columns["Часы аудиторные"];
                 this.columnЧасы_Самостоятельные = base.Columns["Часы Самостоятельные"];
                 this.columnВсего_ЗЕТ = base.Columns["Всего ЗЕТ"];
+                this.columnИмя_Дисциплины = base.Columns["Имя Дисциплины"];
+                this.columnТип_дисциплины = base.Columns["Тип дисциплины"];
+                this.columnИмя_кафедры = base.Columns["Имя кафедры"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1462,6 +1498,12 @@ namespace SomeDataBaseEditor {
                 base.Columns.Add(this.columnЧасы_Самостоятельные);
                 this.columnВсего_ЗЕТ = new global::System.Data.DataColumn("Всего ЗЕТ", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnВсего_ЗЕТ);
+                this.columnИмя_Дисциплины = new global::System.Data.DataColumn("Имя Дисциплины", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnИмя_Дисциплины);
+                this.columnТип_дисциплины = new global::System.Data.DataColumn("Тип дисциплины", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnТип_дисциплины);
+                this.columnИмя_кафедры = new global::System.Data.DataColumn("Имя кафедры", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnИмя_кафедры);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnКод}, true));
                 this.columnКод.AutoIncrement = true;
@@ -1479,6 +1521,12 @@ namespace SomeDataBaseEditor {
                 this.columnЧасы_аудиторные.AllowDBNull = false;
                 this.columnЧасы_Самостоятельные.AllowDBNull = false;
                 this.columnВсего_ЗЕТ.AllowDBNull = false;
+                this.columnИмя_Дисциплины.AllowDBNull = false;
+                this.columnИмя_Дисциплины.MaxLength = 70;
+                this.columnТип_дисциплины.AllowDBNull = false;
+                this.columnТип_дисциплины.MaxLength = 10;
+                this.columnИмя_кафедры.AllowDBNull = false;
+                this.columnИмя_кафедры.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5718,6 +5766,39 @@ namespace SomeDataBaseEditor {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Имя_Дисциплины {
+                get {
+                    return ((string)(this[this.tableДисциплина_как_часть_учебного_плана.Имя_ДисциплиныColumn]));
+                }
+                set {
+                    this[this.tableДисциплина_как_часть_учебного_плана.Имя_ДисциплиныColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Тип_дисциплины {
+                get {
+                    return ((string)(this[this.tableДисциплина_как_часть_учебного_плана.Тип_дисциплиныColumn]));
+                }
+                set {
+                    this[this.tableДисциплина_как_часть_учебного_плана.Тип_дисциплиныColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Имя_кафедры {
+                get {
+                    return ((string)(this[this.tableДисциплина_как_часть_учебного_плана.Имя_кафедрыColumn]));
+                }
+                set {
+                    this[this.tableДисциплина_как_часть_учебного_плана.Имя_кафедрыColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public КафедрыRow КафедрыRow {
                 get {
                     return ((КафедрыRow)(this.GetParentRow(this.Table.ParentRelations["FK_Дисциплина как часть учебного плана_Дисциплины"])));
@@ -7729,23 +7810,18 @@ SELECT Код, [Код семестра], [Код Дисциплины], [Час
             tableMapping.ColumnMappings.Add("Часы аудиторные", "Часы аудиторные");
             tableMapping.ColumnMappings.Add("Часы Самостоятельные", "Часы Самостоятельные");
             tableMapping.ColumnMappings.Add("Всего ЗЕТ", "Всего ЗЕТ");
+            tableMapping.ColumnMappings.Add("Имя Дисциплины", "Имя Дисциплины");
+            tableMapping.ColumnMappings.Add("Тип дисциплины", "Тип дисциплины");
+            tableMapping.ColumnMappings.Add("Имя кафедры", "Имя кафедры");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Дисциплина как часть учебного плана] WHERE (([Код] = @Original_Код) AND ([Код дисциплины] = @Original_Код_дисциплины) AND ([Код учебного плана] = @Original_Код_учебного_плана) AND ([Кодовое обозначение дисциплины] = @Original_Кодовое_обозначение_дисциплины) AND ([Код кафедры] = @Original_Код_кафедры) AND ([Код Тип Дисциплины] = @Original_Код_Тип_Дисциплины) AND ([Часы аудиторные] = @Original_Часы_аудиторные) AND ([Часы Самостоятельные] = @Original_Часы_Самостоятельные) AND ([Всего ЗЕТ] = @Original_Всего_ЗЕТ))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Дисциплина как часть учебного плана]\r\nWHERE        (Код = @ID)";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_дисциплины", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код дисциплины", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_учебного_плана", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код учебного плана", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Кодовое_обозначение_дисциплины", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Кодовое обозначение дисциплины", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_кафедры", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код кафедры", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_Тип_Дисциплины", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код Тип Дисциплины", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Часы_аудиторные", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Часы аудиторные", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Часы_Самостоятельные", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Часы Самостоятельные", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Всего_ЗЕТ", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Всего ЗЕТ", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Дисциплина как часть учебного плана] ([Код дисциплины], [Код учебного плана], [Кодовое обозначение дисциплины], [Код кафедры], [Код Тип Дисциплины], [Часы аудиторные], [Часы Самостоятельные], [Всего ЗЕТ]) VALUES (@Код_дисциплины, @Код_учебного_плана, @Кодовое_обозначение_дисциплины, @Код_кафедры, @Код_Тип_Дисциплины, @Часы_аудиторные, @Часы_Самостоятельные, @Всего_ЗЕТ);
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Дисциплина как часть учебного плана] ([Код дисциплины], [Код учебного плана], [Кодовое обозначение дисциплины], [Код кафедры], [Код Тип Дисциплины], [Часы аудиторные], [Часы Самостоятельные], [Всего ЗЕТ]) VALUES (@Код_дисциплины, @Код_учебного_плана, @Кодовое_обозначение_дисциплины, @Код_кафедры, @Код_Тип_Дисциплины, @Часы_аудиторные, @Часы_Самостоятельные, @Всего_ЗЕТ);
 SELECT Код, [Код дисциплины], [Код учебного плана], [Кодовое обозначение дисциплины], [Код кафедры], [Код Тип Дисциплины], [Часы аудиторные], [Часы Самостоятельные], [Всего ЗЕТ] FROM [Дисциплина как часть учебного плана] WHERE (Код = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код_дисциплины", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код дисциплины", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7758,27 +7834,20 @@ SELECT Код, [Код дисциплины], [Код учебного план�
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Всего_ЗЕТ", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Всего ЗЕТ", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Дисциплина как часть учебного плана] SET [Код дисциплины] = @Код_дисциплины, [Код учебного плана] = @Код_учебного_плана, [Кодовое обозначение дисциплины] = @Кодовое_обозначение_дисциплины, [Код кафедры] = @Код_кафедры, [Код Тип Дисциплины] = @Код_Тип_Дисциплины, [Часы аудиторные] = @Часы_аудиторные, [Часы Самостоятельные] = @Часы_Самостоятельные, [Всего ЗЕТ] = @Всего_ЗЕТ WHERE (([Код] = @Original_Код) AND ([Код дисциплины] = @Original_Код_дисциплины) AND ([Код учебного плана] = @Original_Код_учебного_плана) AND ([Кодовое обозначение дисциплины] = @Original_Кодовое_обозначение_дисциплины) AND ([Код кафедры] = @Original_Код_кафедры) AND ([Код Тип Дисциплины] = @Original_Код_Тип_Дисциплины) AND ([Часы аудиторные] = @Original_Часы_аудиторные) AND ([Часы Самостоятельные] = @Original_Часы_Самостоятельные) AND ([Всего ЗЕТ] = @Original_Всего_ЗЕТ));
-SELECT Код, [Код дисциплины], [Код учебного плана], [Кодовое обозначение дисциплины], [Код кафедры], [Код Тип Дисциплины], [Часы аудиторные], [Часы Самостоятельные], [Всего ЗЕТ] FROM [Дисциплина как часть учебного плана] WHERE (Код = @Код)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE       [Дисциплина как часть учебного плана]
+SET                [Код дисциплины] = @DisciplineID, [Код учебного плана] = @AcademicPlanID, [Кодовое обозначение дисциплины] = @DisciplineShifr, [Код кафедры] = @KafedraID, 
+                         [Код Тип Дисциплины] = @TypeDisciplinID, [Часы аудиторные] = @hoursAuditor, [Часы Самостоятельные] = @hoursSamost, [Всего ЗЕТ] = @VsegoZet
+WHERE        (Код = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код_дисциплины", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код дисциплины", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код_учебного_плана", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код учебного плана", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Кодовое_обозначение_дисциплины", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Кодовое обозначение дисциплины", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код_кафедры", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код кафедры", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код_Тип_Дисциплины", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код Тип Дисциплины", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Часы_аудиторные", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Часы аудиторные", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Часы_Самостоятельные", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Часы Самостоятельные", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Всего_ЗЕТ", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Всего ЗЕТ", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_дисциплины", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код дисциплины", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_учебного_плана", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код учебного плана", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Кодовое_обозначение_дисциплины", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Кодовое обозначение дисциплины", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_кафедры", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код кафедры", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_Тип_Дисциплины", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код Тип Дисциплины", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Часы_аудиторные", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Часы аудиторные", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Часы_Самостоятельные", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Часы Самостоятельные", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Всего_ЗЕТ", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Всего ЗЕТ", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DisciplineID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код дисциплины", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AcademicPlanID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код учебного плана", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DisciplineShifr", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "Кодовое обозначение дисциплины", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KafedraID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код кафедры", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TypeDisciplinID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код Тип Дисциплины", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hoursAuditor", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "Часы аудиторные", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hoursSamost", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "Часы Самостоятельные", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VsegoZet", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "Всего ЗЕТ", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7794,9 +7863,14 @@ SELECT Код, [Код дисциплины], [Код учебного план�
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Код, [Код дисциплины], [Код учебного плана], [Кодовое обозначение дисципли" +
-                "ны], [Код кафедры], [Код Тип Дисциплины], [Часы аудиторные], [Часы Самостоятельн" +
-                "ые], [Всего ЗЕТ] FROM dbo.[Дисциплина как часть учебного плана]";
+            this._commandCollection[0].CommandText = @"SELECT        [Дисциплина как часть учебного плана].Код, [Дисциплина как часть учебного плана].[Код дисциплины], [Дисциплина как часть учебного плана].[Код учебного плана], 
+                         [Дисциплина как часть учебного плана].[Кодовое обозначение дисциплины], [Дисциплина как часть учебного плана].[Код кафедры], [Дисциплина как часть учебного плана].[Код Тип Дисциплины], 
+                         [Дисциплина как часть учебного плана].[Часы аудиторные], [Дисциплина как часть учебного плана].[Часы Самостоятельные], [Дисциплина как часть учебного плана].[Всего ЗЕТ], 
+                         Дисциплины.Имя AS [Имя Дисциплины], [Типы дисциплин].Тип AS [Тип дисциплины], Кафедры.Имя AS [Имя кафедры]
+FROM            [Дисциплина как часть учебного плана] INNER JOIN
+                         Дисциплины ON [Дисциплина как часть учебного плана].[Код дисциплины] = Дисциплины.Код INNER JOIN
+                         [Типы дисциплин] ON [Дисциплина как часть учебного плана].[Код Тип Дисциплины] = [Типы дисциплин].Код INNER JOIN
+                         Кафедры ON [Дисциплина как часть учебного плана].[Код кафедры] = Кафедры.Код";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -7857,21 +7931,8 @@ SELECT Код, [Код дисциплины], [Код учебного план�
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Код, int Original_Код_дисциплины, int Original_Код_учебного_плана, string Original_Кодовое_обозначение_дисциплины, int Original_Код_кафедры, int Original_Код_Тип_Дисциплины, short Original_Часы_аудиторные, short Original_Часы_Самостоятельные, short Original_Всего_ЗЕТ) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Код));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Код_дисциплины));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Код_учебного_плана));
-            if ((Original_Кодовое_обозначение_дисциплины == null)) {
-                throw new global::System.ArgumentNullException("Original_Кодовое_обозначение_дисциплины");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_Кодовое_обозначение_дисциплины));
-            }
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Код_кафедры));
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_Код_Тип_Дисциплины));
-            this.Adapter.DeleteCommand.Parameters[6].Value = ((short)(Original_Часы_аудиторные));
-            this.Adapter.DeleteCommand.Parameters[7].Value = ((short)(Original_Часы_Самостоятельные));
-            this.Adapter.DeleteCommand.Parameters[8].Value = ((short)(Original_Всего_ЗЕТ));
+        public virtual int Delete(int ID) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7926,53 +7987,21 @@ SELECT Код, [Код дисциплины], [Код учебного план�
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    int Код_дисциплины, 
-                    int Код_учебного_плана, 
-                    string Кодовое_обозначение_дисциплины, 
-                    int Код_кафедры, 
-                    int Код_Тип_Дисциплины, 
-                    short Часы_аудиторные, 
-                    short Часы_Самостоятельные, 
-                    short Всего_ЗЕТ, 
-                    int Original_Код, 
-                    int Original_Код_дисциплины, 
-                    int Original_Код_учебного_плана, 
-                    string Original_Кодовое_обозначение_дисциплины, 
-                    int Original_Код_кафедры, 
-                    int Original_Код_Тип_Дисциплины, 
-                    short Original_Часы_аудиторные, 
-                    short Original_Часы_Самостоятельные, 
-                    short Original_Всего_ЗЕТ, 
-                    int Код) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Код_дисциплины));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Код_учебного_плана));
-            if ((Кодовое_обозначение_дисциплины == null)) {
-                throw new global::System.ArgumentNullException("Кодовое_обозначение_дисциплины");
+        public virtual int Update(int DisciplineID, int AcademicPlanID, string DisciplineShifr, int KafedraID, int TypeDisciplinID, short hoursAuditor, short hoursSamost, short VsegoZet, int ID) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(DisciplineID));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(AcademicPlanID));
+            if ((DisciplineShifr == null)) {
+                throw new global::System.ArgumentNullException("DisciplineShifr");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Кодовое_обозначение_дисциплины));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(DisciplineShifr));
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Код_кафедры));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Код_Тип_Дисциплины));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((short)(Часы_аудиторные));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((short)(Часы_Самостоятельные));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((short)(Всего_ЗЕТ));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Код));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Код_дисциплины));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Код_учебного_плана));
-            if ((Original_Кодовое_обозначение_дисциплины == null)) {
-                throw new global::System.ArgumentNullException("Original_Кодовое_обозначение_дисциплины");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Кодовое_обозначение_дисциплины));
-            }
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_Код_кафедры));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_Код_Тип_Дисциплины));
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((short)(Original_Часы_аудиторные));
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((short)(Original_Часы_Самостоятельные));
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((short)(Original_Всего_ЗЕТ));
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Код));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(KafedraID));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(TypeDisciplinID));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((short)(hoursAuditor));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((short)(hoursSamost));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((short)(VsegoZet));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7987,31 +8016,6 @@ SELECT Код, [Код дисциплины], [Код учебного план�
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    int Код_дисциплины, 
-                    int Код_учебного_плана, 
-                    string Кодовое_обозначение_дисциплины, 
-                    int Код_кафедры, 
-                    int Код_Тип_Дисциплины, 
-                    short Часы_аудиторные, 
-                    short Часы_Самостоятельные, 
-                    short Всего_ЗЕТ, 
-                    int Original_Код, 
-                    int Original_Код_дисциплины, 
-                    int Original_Код_учебного_плана, 
-                    string Original_Кодовое_обозначение_дисциплины, 
-                    int Original_Код_кафедры, 
-                    int Original_Код_Тип_Дисциплины, 
-                    short Original_Часы_аудиторные, 
-                    short Original_Часы_Самостоятельные, 
-                    short Original_Всего_ЗЕТ) {
-            return this.Update(Код_дисциплины, Код_учебного_плана, Кодовое_обозначение_дисциплины, Код_кафедры, Код_Тип_Дисциплины, Часы_аудиторные, Часы_Самостоятельные, Всего_ЗЕТ, Original_Код, Original_Код_дисциплины, Original_Код_учебного_плана, Original_Кодовое_обозначение_дисциплины, Original_Код_кафедры, Original_Код_Тип_Дисциплины, Original_Часы_аудиторные, Original_Часы_Самостоятельные, Original_Всего_ЗЕТ, Original_Код);
         }
     }
     

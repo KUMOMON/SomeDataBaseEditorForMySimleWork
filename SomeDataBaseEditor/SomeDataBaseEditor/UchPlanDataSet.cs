@@ -1,18 +1,32 @@
 ﻿namespace SomeDataBaseEditor
 {
-
-
-    partial class UchPlanDataSet
-    {
-        partial class Профили_подготовкиDataTable
-        {
-        }
-    }
 }
 
-namespace SomeDataBaseEditor.UchPlanDataSetTableAdapters {
-    
+namespace SomeDataBaseEditor
+{
+}
 
-    public partial class Профили_подготовкиTableAdapter {
+namespace SomeDataBaseEditor
+{
+}
+
+namespace SomeDataBaseEditor
+{
+}
+
+namespace SomeDataBaseEditor
+{
+}
+
+namespace SomeDataBaseEditor
+{
+
+}
+namespace SomeDataBaseEditor
+{
+
+
+    public partial class UchPlanDataSet
+    {
     }
 }
