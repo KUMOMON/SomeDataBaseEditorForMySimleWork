@@ -19,7 +19,7 @@ namespace SomeDataBaseEditor.GUI_DataTables.Catalogs
         private void ProfiliPodgotovki_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "uchPlanDataSet1.Направления_подготовки". При необходимости она может быть перемещена или удалена.
-            this.направления_подготовкиTableAdapter.Fill(this.uchPlanDataSet1.Направления_подготовки);
+            this.направления_подготовкиTableAdapter.Fill(this.uchPlanDataSet.Направления_подготовки);
             UpdateDataInDataGridView();
         }
 

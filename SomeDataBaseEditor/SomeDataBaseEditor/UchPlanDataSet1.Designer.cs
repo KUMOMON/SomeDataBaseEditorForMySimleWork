@@ -10251,53 +10251,40 @@ SELECT [Код ДУП], [Код реализуемой компетенции] F
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Семестры] WHERE (([Код] = @Original_Код) AND ([Код учебного плана] = @Original_Код_учебного_плана) AND ([Номер] = @Original_Номер) AND ([Ко-во недель] = @p2) AND ([Обязательных часов физкультуры в неделя] = @Original_Обязательных_часов_физкультуры_в_неделя) AND ([Обязательных экзаменов] = @Original_Обязательных_экзаменов) AND ([Обязательных курсовых работ] = @Original_Обязательных_курсовых_работ) AND ([Обязательных зачетов] = @Original_Обязательных_зачетов) AND ([Обязательных курсовых проектов] = @Original_Обязательных_курсовых_проектов))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM Семестры\nWHERE        (Код = @ID)";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_учебного_плана", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код учебного плана", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Номер", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Номер", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p2", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ко-во недель", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Обязательных_часов_физкультуры_в_неделя", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Обязательных часов физкультуры в неделя", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Обязательных_экзаменов", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Обязательных экзаменов", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Обязательных_курсовых_работ", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Обязательных курсовых работ", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Обязательных_зачетов", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Обязательных зачетов", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Обязательных_курсовых_проектов", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Обязательных курсовых проектов", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Семестры] ([Код учебного плана], [Номер], [Ко-во недель], [Обязательных часов физкультуры в неделя], [Обязательных экзаменов], [Обязательных курсовых работ], [Обязательных зачетов], [Обязательных курсовых проектов]) VALUES (@Код_учебного_плана, @Номер, @p1, @Обязательных_часов_физкультуры_в_неделя, @Обязательных_экзаменов, @Обязательных_курсовых_работ, @Обязательных_зачетов, @Обязательных_курсовых_проектов);
-SELECT Код, [Код учебного плана], Номер, [Ко-во недель], [Обязательных часов физкультуры в неделя], [Обязательных экзаменов], [Обязательных курсовых работ], [Обязательных зачетов], [Обязательных курсовых проектов] FROM Семестры WHERE (Код = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO Семестры
+                         ([Код учебного плана], Номер, [Ко-во недель], [Обязательных часов физкультуры в неделя], [Обязательных экзаменов], [Обязательных курсовых работ], [Обязательных зачетов], 
+                         [Обязательных курсовых проектов])
+VALUES        (@AcademicPlanID,@NumberOfSemestr,@CountWeeks,@CountHoursSport,@CountExam,@CountKourseWork,@CountOffset,@CountKourseProj)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код_учебного_плана", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код учебного плана", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Номер", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Номер", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ко-во недель", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Обязательных_часов_физкультуры_в_неделя", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Обязательных часов физкультуры в неделя", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Обязательных_экзаменов", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Обязательных экзаменов", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Обязательных_курсовых_работ", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Обязательных курсовых работ", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Обязательных_зачетов", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Обязательных зачетов", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Обязательных_курсовых_проектов", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Обязательных курсовых проектов", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AcademicPlanID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код учебного плана", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumberOfSemestr", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Номер", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CountWeeks", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "Ко-во недель", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CountHoursSport", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "Обязательных часов физкультуры в неделя", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CountExam", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "Обязательных экзаменов", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CountKourseWork", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "Обязательных курсовых работ", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CountOffset", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "Обязательных зачетов", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CountKourseProj", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "Обязательных курсовых проектов", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Семестры] SET [Код учебного плана] = @Код_учебного_плана, [Номер] = @Номер, [Ко-во недель] = @p1, [Обязательных часов физкультуры в неделя] = @Обязательных_часов_физкультуры_в_неделя, [Обязательных экзаменов] = @Обязательных_экзаменов, [Обязательных курсовых работ] = @Обязательных_курсовых_работ, [Обязательных зачетов] = @Обязательных_зачетов, [Обязательных курсовых проектов] = @Обязательных_курсовых_проектов WHERE (([Код] = @Original_Код) AND ([Код учебного плана] = @Original_Код_учебного_плана) AND ([Номер] = @Original_Номер) AND ([Ко-во недель] = @p2) AND ([Обязательных часов физкультуры в неделя] = @Original_Обязательных_часов_физкультуры_в_неделя) AND ([Обязательных экзаменов] = @Original_Обязательных_экзаменов) AND ([Обязательных курсовых работ] = @Original_Обязательных_курсовых_работ) AND ([Обязательных зачетов] = @Original_Обязательных_зачетов) AND ([Обязательных курсовых проектов] = @Original_Обязательных_курсовых_проектов));
-SELECT Код, [Код учебного плана], Номер, [Ко-во недель], [Обязательных часов физкультуры в неделя], [Обязательных экзаменов], [Обязательных курсовых работ], [Обязательных зачетов], [Обязательных курсовых проектов] FROM Семестры WHERE (Код = @Код)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE       Семестры
+SET                [Код учебного плана] = @NewAcademicPlanID, Номер = @NewNumberOfSemestr, [Обязательных часов физкультуры в неделя] = @NewHoursSport, [Обязательных экзаменов] = @NewCountExam, 
+                         [Обязательных курсовых работ] = @NewCourseWork, [Обязательных зачетов] = @NewCountOffset, [Обязательных курсовых проектов] = @NewCountCourseProj, [Ко-во недель] = @NewCountWeek
+WHERE        (Код = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код_учебного_плана", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код учебного плана", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Номер", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Номер", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ко-во недель", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Обязательных_часов_физкультуры_в_неделя", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Обязательных часов физкультуры в неделя", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Обязательных_экзаменов", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Обязательных экзаменов", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Обязательных_курсовых_работ", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Обязательных курсовых работ", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Обязательных_зачетов", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Обязательных зачетов", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Обязательных_курсовых_проектов", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Обязательных курсовых проектов", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_учебного_плана", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код учебного плана", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Номер", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Номер", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p2", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ко-во недель", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Обязательных_часов_физкультуры_в_неделя", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Обязательных часов физкультуры в неделя", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Обязательных_экзаменов", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Обязательных экзаменов", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Обязательных_курсовых_работ", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Обязательных курсовых работ", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Обязательных_зачетов", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Обязательных зачетов", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Обязательных_курсовых_проектов", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Обязательных курсовых проектов", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NewAcademicPlanID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код учебного плана", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NewNumberOfSemestr", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Номер", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NewHoursSport", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "Обязательных часов физкультуры в неделя", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NewCountExam", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "Обязательных экзаменов", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NewCourseWork", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "Обязательных курсовых работ", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NewCountOffset", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "Обязательных зачетов", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NewCountCourseProj", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "Обязательных курсовых проектов", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NewCountWeek", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "Ко-во недель", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10376,16 +10363,8 @@ SELECT Код, [Код учебного плана], Номер, [Ко-во не
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Код, int Original_Код_учебного_плана, int Original_Номер, short p2, short Original_Обязательных_часов_физкультуры_в_неделя, short Original_Обязательных_экзаменов, short Original_Обязательных_курсовых_работ, short Original_Обязательных_зачетов, short Original_Обязательных_курсовых_проектов) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Код));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Код_учебного_плана));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Номер));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((short)(p2));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((short)(Original_Обязательных_часов_физкультуры_в_неделя));
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((short)(Original_Обязательных_экзаменов));
-            this.Adapter.DeleteCommand.Parameters[6].Value = ((short)(Original_Обязательных_курсовых_работ));
-            this.Adapter.DeleteCommand.Parameters[7].Value = ((short)(Original_Обязательных_зачетов));
-            this.Adapter.DeleteCommand.Parameters[8].Value = ((short)(Original_Обязательных_курсовых_проектов));
+        public virtual int Delete(int ID) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -10406,15 +10385,15 @@ SELECT Код, [Код учебного плана], Номер, [Ко-во не
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int Код_учебного_плана, int Номер, short p1, short Обязательных_часов_физкультуры_в_неделя, short Обязательных_экзаменов, short Обязательных_курсовых_работ, short Обязательных_зачетов, short Обязательных_курсовых_проектов) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Код_учебного_плана));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Номер));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((short)(p1));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((short)(Обязательных_часов_физкультуры_в_неделя));
-            this.Adapter.InsertCommand.Parameters[4].Value = ((short)(Обязательных_экзаменов));
-            this.Adapter.InsertCommand.Parameters[5].Value = ((short)(Обязательных_курсовых_работ));
-            this.Adapter.InsertCommand.Parameters[6].Value = ((short)(Обязательных_зачетов));
-            this.Adapter.InsertCommand.Parameters[7].Value = ((short)(Обязательных_курсовых_проектов));
+        public virtual int Insert(int AcademicPlanID, int NumberOfSemestr, short CountWeeks, short CountHoursSport, short CountExam, short CountKourseWork, short CountOffset, short CountKourseProj) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(AcademicPlanID));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(NumberOfSemestr));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((short)(CountWeeks));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((short)(CountHoursSport));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((short)(CountExam));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((short)(CountKourseWork));
+            this.Adapter.InsertCommand.Parameters[6].Value = ((short)(CountOffset));
+            this.Adapter.InsertCommand.Parameters[7].Value = ((short)(CountKourseProj));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -10435,43 +10414,16 @@ SELECT Код, [Код учебного плана], Номер, [Ко-во не
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    int Код_учебного_плана, 
-                    int Номер, 
-                    short p1, 
-                    short Обязательных_часов_физкультуры_в_неделя, 
-                    short Обязательных_экзаменов, 
-                    short Обязательных_курсовых_работ, 
-                    short Обязательных_зачетов, 
-                    short Обязательных_курсовых_проектов, 
-                    int Original_Код, 
-                    int Original_Код_учебного_плана, 
-                    int Original_Номер, 
-                    short p2, 
-                    short Original_Обязательных_часов_физкультуры_в_неделя, 
-                    short Original_Обязательных_экзаменов, 
-                    short Original_Обязательных_курсовых_работ, 
-                    short Original_Обязательных_зачетов, 
-                    short Original_Обязательных_курсовых_проектов, 
-                    int Код) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Код_учебного_плана));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Номер));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((short)(p1));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((short)(Обязательных_часов_физкультуры_в_неделя));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((short)(Обязательных_экзаменов));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((short)(Обязательных_курсовых_работ));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((short)(Обязательных_зачетов));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((short)(Обязательных_курсовых_проектов));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Код));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Код_учебного_плана));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Номер));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((short)(p2));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((short)(Original_Обязательных_часов_физкультуры_в_неделя));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((short)(Original_Обязательных_экзаменов));
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((short)(Original_Обязательных_курсовых_работ));
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((short)(Original_Обязательных_зачетов));
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((short)(Original_Обязательных_курсовых_проектов));
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Код));
+        public virtual int Update(int NewAcademicPlanID, int NewNumberOfSemestr, short NewHoursSport, short NewCountExam, short NewCourseWork, short NewCountOffset, short NewCountCourseProj, short NewCountWeek, int ID) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(NewAcademicPlanID));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(NewNumberOfSemestr));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((short)(NewHoursSport));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((short)(NewCountExam));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((short)(NewCourseWork));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((short)(NewCountOffset));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((short)(NewCountCourseProj));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((short)(NewCountWeek));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -10486,31 +10438,6 @@ SELECT Код, [Код учебного плана], Номер, [Ко-во не
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    int Код_учебного_плана, 
-                    int Номер, 
-                    short p1, 
-                    short Обязательных_часов_физкультуры_в_неделя, 
-                    short Обязательных_экзаменов, 
-                    short Обязательных_курсовых_работ, 
-                    short Обязательных_зачетов, 
-                    short Обязательных_курсовых_проектов, 
-                    int Original_Код, 
-                    int Original_Код_учебного_плана, 
-                    int Original_Номер, 
-                    short p2, 
-                    short Original_Обязательных_часов_физкультуры_в_неделя, 
-                    short Original_Обязательных_экзаменов, 
-                    short Original_Обязательных_курсовых_работ, 
-                    short Original_Обязательных_зачетов, 
-                    short Original_Обязательных_курсовых_проектов) {
-            return this.Update(Код_учебного_плана, Номер, p1, Обязательных_часов_физкультуры_в_неделя, Обязательных_экзаменов, Обязательных_курсовых_работ, Обязательных_зачетов, Обязательных_курсовых_проектов, Original_Код, Original_Код_учебного_плана, Original_Номер, p2, Original_Обязательных_часов_физкультуры_в_неделя, Original_Обязательных_экзаменов, Original_Обязательных_курсовых_работ, Original_Обязательных_зачетов, Original_Обязательных_курсовых_проектов, Original_Код);
         }
     }
     
@@ -10940,14 +10867,14 @@ SELECT Код, [Код учебного плана], Номер, [Ко-во не
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Учебные планы]\r\nWHERE        (Код = @ID)";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Учебные планы]\nWHERE        (Код = @ID)";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [Учебные планы]\r\n                         ([Код профиля подготовки], " +
-                "[Код квалификации], [Дата утверждения], [Кто утвердил], [Код формы обучения])\r\nV" +
-                "ALUES        (@ProfilID,@KvalificID,@DateVerific,@NameVerific,@FormEduID)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Учебные планы]\n                         ([Код профиля подготовки], [" +
+                "Код квалификации], [Дата утверждения], [Кто утвердил], [Код формы обучения])\nVAL" +
+                "UES        (@ProfilID,@KvalificID,@DateVerific,@NameVerific,@FormEduID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProfilID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код профиля подготовки", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KvalificID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код квалификации", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));

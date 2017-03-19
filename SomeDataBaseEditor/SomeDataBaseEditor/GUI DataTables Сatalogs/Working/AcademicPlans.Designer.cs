@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.учебныеПланыBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uchPlanDataSet = new SomeDataBaseEditor.UchPlanDataSet();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.uchPlanDataSet = new SomeDataBaseEditor.UchPlanDataSet();
-            this.учебныеПланыBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.учебные_планыTableAdapter = new SomeDataBaseEditor.UchPlanDataSetTableAdapters.Учебные_планыTableAdapter();
             this.кодDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.профильПодогтовкиDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,8 +49,8 @@
             this.кодФормыОбученияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.срокОбученияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.учебныеПланыBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -80,6 +80,16 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(927, 352);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // учебныеПланыBindingSource
+            // 
+            this.учебныеПланыBindingSource.DataMember = "Учебные планы";
+            this.учебныеПланыBindingSource.DataSource = this.uchPlanDataSet;
+            // 
+            // uchPlanDataSet
+            // 
+            this.uchPlanDataSet.DataSetName = "UchPlanDataSet";
+            this.uchPlanDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button1
             // 
@@ -131,16 +141,6 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // uchPlanDataSet
-            // 
-            this.uchPlanDataSet.DataSetName = "UchPlanDataSet";
-            this.uchPlanDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // учебныеПланыBindingSource
-            // 
-            this.учебныеПланыBindingSource.DataMember = "Учебные планы";
-            this.учебныеПланыBindingSource.DataSource = this.uchPlanDataSet;
-            // 
             // учебные_планыTableAdapter
             // 
             this.учебные_планыTableAdapter.ClearBeforeFill = true;
@@ -151,6 +151,7 @@
             this.кодDataGridViewTextBoxColumn.HeaderText = "Код";
             this.кодDataGridViewTextBoxColumn.Name = "кодDataGridViewTextBoxColumn";
             this.кодDataGridViewTextBoxColumn.ReadOnly = true;
+            this.кодDataGridViewTextBoxColumn.Visible = false;
             this.кодDataGridViewTextBoxColumn.Width = 51;
             // 
             // профильПодогтовкиDataGridViewTextBoxColumn
@@ -243,8 +244,8 @@
             this.Text = "Academic_plans";
             this.Load += new System.EventHandler(this.AcademicPlans_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.учебныеПланыBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

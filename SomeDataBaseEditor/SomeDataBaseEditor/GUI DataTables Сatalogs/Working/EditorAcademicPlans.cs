@@ -54,14 +54,12 @@ namespace SomeDataBaseEditor.GUI_DataTables.Working
 
         private void updateDataBaseInfo()
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "uchPlanDataSet1.Формы_обучения". При необходимости она может быть перемещена или удалена.
-            this.формы_обученияTableAdapter1.Fill(this.uchPlanDataSet1.Формы_обучения);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "uchPlanDataSet1.Квалификации". При необходимости она может быть перемещена или удалена.
             this.квалификацииTableAdapter1.Fill(this.uchPlanDataSet1.Квалификации);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "uchPlanDataSet1.Направления_подготовки". При необходимости она может быть перемещена или удалена.
-            this.направления_подготовкиTableAdapter1.Fill(this.uchPlanDataSet1.Направления_подготовки);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "uchPlanDataSet1.Профили_подготовки". При необходимости она может быть перемещена или удалена.
             this.профили_подготовкиTableAdapter1.Fill(this.uchPlanDataSet1.Профили_подготовки);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "uchPlanDataSet1.Направления_подготовки". При необходимости она может быть перемещена или удалена.
+            this.направления_подготовкиTableAdapter1.Fill(this.uchPlanDataSet1.Направления_подготовки);
         }
 
         private void cmbBx_Napravlenie_SelectedValueChanged(object sender, EventArgs e)

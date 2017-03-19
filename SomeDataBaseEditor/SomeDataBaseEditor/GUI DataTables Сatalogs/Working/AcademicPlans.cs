@@ -18,7 +18,6 @@ namespace SomeDataBaseEditor.GUI_DataTables.Working
 {
     public partial class AcademicPlans : Form
     {
-        const long someIDFromAcademicPlan = 0;
 
         public AcademicPlans()
         {
@@ -31,7 +30,8 @@ namespace SomeDataBaseEditor.GUI_DataTables.Working
         /// <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)
         {
-            using (var form = new GUI_DataTables.Working.Semesters(someIDFromAcademicPlan))
+            var curID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value);
+            using (var form = new GUI_DataTables.Working.Semesters(curID))
             {
                 this.Hide();
                 form.ShowDialog();
@@ -41,7 +41,8 @@ namespace SomeDataBaseEditor.GUI_DataTables.Working
 
         private void button6_Click(object sender, EventArgs e)
         {
-            using (var form = new GUI_DataTables.Working.DisciplineInAcademicPlan(someIDFromAcademicPlan))
+            var curID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value);
+            using (var form = new GUI_DataTables.Working.DisciplineInAcademicPlan(curID))
             {
                 this.Hide();
                 form.ShowDialog();

@@ -139,7 +139,7 @@
     <Compile Include="UchPlanDataSet.cs">
       <DependentUpon>UchPlanDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="UchPlanDataSet.Designer.cs">
+    <Compile Include="UchPlanDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UchPlanDataSet.xsd</DependentUpon>
@@ -188,6 +188,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI DataTables Сatalogs\Catalogs\ProfiliPodgotovki.resx">
       <DependentUpon>ProfiliPodgotovki.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -210,11 +211,12 @@
     </Compile>
     <None Include="UchPlanDataSet.xsc">
       <DependentUpon>UchPlanDataSet.xsd</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
     <None Include="UchPlanDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>UchPlanDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>UchPlanDataSet1.Designer.cs</LastGenOutput>
     </None>
     <None Include="UchPlanDataSet.xss">
       <DependentUpon>UchPlanDataSet.xsd</DependentUpon>
