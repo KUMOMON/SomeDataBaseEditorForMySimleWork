@@ -4264,6 +4264,14 @@ namespace SomeDataBaseEditor {
             
             private global::System.Data.DataColumn columnКод_формы_обучения;
             
+            private global::System.Data.DataColumn columnПрофиль_подогтовки;
+            
+            private global::System.Data.DataColumn columnКвалификация;
+            
+            private global::System.Data.DataColumn columnСрок_обучения;
+            
+            private global::System.Data.DataColumn columnФорма_обучения;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public Учебные_планыDataTable() {
@@ -4347,6 +4355,38 @@ namespace SomeDataBaseEditor {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Профиль_подогтовкиColumn {
+                get {
+                    return this.columnПрофиль_подогтовки;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn КвалификацияColumn {
+                get {
+                    return this.columnКвалификация;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Срок_обученияColumn {
+                get {
+                    return this.columnСрок_обучения;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Форма_обученияColumn {
+                get {
+                    return this.columnФорма_обучения;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4382,7 +4422,7 @@ namespace SomeDataBaseEditor {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Учебные_планыRow AddУчебные_планыRow(Профили_подготовкиRow parentПрофили_подготовкиRowByFK_Учебные_планы_Профили_подготовки, КвалификацииRow parentКвалификацииRowByFK_Учебные_планы_Квалификации, System.DateTime Дата_утверждения, string Кто_утвердил, Формы_обученияRow parentФормы_обученияRowByFK_Учебные_планы_Формы_обучения) {
+            public Учебные_планыRow AddУчебные_планыRow(Профили_подготовкиRow parentПрофили_подготовкиRowByFK_Учебные_планы_Профили_подготовки, КвалификацииRow parentКвалификацииRowByFK_Учебные_планы_Квалификации, System.DateTime Дата_утверждения, string Кто_утвердил, Формы_обученияRow parentФормы_обученияRowByFK_Учебные_планы_Формы_обучения, string Профиль_подогтовки, string Квалификация, int Срок_обучения, string Форма_обучения) {
                 Учебные_планыRow rowУчебные_планыRow = ((Учебные_планыRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -4390,7 +4430,11 @@ namespace SomeDataBaseEditor {
                         null,
                         Дата_утверждения,
                         Кто_утвердил,
-                        null};
+                        null,
+                        Профиль_подогтовки,
+                        Квалификация,
+                        Срок_обучения,
+                        Форма_обучения};
                 if ((parentПрофили_подготовкиRowByFK_Учебные_планы_Профили_подготовки != null)) {
                     columnValuesArray[1] = parentПрофили_подготовкиRowByFK_Учебные_планы_Профили_подготовки[0];
                 }
@@ -4435,6 +4479,10 @@ namespace SomeDataBaseEditor {
                 this.columnДата_утверждения = base.Columns["Дата утверждения"];
                 this.columnКто_утвердил = base.Columns["Кто утвердил"];
                 this.columnКод_формы_обучения = base.Columns["Код формы обучения"];
+                this.columnПрофиль_подогтовки = base.Columns["Профиль подогтовки"];
+                this.columnКвалификация = base.Columns["Квалификация"];
+                this.columnСрок_обучения = base.Columns["Срок обучения"];
+                this.columnФорма_обучения = base.Columns["Форма обучения"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4452,6 +4500,14 @@ namespace SomeDataBaseEditor {
                 base.Columns.Add(this.columnКто_утвердил);
                 this.columnКод_формы_обучения = new global::System.Data.DataColumn("Код формы обучения", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnКод_формы_обучения);
+                this.columnПрофиль_подогтовки = new global::System.Data.DataColumn("Профиль подогтовки", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnПрофиль_подогтовки);
+                this.columnКвалификация = new global::System.Data.DataColumn("Квалификация", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnКвалификация);
+                this.columnСрок_обучения = new global::System.Data.DataColumn("Срок обучения", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnСрок_обучения);
+                this.columnФорма_обучения = new global::System.Data.DataColumn("Форма обучения", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnФорма_обучения);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnКод}, true));
                 this.columnКод.AutoIncrement = true;
@@ -4465,6 +4521,12 @@ namespace SomeDataBaseEditor {
                 this.columnКто_утвердил.AllowDBNull = false;
                 this.columnКто_утвердил.MaxLength = 50;
                 this.columnКод_формы_обучения.AllowDBNull = false;
+                this.columnПрофиль_подогтовки.MaxLength = 50;
+                this.columnКвалификация.AllowDBNull = false;
+                this.columnКвалификация.MaxLength = 15;
+                this.columnСрок_обучения.AllowDBNull = false;
+                this.columnФорма_обучения.AllowDBNull = false;
+                this.columnФорма_обучения.MaxLength = 10;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6407,6 +6469,56 @@ namespace SomeDataBaseEditor {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Профиль_подогтовки {
+                get {
+                    try {
+                        return ((string)(this[this.tableУчебные_планы.Профиль_подогтовкиColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Профиль подогтовки\' в таблице \'Учебные планы\' равно DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableУчебные_планы.Профиль_подогтовкиColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Квалификация {
+                get {
+                    return ((string)(this[this.tableУчебные_планы.КвалификацияColumn]));
+                }
+                set {
+                    this[this.tableУчебные_планы.КвалификацияColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Срок_обучения {
+                get {
+                    return ((int)(this[this.tableУчебные_планы.Срок_обученияColumn]));
+                }
+                set {
+                    this[this.tableУчебные_планы.Срок_обученияColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Форма_обучения {
+                get {
+                    return ((string)(this[this.tableУчебные_планы.Форма_обученияColumn]));
+                }
+                set {
+                    this[this.tableУчебные_планы.Форма_обученияColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public КвалификацииRow КвалификацииRow {
                 get {
                     return ((КвалификацииRow)(this.GetParentRow(this.Table.ParentRelations["FK_Учебные планы_Квалификации"])));
@@ -6448,6 +6560,18 @@ namespace SomeDataBaseEditor {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetДата_утвержденияNull() {
                 this[this.tableУчебные_планы.Дата_утвержденияColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsПрофиль_подогтовкиNull() {
+                return this.IsNull(this.tableУчебные_планы.Профиль_подогтовкиColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetПрофиль_подогтовкиNull() {
+                this[this.tableУчебные_планы.Профиль_подогтовкиColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8309,18 +8433,17 @@ SELECT Код, [Код дисциплины], [Код учебного план�
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM Кафедры\r\nWHERE        (Код = @ID)";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM Кафедры\nWHERE        (Код = @ID)";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO Кафедры\r\n                         (Имя)\r\nVALUES        (@Name)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO Кафедры\n                         (Имя)\nVALUES        (@Name)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Имя", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE       Кафедры\r\nSET                Имя = @NewName\r\nWHERE        (Код = @ID)" +
-                "";
+            this._adapter.UpdateCommand.CommandText = "UPDATE       Кафедры\nSET                Имя = @NewName\nWHERE        (Код = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NewName", global::System.Data.SqlDbType.NChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Имя", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -8601,20 +8724,20 @@ SELECT Код, [Код дисциплины], [Код учебного план�
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM Квалификации\r\nWHERE        (Код = @ID)";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM Квалификации\nWHERE        (Код = @ID)";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO Квалификации\r\n                         (Имя, [Срок обучения])\r\nVALUES" +
-                "        (@Name,@Years)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO Квалификации\n                         (Имя, [Срок обучения])\nVALUES  " +
+                "      (@Name,@Years)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "Имя", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Years", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Срок обучения", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE       Квалификации\r\nSET                Имя = @NewName, [Срок обучения] = @" +
-                "NewYears\r\nWHERE        (Код = @ID)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE       Квалификации\nSET                Имя = @NewName, [Срок обучения] = @N" +
+                "ewYears\nWHERE        (Код = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NewName", global::System.Data.SqlDbType.NChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "Имя", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NewYears", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Срок обучения", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -8897,19 +9020,19 @@ SELECT Код, [Код дисциплины], [Код учебного план�
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Направления подготовки]\r\nWHERE        (Код = @curID)";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Направления подготовки]\nWHERE        (Код = @curID)";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@curID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [Направления подготовки]\r\n                         (Имя)\r\nVALUES     " +
-                "   (@newName)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Направления подготовки]\n                         (Имя)\nVALUES       " +
+                " (@newName)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@newName", global::System.Data.SqlDbType.NChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Имя", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE       [Направления подготовки]\r\nSET                Имя = @newName\r\nWHERE  " +
-                "      (Код = @curID)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE       [Направления подготовки]\nSET                Имя = @newName\nWHERE    " +
+                "    (Код = @curID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@newName", global::System.Data.SqlDbType.NChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Имя", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@curID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -9190,7 +9313,7 @@ SELECT Код, [Код дисциплины], [Код учебного план�
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Профили подготовки]\r\nWHERE        (Код = @ID)";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Профили подготовки]\nWHERE        (Код = @ID)";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
@@ -9203,8 +9326,8 @@ SELECT Код, [Код дисциплины], [Код учебного план�
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код_направления_подготовки", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код направления подготовки", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE       [Профили подготовки]\r\nSET                Имя = @newName, [Код направ" +
-                "ления подготовки] = @newNaprCode\r\nWHERE        (Код = @ID)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE       [Профили подготовки]\nSET                Имя = @newName, [Код направл" +
+                "ения подготовки] = @newNaprCode\nWHERE        (Код = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@newName", global::System.Data.SqlDbType.NChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Имя", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@newNaprCode", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код направления подготовки", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -9224,8 +9347,8 @@ SELECT Код, [Код дисциплины], [Код учебного план�
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        Код, Имя, [Код направления подготовки]\r\nFROM            [Профили по" +
-                "дготовки]";
+            this._commandCollection[0].CommandText = "SELECT        Код, Имя, [Код направления подготовки]\nFROM            [Профили под" +
+                "готовки]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -9528,19 +9651,19 @@ FROM            [Профили подготовки] INNER JOIN
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Реализуемые компетенции]\r\nWHERE        (Код = @ID)";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Реализуемые компетенции]\nWHERE        (Код = @ID)";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [Реализуемые компетенции]\r\n                         (Название)\r\nVALUE" +
-                "S        (@Name)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Реализуемые компетенции]\n                         (Название)\nVALUES " +
+                "       (@Name)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NChar, 80, global::System.Data.ParameterDirection.Input, 0, 0, "Название", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE       [Реализуемые компетенции]\r\nSET                Название = @newName\r\nW" +
-                "HERE        (Код = @ID)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE       [Реализуемые компетенции]\nSET                Название = @newName\nWHE" +
+                "RE        (Код = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@newName", global::System.Data.SqlDbType.NChar, 80, global::System.Data.ParameterDirection.Input, 0, 0, "Название", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -10517,7 +10640,7 @@ SELECT Код, [Код учебного плана], Номер, [Ко-во не
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Типы дисциплин]\r\nWHERE        (Код = @ID)";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Типы дисциплин]\nWHERE        (Код = @ID)";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
@@ -10528,8 +10651,8 @@ SELECT Код, [Код учебного плана], Номер, [Ко-во не
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Тип", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Тип", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE       [Типы дисциплин]\r\nSET                Тип = @newName\r\nWHERE        (К" +
-                "од = @ID)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE       [Типы дисциплин]\nSET                Тип = @newName\nWHERE        (Код" +
+                " = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@newName", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "Тип", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -10810,46 +10933,40 @@ SELECT Код, [Код учебного плана], Номер, [Ко-во не
             tableMapping.ColumnMappings.Add("Дата утверждения", "Дата утверждения");
             tableMapping.ColumnMappings.Add("Кто утвердил", "Кто утвердил");
             tableMapping.ColumnMappings.Add("Код формы обучения", "Код формы обучения");
+            tableMapping.ColumnMappings.Add("Профиль подогтовки", "Профиль подогтовки");
+            tableMapping.ColumnMappings.Add("Квалификация", "Квалификация");
+            tableMapping.ColumnMappings.Add("Срок обучения", "Срок обучения");
+            tableMapping.ColumnMappings.Add("Форма обучения", "Форма обучения");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Учебные планы] WHERE (([Код] = @Original_Код) AND ([Код профиля подготовки] = @Original_Код_профиля_подготовки) AND ([Код квалификации] = @Original_Код_квалификации) AND ((@IsNull_Дата_утверждения = 1 AND [Дата утверждения] IS NULL) OR ([Дата утверждения] = @Original_Дата_утверждения)) AND ([Кто утвердил] = @Original_Кто_утвердил) AND ([Код формы обучения] = @Original_Код_формы_обучения))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Учебные планы]\r\nWHERE        (Код = @ID)";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_профиля_подготовки", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код профиля подготовки", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_квалификации", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код квалификации", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Дата_утверждения", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дата утверждения", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Дата_утверждения", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дата утверждения", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Кто_утвердил", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Кто утвердил", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_формы_обучения", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код формы обучения", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Учебные планы] ([Код профиля подготовки], [Код квалификации], [Дата утверждения], [Кто утвердил], [Код формы обучения]) VALUES (@Код_профиля_подготовки, @Код_квалификации, @Дата_утверждения, @Кто_утвердил, @Код_формы_обучения);
-SELECT Код, [Код профиля подготовки], [Код квалификации], [Дата утверждения], [Кто утвердил], [Код формы обучения] FROM [Учебные планы] WHERE (Код = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Учебные планы]\r\n                         ([Код профиля подготовки], " +
+                "[Код квалификации], [Дата утверждения], [Кто утвердил], [Код формы обучения])\r\nV" +
+                "ALUES        (@ProfilID,@KvalificID,@DateVerific,@NameVerific,@FormEduID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код_профиля_подготовки", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код профиля подготовки", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код_квалификации", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код квалификации", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Дата_утверждения", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дата утверждения", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Кто_утвердил", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Кто утвердил", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код_формы_обучения", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код формы обучения", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProfilID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код профиля подготовки", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KvalificID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код квалификации", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateVerific", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Дата утверждения", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NameVerific", global::System.Data.SqlDbType.NChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Кто утвердил", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FormEduID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код формы обучения", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Учебные планы] SET [Код профиля подготовки] = @Код_профиля_подготовки, [Код квалификации] = @Код_квалификации, [Дата утверждения] = @Дата_утверждения, [Кто утвердил] = @Кто_утвердил, [Код формы обучения] = @Код_формы_обучения WHERE (([Код] = @Original_Код) AND ([Код профиля подготовки] = @Original_Код_профиля_подготовки) AND ([Код квалификации] = @Original_Код_квалификации) AND ((@IsNull_Дата_утверждения = 1 AND [Дата утверждения] IS NULL) OR ([Дата утверждения] = @Original_Дата_утверждения)) AND ([Кто утвердил] = @Original_Кто_утвердил) AND ([Код формы обучения] = @Original_Код_формы_обучения));
-SELECT Код, [Код профиля подготовки], [Код квалификации], [Дата утверждения], [Кто утвердил], [Код формы обучения] FROM [Учебные планы] WHERE (Код = @Код)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE       [Учебные планы]
+SET                [Код профиля подготовки] = @NewProfilID, [Код квалификации] = @NewKvalificID, [Дата утверждения] = @NewDateVerific, [Кто утвердил] = @NewNameVerific, 
+                         [Код формы обучения] = @NewFormEduID
+WHERE        (Код = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код_профиля_подготовки", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код профиля подготовки", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код_квалификации", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код квалификации", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Дата_утверждения", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дата утверждения", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Кто_утвердил", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Кто утвердил", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код_формы_обучения", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код формы обучения", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_профиля_подготовки", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код профиля подготовки", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_квалификации", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код квалификации", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Дата_утверждения", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дата утверждения", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Дата_утверждения", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дата утверждения", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Кто_утвердил", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Кто утвердил", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_формы_обучения", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код формы обучения", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NewProfilID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код профиля подготовки", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NewKvalificID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код квалификации", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NewDateVerific", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Дата утверждения", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NewNameVerific", global::System.Data.SqlDbType.NChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Кто утвердил", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NewFormEduID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код формы обучения", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10865,8 +10982,13 @@ SELECT Код, [Код профиля подготовки], [Код квали�
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Код, [Код профиля подготовки], [Код квалификации], [Дата утверждения], [Кт" +
-                "о утвердил], [Код формы обучения] FROM dbo.[Учебные планы]";
+            this._commandCollection[0].CommandText = @"SELECT        [Учебные планы].Код, [Профили подготовки].Имя AS [Профиль подогтовки], Квалификации.Имя AS Квалификация, Квалификации.[Срок обучения], [Учебные планы].[Дата утверждения], 
+                         [Учебные планы].[Кто утвердил], [Формы обучения].Имя AS [Форма обучения], [Учебные планы].[Код профиля подготовки], [Учебные планы].[Код квалификации], 
+                         [Учебные планы].[Код формы обучения]
+FROM            [Учебные планы] INNER JOIN
+                         [Профили подготовки] ON [Учебные планы].[Код профиля подготовки] = [Профили подготовки].Код INNER JOIN
+                         [Формы обучения] ON [Учебные планы].[Код формы обучения] = [Формы обучения].Код INNER JOIN
+                         Квалификации ON [Учебные планы].[Код квалификации] = Квалификации.Код";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -10927,25 +11049,8 @@ SELECT Код, [Код профиля подготовки], [Код квали�
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Код, int Original_Код_профиля_подготовки, int Original_Код_квалификации, global::System.Nullable<global::System.DateTime> Original_Дата_утверждения, string Original_Кто_утвердил, int Original_Код_формы_обучения) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Код));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Код_профиля_подготовки));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Код_квалификации));
-            if ((Original_Дата_утверждения.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_Дата_утверждения.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Кто_утвердил == null)) {
-                throw new global::System.ArgumentNullException("Original_Кто_утвердил");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_Кто_утвердил));
-            }
-            this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_Код_формы_обучения));
+        public virtual int Delete(int ID) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -10966,22 +11071,22 @@ SELECT Код, [Код профиля подготовки], [Код квали�
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int Код_профиля_подготовки, int Код_квалификации, global::System.Nullable<global::System.DateTime> Дата_утверждения, string Кто_утвердил, int Код_формы_обучения) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Код_профиля_подготовки));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Код_квалификации));
-            if ((Дата_утверждения.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(Дата_утверждения.Value));
+        public virtual int Insert(int ProfilID, int KvalificID, global::System.Nullable<global::System.DateTime> DateVerific, string NameVerific, int FormEduID) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ProfilID));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(KvalificID));
+            if ((DateVerific.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(DateVerific.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Кто_утвердил == null)) {
-                throw new global::System.ArgumentNullException("Кто_утвердил");
+            if ((NameVerific == null)) {
+                throw new global::System.ArgumentNullException("NameVerific");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Кто_утвердил));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(NameVerific));
             }
-            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(Код_формы_обучения));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(FormEduID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -11002,41 +11107,23 @@ SELECT Код, [Код профиля подготовки], [Код квали�
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Код_профиля_подготовки, int Код_квалификации, global::System.Nullable<global::System.DateTime> Дата_утверждения, string Кто_утвердил, int Код_формы_обучения, int Original_Код, int Original_Код_профиля_подготовки, int Original_Код_квалификации, global::System.Nullable<global::System.DateTime> Original_Дата_утверждения, string Original_Кто_утвердил, int Original_Код_формы_обучения, int Код) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Код_профиля_подготовки));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Код_квалификации));
-            if ((Дата_утверждения.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(Дата_утверждения.Value));
+        public virtual int Update(int NewProfilID, int NewKvalificID, global::System.Nullable<global::System.DateTime> NewDateVerific, string NewNameVerific, int NewFormEduID, int ID) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(NewProfilID));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(NewKvalificID));
+            if ((NewDateVerific.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(NewDateVerific.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Кто_утвердил == null)) {
-                throw new global::System.ArgumentNullException("Кто_утвердил");
+            if ((NewNameVerific == null)) {
+                throw new global::System.ArgumentNullException("NewNameVerific");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Кто_утвердил));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(NewNameVerific));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Код_формы_обучения));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_Код));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_Код_профиля_подготовки));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Код_квалификации));
-            if ((Original_Дата_утверждения.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_Дата_утверждения.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Кто_утвердил == null)) {
-                throw new global::System.ArgumentNullException("Original_Кто_утвердил");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Кто_утвердил));
-            }
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Код_формы_обучения));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Код));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(NewFormEduID));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -11051,14 +11138,6 @@ SELECT Код, [Код профиля подготовки], [Код квали�
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Код_профиля_подготовки, int Код_квалификации, global::System.Nullable<global::System.DateTime> Дата_утверждения, string Кто_утвердил, int Код_формы_обучения, int Original_Код, int Original_Код_профиля_подготовки, int Original_Код_квалификации, global::System.Nullable<global::System.DateTime> Original_Дата_утверждения, string Original_Кто_утвердил, int Original_Код_формы_обучения) {
-            return this.Update(Код_профиля_подготовки, Код_квалификации, Дата_утверждения, Кто_утвердил, Код_формы_обучения, Original_Код, Original_Код_профиля_подготовки, Original_Код_квалификации, Original_Дата_утверждения, Original_Кто_утвердил, Original_Код_формы_обучения, Original_Код);
         }
     }
     
@@ -11188,7 +11267,7 @@ SELECT Код, [Код профиля подготовки], [Код квали�
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Формы контроля]\r\nWHERE        (Код = @ID)";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Формы контроля]\nWHERE        (Код = @ID)";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
@@ -11199,8 +11278,8 @@ SELECT Код, [Код профиля подготовки], [Код квали�
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Имя", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Имя", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE       [Формы контроля]\r\nSET                Имя = @NewName\r\nWHERE        (К" +
-                "од = @ID)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE       [Формы контроля]\nSET                Имя = @NewName\nWHERE        (Код" +
+                " = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NewName", global::System.Data.SqlDbType.NChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "Имя", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -11779,19 +11858,19 @@ SELECT [Код ДС], [Код Формы контроля] FROM [Формы Ко
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Формы обучения]\r\nWHERE        (Код = @ID)";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Формы обучения]\nWHERE        (Код = @ID)";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [Формы обучения]\r\n                         (Имя)\r\nVALUES        (@Nam" +
-                "e)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Формы обучения]\n                         (Имя)\nVALUES        (@Name)" +
+                "";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "Имя", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE       [Формы обучения]\r\nSET                Имя = @NewName\r\nWHERE        (К" +
-                "од = @ID)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE       [Формы обучения]\nSET                Имя = @NewName\nWHERE        (Код" +
+                " = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NewName", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "Имя", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));

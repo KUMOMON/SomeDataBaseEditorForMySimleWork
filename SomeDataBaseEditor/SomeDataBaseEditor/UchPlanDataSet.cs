@@ -12,7 +12,7 @@
 
 namespace SomeDataBaseEditor.UchPlanDataSetTableAdapters {
     
-    
+
     public partial class Профили_подготовкиTableAdapter {
     }
 }

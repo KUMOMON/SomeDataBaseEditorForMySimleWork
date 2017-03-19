@@ -26,13 +26,12 @@ namespace SomeDataBaseEditor.GUI_DataTables.Catalogs
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             //id направления (unvisible)
-           
 
-           Int32 curNaprID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[dataGridView1.Columns.Count-1].Value);
+
+           var curNaprID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[dataGridView1.Columns.Count-1].Value);
            txtBx.Text = Convert.ToString(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[1].Value).Trim();
             
            cmbBx.SelectedValue = curNaprID;
-           
         }
 
         private void UpdateDataInDataGridView()
@@ -47,7 +46,7 @@ namespace SomeDataBaseEditor.GUI_DataTables.Catalogs
             dataGridView1.Update();
             dataGridView1.AutoResizeColumns();
 
-            dataGridView1.Columns[dataGridView1.Columns.Count - 1].Visible = false; 
+            dataGridView1.Columns[dataGridView1.Columns.Count - 1].Visible = false;
 
         }
 
@@ -66,7 +65,7 @@ namespace SomeDataBaseEditor.GUI_DataTables.Catalogs
 
         private void btn_update_Click(object sender, EventArgs e)
         {
-            Int32 curID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value);
+            var curID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value);
 
             try
             {
@@ -81,7 +80,7 @@ namespace SomeDataBaseEditor.GUI_DataTables.Catalogs
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            Int32 curID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value);
+            var curID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value);
 
             try
             {
