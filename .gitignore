@@ -288,3 +288,7 @@ __pycache__/
 *.xsd.cs
 
 bookrecs/
+
+SomeDataBaseEditor/SomeDataBaseEditor/obj/
+
+SomeDataBaseEditor/SomeDataBaseEditor/bin/

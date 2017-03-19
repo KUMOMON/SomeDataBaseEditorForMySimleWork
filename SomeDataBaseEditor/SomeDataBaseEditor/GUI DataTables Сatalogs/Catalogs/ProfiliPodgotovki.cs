@@ -18,9 +18,80 @@ namespace SomeDataBaseEditor.GUI_DataTables.Catalogs
 
         private void ProfiliPodgotovki_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "uchPlanDataSet.Профили_подготовки". При необходимости она может быть перемещена или удалена.
-            this.профили_подготовкиTableAdapter.Fill(this.uchPlanDataSet.Профили_подготовки);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "uchPlanDataSet1.Направления_подготовки". При необходимости она может быть перемещена или удалена.
+            this.направления_подготовкиTableAdapter.Fill(this.uchPlanDataSet1.Направления_подготовки);
+            UpdateDataInDataGridView();
+        }
 
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            //id направления (unvisible)
+           
+
+           Int32 curNaprID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[dataGridView1.Columns.Count-1].Value);
+           txtBx.Text = Convert.ToString(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[1].Value).Trim();
+            
+           cmbBx.SelectedValue = curNaprID;
+           
+        }
+
+        private void UpdateDataInDataGridView()
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "uchPlanDataSet.Учебные_планы". При необходимости она может быть перемещена или удалена.
+            this.учебные_планыTableAdapter.Fill(this.uchPlanDataSet.Учебные_планы);
+            dataGridView1.DataSource = null;
+            dataGridView1.Update();
+            профилиПодготовкиBindingSource.DataSource = профили_подготовкиTableAdapter1.GetDataByViaNapravleniye();
+            dataGridView1.DataSource = профили_подготовкиTableAdapter1.GetDataByViaNapravleniye();
+            dataGridView1.Columns.RemoveAt(2);
+            dataGridView1.Update();
+            dataGridView1.AutoResizeColumns();
+
+            dataGridView1.Columns[dataGridView1.Columns.Count - 1].Visible = false; 
+
+        }
+
+        private void btn_insert_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                профили_подготовкиTableAdapter1.Insert(txtBx.Text, Convert.ToInt32(cmbBx.SelectedValue));
+            }
+            catch(System.Data.SqlClient.SqlException sqlEx)
+            {
+                MessageBox.Show(sqlEx.Message);
+            }
+            UpdateDataInDataGridView();
+        }
+
+        private void btn_update_Click(object sender, EventArgs e)
+        {
+            Int32 curID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value);
+
+            try
+            {
+                профили_подготовкиTableAdapter1.Update(txtBx.Text, Convert.ToInt32(cmbBx.SelectedValue),curID);
+            }
+            catch (System.Data.SqlClient.SqlException sqlEx)
+            {
+                MessageBox.Show(sqlEx.Message);
+            }
+            UpdateDataInDataGridView();
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            Int32 curID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value);
+
+            try
+            {
+                профили_подготовкиTableAdapter1.Delete(curID);
+            }
+            catch (System.Data.SqlClient.SqlException sqlEx)
+            {
+                MessageBox.Show(sqlEx.Message);
+            }
+            UpdateDataInDataGridView();
         }
     }
 }
