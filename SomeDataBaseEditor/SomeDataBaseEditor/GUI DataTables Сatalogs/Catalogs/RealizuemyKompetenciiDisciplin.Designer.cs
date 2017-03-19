@@ -91,6 +91,7 @@
             this.названиеDataGridViewTextBoxColumn});
             this.dtGrdVw.DataSource = this.реализуемыеКомпетенцииBindingSource;
             this.dtGrdVw.Location = new System.Drawing.Point(12, 12);
+            this.dtGrdVw.MultiSelect = false;
             this.dtGrdVw.Name = "dtGrdVw";
             this.dtGrdVw.ReadOnly = true;
             this.dtGrdVw.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
