@@ -110,6 +110,12 @@
     <Compile Include="GUI DataTables Сatalogs\Working\EditorAcademicPlans.Designer.cs">
       <DependentUpon>EditorAcademicPlans.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI DataTables Сatalogs\Working\RealizCompetenceDiscipline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI DataTables Сatalogs\Working\RealizCompetenceDiscipline.Designer.cs">
+      <DependentUpon>RealizCompetenceDiscipline.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI DataTables Сatalogs\Working\Semesters.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,9 @@
     <EmbeddedResource Include="GUI DataTables Сatalogs\Working\EditorAcademicPlans.resx">
       <DependentUpon>EditorAcademicPlans.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI DataTables Сatalogs\Working\RealizCompetenceDiscipline.resx">
+      <DependentUpon>RealizCompetenceDiscipline.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI DataTables Сatalogs\Working\Semesters.resx">
       <DependentUpon>Semesters.cs</DependentUpon>
     </EmbeddedResource>
@@ -214,7 +223,7 @@
     <None Include="UchPlanDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>UchPlanDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>UchPlanDataSet2.Designer.cs</LastGenOutput>
     </None>
     <None Include="UchPlanDataSet.xss">
       <DependentUpon>UchPlanDataSet.xsd</DependentUpon>

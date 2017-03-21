@@ -437,6 +437,7 @@
             this.btn_realizKompetenc.TabIndex = 15;
             this.btn_realizKompetenc.Text = "Реализуемые компетенции дисциплины";
             this.btn_realizKompetenc.UseVisualStyleBackColor = true;
+            this.btn_realizKompetenc.Click += new System.EventHandler(this.btn_realizKompetenc_Click);
             // 
             // DisciplineInAcademicPlan
             // 
