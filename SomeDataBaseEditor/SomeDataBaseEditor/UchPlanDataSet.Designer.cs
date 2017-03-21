@@ -7477,41 +7477,33 @@ namespace SomeDataBaseEditor.UchPlanDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Дисциплина как часть семестра] WHERE (([Код] = @Original_Код) AND ([Код семестра] = @Original_Код_семестра) AND ([Код Дисциплины] = @Original_Код_Дисциплины) AND ([Часы лекций] = @Original_Часы_лекций) AND ([Часы практики] = @Original_Часы_практики) AND ([Часы КСР] = @Original_Часы_КСР))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Дисциплина как часть семестра]\r\nWHERE        (Код = @ID)";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_семестра", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код семестра", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_Дисциплины", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код Дисциплины", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Часы_лекций", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Часы лекций", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Часы_практики", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Часы практики", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Часы_КСР", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Часы КСР", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Дисциплина как часть семестра] ([Код семестра], [Код Дисциплины], [Часы лекций], [Часы практики], [Часы КСР]) VALUES (@Код_семестра, @Код_Дисциплины, @Часы_лекций, @Часы_практики, @Часы_КСР);
-SELECT Код, [Код семестра], [Код Дисциплины], [Часы лекций], [Часы практики], [Часы КСР] FROM [Дисциплина как часть семестра] WHERE (Код = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Дисциплина как часть семестра]\r\n                         ([Код семес" +
+                "тра], [Код Дисциплины], [Часы лекций], [Часы практики], [Часы КСР])\r\nVALUES     " +
+                "   (@SemesterID,@DisciplineID,@hoursAuditor,@hoursPract,@hoursKSR)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код_семестра", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код семестра", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код_Дисциплины", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код Дисциплины", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Часы_лекций", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Часы лекций", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Часы_практики", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Часы практики", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Часы_КСР", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Часы КСР", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SemesterID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код семестра", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DisciplineID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код Дисциплины", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hoursAuditor", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "Часы лекций", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hoursPract", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "Часы практики", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hoursKSR", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "Часы КСР", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Дисциплина как часть семестра] SET [Код семестра] = @Код_семестра, [Код Дисциплины] = @Код_Дисциплины, [Часы лекций] = @Часы_лекций, [Часы практики] = @Часы_практики, [Часы КСР] = @Часы_КСР WHERE (([Код] = @Original_Код) AND ([Код семестра] = @Original_Код_семестра) AND ([Код Дисциплины] = @Original_Код_Дисциплины) AND ([Часы лекций] = @Original_Часы_лекций) AND ([Часы практики] = @Original_Часы_практики) AND ([Часы КСР] = @Original_Часы_КСР));
-SELECT Код, [Код семестра], [Код Дисциплины], [Часы лекций], [Часы практики], [Часы КСР] FROM [Дисциплина как часть семестра] WHERE (Код = @Код)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE       [Дисциплина как часть семестра]\r\nSET                [Код семестра] =" +
+                " @SemesterID, [Код Дисциплины] = @DisciplineID, [Часы лекций] = @hoursAuditor, [" +
+                "Часы практики] = @hoursPractic, [Часы КСР] = @hoursKSR\r\nWHERE        (Код = @ID)" +
+                "";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код_семестра", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код семестра", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код_Дисциплины", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код Дисциплины", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Часы_лекций", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Часы лекций", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Часы_практики", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Часы практики", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Часы_КСР", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Часы КСР", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_семестра", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код семестра", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_Дисциплины", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код Дисциплины", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Часы_лекций", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Часы лекций", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Часы_практики", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Часы практики", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Часы_КСР", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Часы КСР", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SemesterID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код семестра", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DisciplineID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код Дисциплины", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hoursAuditor", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "Часы лекций", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hoursPractic", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "Часы практики", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hoursKSR", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "Часы КСР", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7524,12 +7516,22 @@ SELECT Код, [Код семестра], [Код Дисциплины], [Час
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Код, [Код семестра], [Код Дисциплины], [Часы лекций], [Часы практики], [Ча" +
-                "сы КСР] FROM dbo.[Дисциплина как часть семестра]";
+            this._commandCollection[0].CommandText = "SELECT        Код, [Код семестра], [Код Дисциплины], [Часы лекций], [Часы практик" +
+                "и], [Часы КСР]\nFROM            [Дисциплина как часть семестра]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        [Дисциплина как часть семестра].Код, Семестры.Номер AS [Номер семестра], [Дисциплина как часть семестра].[Код семестра], [Дисциплина как часть семестра].[Часы лекций], 
+                         [Дисциплина как часть семестра].[Часы практики], [Дисциплина как часть семестра].[Часы КСР]
+FROM            Семестры INNER JOIN
+                         [Дисциплина как часть семестра] ON Семестры.Код = [Дисциплина как часть семестра].[Код семестра]
+WHERE        (Семестры.[Код учебного плана] = @AcademicPlanID) AND ([Дисциплина как часть семестра].[Код Дисциплины] = @DisciplineID)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AcademicPlanID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код учебного плана", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DisciplineID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код Дисциплины", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7551,6 +7553,34 @@ SELECT Код, [Код семестра], [Код Дисциплины], [Час
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual UchPlanDataSet.Дисциплина_как_часть_семестраDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            UchPlanDataSet.Дисциплина_как_часть_семестраDataTable dataTable = new UchPlanDataSet.Дисциплина_как_часть_семестраDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByUsed1(UchPlanDataSet.Дисциплина_как_часть_семестраDataTable dataTable, int AcademicPlanID, int DisciplineID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(AcademicPlanID));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(DisciplineID));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual UchPlanDataSet.Дисциплина_как_часть_семестраDataTable GetDataByUsed1(int AcademicPlanID, int DisciplineID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(AcademicPlanID));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(DisciplineID));
             UchPlanDataSet.Дисциплина_как_часть_семестраDataTable dataTable = new UchPlanDataSet.Дисциплина_как_часть_семестраDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -7589,13 +7619,8 @@ SELECT Код, [Код семестра], [Код Дисциплины], [Час
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Код, int Original_Код_семестра, int Original_Код_Дисциплины, short Original_Часы_лекций, short Original_Часы_практики, short Original_Часы_КСР) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Код));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Код_семестра));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Код_Дисциплины));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((short)(Original_Часы_лекций));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((short)(Original_Часы_практики));
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((short)(Original_Часы_КСР));
+        public virtual int Delete(int ID) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7616,12 +7641,12 @@ SELECT Код, [Код семестра], [Код Дисциплины], [Час
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int Код_семестра, int Код_Дисциплины, short Часы_лекций, short Часы_практики, short Часы_КСР) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Код_семестра));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Код_Дисциплины));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((short)(Часы_лекций));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((short)(Часы_практики));
-            this.Adapter.InsertCommand.Parameters[4].Value = ((short)(Часы_КСР));
+        public virtual int Insert(int SemesterID, int DisciplineID, short hoursAuditor, short hoursPract, short hoursKSR) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(SemesterID));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(DisciplineID));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((short)(hoursAuditor));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((short)(hoursPract));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((short)(hoursKSR));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7642,19 +7667,13 @@ SELECT Код, [Код семестра], [Код Дисциплины], [Час
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Код_семестра, int Код_Дисциплины, short Часы_лекций, short Часы_практики, short Часы_КСР, int Original_Код, int Original_Код_семестра, int Original_Код_Дисциплины, short Original_Часы_лекций, short Original_Часы_практики, short Original_Часы_КСР, int Код) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Код_семестра));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Код_Дисциплины));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((short)(Часы_лекций));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((short)(Часы_практики));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((short)(Часы_КСР));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_Код));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_Код_семестра));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Код_Дисциплины));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((short)(Original_Часы_лекций));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((short)(Original_Часы_практики));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((short)(Original_Часы_КСР));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Код));
+        public virtual int Update(int SemesterID, int DisciplineID, short hoursAuditor, short hoursPractic, short hoursKSR, int ID) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(SemesterID));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(DisciplineID));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((short)(hoursAuditor));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((short)(hoursPractic));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((short)(hoursKSR));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7669,14 +7688,6 @@ SELECT Код, [Код семестра], [Код Дисциплины], [Час
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Код_семестра, int Код_Дисциплины, short Часы_лекций, short Часы_практики, short Часы_КСР, int Original_Код, int Original_Код_семестра, int Original_Код_Дисциплины, short Original_Часы_лекций, short Original_Часы_практики, short Original_Часы_КСР) {
-            return this.Update(Код_семестра, Код_Дисциплины, Часы_лекций, Часы_практики, Часы_КСР, Original_Код, Original_Код_семестра, Original_Код_Дисциплины, Original_Часы_лекций, Original_Часы_практики, Original_Часы_КСР, Original_Код);
         }
     }
     
@@ -7816,7 +7827,7 @@ SELECT Код, [Код семестра], [Код Дисциплины], [Час
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Дисциплина как часть учебного плана]\r\nWHERE        (Код = @ID)";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Дисциплина как часть учебного плана]\nWHERE        (Код = @ID)";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
@@ -11490,27 +11501,31 @@ FROM            [Учебные планы] INNER JOIN
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Формы Контроля В Семестре] WHERE (([Код ДС] = @Original_Код_ДС" +
-                ") AND ([Код Формы контроля] = @Original_Код_Формы_контроля))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Формы Контроля В Семестре]\r\nWHERE        ([Код ДС] = @DisciplineInSe" +
+                "mesterID) AND ([Код Формы контроля] = @FormControlID)";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_ДС", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код ДС", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_Формы_контроля", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код Формы контроля", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DisciplineInSemesterID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код ДС", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FormControlID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код Формы контроля", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Формы Контроля В Семестре] ([Код ДС], [Код Формы контроля]) VALUES (@Код_ДС, @Код_Формы_контроля);
-SELECT [Код ДС], [Код Формы контроля] FROM [Формы Контроля В Семестре] WHERE ([Код ДС] = @Код_ДС) AND ([Код Формы контроля] = @Код_Формы_контроля)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Формы Контроля В Семестре]\r\n                         ([Код ДС], [Код" +
+                " Формы контроля])\r\nVALUES        (@DisciplineInSemesterID,@FormControlID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код_ДС", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код ДС", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код_Формы_контроля", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код Формы контроля", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DisciplineInSemesterID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код ДС", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FormControlID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код Формы контроля", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Формы Контроля В Семестре] SET [Код ДС] = @Код_ДС, [Код Формы контроля] = @Код_Формы_контроля WHERE (([Код ДС] = @Original_Код_ДС) AND ([Код Формы контроля] = @Original_Код_Формы_контроля));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE       [Формы Контроля В Семестре]
+SET                [Код ДС] = @NewDisciplineInSemesterID, [Код Формы контроля] = @NewFormControlID
+WHERE        ([Код ДС] = @OldDisciplineInSemeterID) AND ([Код Формы контроля] = @OldFormControl); 
 SELECT [Код ДС], [Код Формы контроля] FROM [Формы Контроля В Семестре] WHERE ([Код ДС] = @Код_ДС) AND ([Код Формы контроля] = @Код_Формы_контроля)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код_ДС", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код ДС", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код_Формы_контроля", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код Формы контроля", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_ДС", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код ДС", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_Формы_контроля", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код Формы контроля", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NewDisciplineInSemesterID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код ДС", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NewFormControlID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код Формы контроля", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OldDisciplineInSemeterID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код ДС", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OldFormControl", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код Формы контроля", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код_ДС", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код ДС", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код_Формы_контроля", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код Формы контроля", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11523,11 +11538,19 @@ SELECT [Код ДС], [Код Формы контроля] FROM [Формы Ко
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT [Код ДС], [Код Формы контроля] FROM dbo.[Формы Контроля В Семестре]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        [Формы контроля].Имя AS [Имя формы контроля], [Формы контроля].Код
+FROM            [Формы Контроля В Семестре] INNER JOIN
+                         [Формы контроля] ON [Формы Контроля В Семестре].[Код Формы контроля] = [Формы контроля].Код
+WHERE        ([Формы Контроля В Семестре].[Код ДС] = @DisciplineInSemestrID)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DisciplineInSemestrID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код ДС", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11549,6 +11572,32 @@ SELECT [Код ДС], [Код Формы контроля] FROM [Формы Ко
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual UchPlanDataSet.Формы_Контроля_В_СеместреDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            UchPlanDataSet.Формы_Контроля_В_СеместреDataTable dataTable = new UchPlanDataSet.Формы_Контроля_В_СеместреDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByUsed1(UchPlanDataSet.Формы_Контроля_В_СеместреDataTable dataTable, int DisciplineInSemestrID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(DisciplineInSemestrID));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual UchPlanDataSet.Формы_Контроля_В_СеместреDataTable GetDataByUsed1(int DisciplineInSemestrID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(DisciplineInSemestrID));
             UchPlanDataSet.Формы_Контроля_В_СеместреDataTable dataTable = new UchPlanDataSet.Формы_Контроля_В_СеместреDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -11587,9 +11636,9 @@ SELECT [Код ДС], [Код Формы контроля] FROM [Формы Ко
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Код_ДС, int Original_Код_Формы_контроля) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Код_ДС));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Код_Формы_контроля));
+        public virtual int Delete(int DisciplineInSemesterID, int FormControlID) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(DisciplineInSemesterID));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(FormControlID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -11610,9 +11659,9 @@ SELECT [Код ДС], [Код Формы контроля] FROM [Формы Ко
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int Код_ДС, int Код_Формы_контроля) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Код_ДС));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Код_Формы_контроля));
+        public virtual int Insert(int DisciplineInSemesterID, int FormControlID) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(DisciplineInSemesterID));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(FormControlID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -11633,11 +11682,13 @@ SELECT [Код ДС], [Код Формы контроля] FROM [Формы Ко
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Код_ДС, int Код_Формы_контроля, int Original_Код_ДС, int Original_Код_Формы_контроля) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Код_ДС));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Код_Формы_контроля));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_Код_ДС));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_Код_Формы_контроля));
+        public virtual int Update(int NewDisciplineInSemesterID, int NewFormControlID, int OldDisciplineInSemeterID, int OldFormControl, int Код_ДС, int Код_Формы_контроля) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(NewDisciplineInSemesterID));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(NewFormControlID));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(OldDisciplineInSemeterID));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(OldFormControl));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Код_ДС));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Код_Формы_контроля));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -11658,8 +11709,8 @@ SELECT [Код ДС], [Код Формы контроля] FROM [Формы Ко
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Original_Код_ДС, int Original_Код_Формы_контроля) {
-            return this.Update(Original_Код_ДС, Original_Код_Формы_контроля, Original_Код_ДС, Original_Код_Формы_контроля);
+        public virtual int Update(int OldDisciplineInSemeterID, int OldFormControl, int Код_ДС, int Код_Формы_контроля) {
+            return this.Update(OldDisciplineInSemeterID, OldFormControl, OldDisciplineInSemeterID, OldFormControl, Код_ДС, Код_Формы_контроля);
         }
     }
     

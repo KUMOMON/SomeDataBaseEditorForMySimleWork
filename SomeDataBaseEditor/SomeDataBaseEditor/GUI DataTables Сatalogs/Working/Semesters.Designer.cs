@@ -29,26 +29,26 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
-            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
-            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
-            this.label7 = new System.Windows.Forms.Label();
-            this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
-            this.uchPlanDataSet = new SomeDataBaseEditor.UchPlanDataSet();
+            this.dtGrdVw = new System.Windows.Forms.DataGridView();
             this.семестрыBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uchPlanDataSet = new SomeDataBaseEditor.UchPlanDataSet();
+            this.btn_insert = new System.Windows.Forms.Button();
+            this.btn_update = new System.Windows.Forms.Button();
+            this.btn_delete = new System.Windows.Forms.Button();
+            this.numUpDwn_SemesterNum = new System.Windows.Forms.NumericUpDown();
+            this.lbl_SemesterNum = new System.Windows.Forms.Label();
+            this.lbl_countWeeks = new System.Windows.Forms.Label();
+            this.numUpDwn_countWeeks = new System.Windows.Forms.NumericUpDown();
+            this.lbl_hoursOfSport = new System.Windows.Forms.Label();
+            this.numUpDwn_hoursOfSport = new System.Windows.Forms.NumericUpDown();
+            this.lbl_CountExam = new System.Windows.Forms.Label();
+            this.numUpDwn_CountExam = new System.Windows.Forms.NumericUpDown();
+            this.lbl_CountCourseWork = new System.Windows.Forms.Label();
+            this.numUpDwn_CountCourseWork = new System.Windows.Forms.NumericUpDown();
+            this.lbl_CountCourseProj = new System.Windows.Forms.Label();
+            this.numUpDwn_CountCourseProj = new System.Windows.Forms.NumericUpDown();
+            this.lbl_CountOffset = new System.Windows.Forms.Label();
+            this.numUpDwn_CountOffset = new System.Windows.Forms.NumericUpDown();
             this.семестрыTableAdapter = new SomeDataBaseEditor.UchPlanDataSetTableAdapters.СеместрыTableAdapter();
             this.кодDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.кодУчебногоПланаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,23 +59,27 @@
             this.обязательныхКурсовыхРаботDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.обязательныхЗачетовDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.обязательныхКурсовыхПроектовDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGrdVw)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.семестрыBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_SemesterNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_countWeeks)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_hoursOfSport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_CountExam)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_CountCourseWork)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_CountCourseProj)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_CountOffset)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dtGrdVw
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtGrdVw.AllowUserToAddRows = false;
+            this.dtGrdVw.AllowUserToDeleteRows = false;
+            this.dtGrdVw.AutoGenerateColumns = false;
+            this.dtGrdVw.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dtGrdVw.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtGrdVw.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtGrdVw.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.кодDataGridViewTextBoxColumn,
             this.кодУчебногоПланаDataGridViewTextBoxColumn,
             this.номерDataGridViewTextBoxColumn,
@@ -85,160 +89,167 @@
             this.обязательныхКурсовыхРаботDataGridViewTextBoxColumn,
             this.обязательныхЗачетовDataGridViewTextBoxColumn,
             this.обязательныхКурсовыхПроектовDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.семестрыBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(484, 168);
-            this.dataGridView1.TabIndex = 0;
+            this.dtGrdVw.DataSource = this.семестрыBindingSource;
+            this.dtGrdVw.Location = new System.Drawing.Point(12, 12);
+            this.dtGrdVw.MultiSelect = false;
+            this.dtGrdVw.Name = "dtGrdVw";
+            this.dtGrdVw.ReadOnly = true;
+            this.dtGrdVw.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtGrdVw.Size = new System.Drawing.Size(713, 168);
+            this.dtGrdVw.TabIndex = 0;
+            this.dtGrdVw.SelectionChanged += new System.EventHandler(this.dtGrdVw_SelectionChanged);
             // 
-            // button1
+            // семестрыBindingSource
             // 
-            this.button1.Location = new System.Drawing.Point(421, 195);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 43);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Insert";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(421, 244);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 43);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Update";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(421, 293);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 42);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Remove";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(114, 193);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDown1.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 195);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Номер семестра:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 220);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Кол-во недель";
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Location = new System.Drawing.Point(114, 218);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDown2.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(184, 195);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(153, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Обязательных часов физ-ры";
-            // 
-            // numericUpDown3
-            // 
-            this.numericUpDown3.Location = new System.Drawing.Point(343, 195);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDown3.TabIndex = 8;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(184, 220);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(140, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Обязательных экзаменов";
-            // 
-            // numericUpDown4
-            // 
-            this.numericUpDown4.Location = new System.Drawing.Point(343, 218);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDown4.TabIndex = 10;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 273);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(164, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Обязательных курсовых работ\r\n";
-            // 
-            // numericUpDown5
-            // 
-            this.numericUpDown5.Location = new System.Drawing.Point(197, 273);
-            this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDown5.TabIndex = 12;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 303);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(182, 13);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Обязательных курсовых проектов\r\n";
-            // 
-            // numericUpDown6
-            // 
-            this.numericUpDown6.Location = new System.Drawing.Point(197, 301);
-            this.numericUpDown6.Name = "numericUpDown6";
-            this.numericUpDown6.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDown6.TabIndex = 14;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(184, 246);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(140, 13);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Обязательных экзаменов";
-            // 
-            // numericUpDown7
-            // 
-            this.numericUpDown7.Location = new System.Drawing.Point(343, 244);
-            this.numericUpDown7.Name = "numericUpDown7";
-            this.numericUpDown7.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDown7.TabIndex = 16;
+            this.семестрыBindingSource.DataMember = "Семестры";
+            this.семестрыBindingSource.DataSource = this.uchPlanDataSet;
             // 
             // uchPlanDataSet
             // 
             this.uchPlanDataSet.DataSetName = "UchPlanDataSet";
             this.uchPlanDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // семестрыBindingSource
+            // btn_insert
             // 
-            this.семестрыBindingSource.DataMember = "Семестры";
-            this.семестрыBindingSource.DataSource = this.uchPlanDataSet;
+            this.btn_insert.Location = new System.Drawing.Point(653, 198);
+            this.btn_insert.Name = "btn_insert";
+            this.btn_insert.Size = new System.Drawing.Size(72, 25);
+            this.btn_insert.TabIndex = 1;
+            this.btn_insert.Text = "Insert";
+            this.btn_insert.UseVisualStyleBackColor = true;
+            this.btn_insert.Click += new System.EventHandler(this.btn_insert_Click);
+            // 
+            // btn_update
+            // 
+            this.btn_update.Location = new System.Drawing.Point(653, 229);
+            this.btn_update.Name = "btn_update";
+            this.btn_update.Size = new System.Drawing.Size(72, 24);
+            this.btn_update.TabIndex = 2;
+            this.btn_update.Text = "Update";
+            this.btn_update.UseVisualStyleBackColor = true;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
+            // 
+            // btn_delete
+            // 
+            this.btn_delete.Location = new System.Drawing.Point(653, 257);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(72, 25);
+            this.btn_delete.TabIndex = 3;
+            this.btn_delete.Text = "Remove";
+            this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
+            // 
+            // numUpDwn_SemesterNum
+            // 
+            this.numUpDwn_SemesterNum.Location = new System.Drawing.Point(114, 193);
+            this.numUpDwn_SemesterNum.Name = "numUpDwn_SemesterNum";
+            this.numUpDwn_SemesterNum.Size = new System.Drawing.Size(44, 20);
+            this.numUpDwn_SemesterNum.TabIndex = 4;
+            // 
+            // lbl_SemesterNum
+            // 
+            this.lbl_SemesterNum.AutoSize = true;
+            this.lbl_SemesterNum.Location = new System.Drawing.Point(12, 195);
+            this.lbl_SemesterNum.Name = "lbl_SemesterNum";
+            this.lbl_SemesterNum.Size = new System.Drawing.Size(96, 13);
+            this.lbl_SemesterNum.TabIndex = 5;
+            this.lbl_SemesterNum.Text = "Номер семестра:";
+            // 
+            // lbl_countWeeks
+            // 
+            this.lbl_countWeeks.AutoSize = true;
+            this.lbl_countWeeks.Location = new System.Drawing.Point(12, 220);
+            this.lbl_countWeeks.Name = "lbl_countWeeks";
+            this.lbl_countWeeks.Size = new System.Drawing.Size(80, 13);
+            this.lbl_countWeeks.TabIndex = 7;
+            this.lbl_countWeeks.Text = "Кол-во недель";
+            // 
+            // numUpDwn_countWeeks
+            // 
+            this.numUpDwn_countWeeks.Location = new System.Drawing.Point(114, 218);
+            this.numUpDwn_countWeeks.Name = "numUpDwn_countWeeks";
+            this.numUpDwn_countWeeks.Size = new System.Drawing.Size(44, 20);
+            this.numUpDwn_countWeeks.TabIndex = 6;
+            // 
+            // lbl_hoursOfSport
+            // 
+            this.lbl_hoursOfSport.AutoSize = true;
+            this.lbl_hoursOfSport.Location = new System.Drawing.Point(405, 263);
+            this.lbl_hoursOfSport.Name = "lbl_hoursOfSport";
+            this.lbl_hoursOfSport.Size = new System.Drawing.Size(192, 13);
+            this.lbl_hoursOfSport.TabIndex = 9;
+            this.lbl_hoursOfSport.Text = "Обязательных часов физ-ры (в нед.)";
+            // 
+            // numUpDwn_hoursOfSport
+            // 
+            this.numUpDwn_hoursOfSport.Location = new System.Drawing.Point(603, 261);
+            this.numUpDwn_hoursOfSport.Name = "numUpDwn_hoursOfSport";
+            this.numUpDwn_hoursOfSport.Size = new System.Drawing.Size(44, 20);
+            this.numUpDwn_hoursOfSport.TabIndex = 8;
+            // 
+            // lbl_CountExam
+            // 
+            this.lbl_CountExam.AutoSize = true;
+            this.lbl_CountExam.Location = new System.Drawing.Point(184, 194);
+            this.lbl_CountExam.Name = "lbl_CountExam";
+            this.lbl_CountExam.Size = new System.Drawing.Size(140, 13);
+            this.lbl_CountExam.TabIndex = 11;
+            this.lbl_CountExam.Text = "Обязательных экзаменов";
+            // 
+            // numUpDwn_CountExam
+            // 
+            this.numUpDwn_CountExam.Location = new System.Drawing.Point(330, 194);
+            this.numUpDwn_CountExam.Name = "numUpDwn_CountExam";
+            this.numUpDwn_CountExam.Size = new System.Drawing.Size(44, 20);
+            this.numUpDwn_CountExam.TabIndex = 10;
+            // 
+            // lbl_CountCourseWork
+            // 
+            this.lbl_CountCourseWork.AutoSize = true;
+            this.lbl_CountCourseWork.Location = new System.Drawing.Point(418, 200);
+            this.lbl_CountCourseWork.Name = "lbl_CountCourseWork";
+            this.lbl_CountCourseWork.Size = new System.Drawing.Size(164, 13);
+            this.lbl_CountCourseWork.TabIndex = 13;
+            this.lbl_CountCourseWork.Text = "Обязательных курсовых работ\r\n";
+            // 
+            // numUpDwn_CountCourseWork
+            // 
+            this.numUpDwn_CountCourseWork.Location = new System.Drawing.Point(603, 198);
+            this.numUpDwn_CountCourseWork.Name = "numUpDwn_CountCourseWork";
+            this.numUpDwn_CountCourseWork.Size = new System.Drawing.Size(44, 20);
+            this.numUpDwn_CountCourseWork.TabIndex = 12;
+            // 
+            // lbl_CountCourseProj
+            // 
+            this.lbl_CountCourseProj.AutoSize = true;
+            this.lbl_CountCourseProj.Location = new System.Drawing.Point(405, 232);
+            this.lbl_CountCourseProj.Name = "lbl_CountCourseProj";
+            this.lbl_CountCourseProj.Size = new System.Drawing.Size(182, 13);
+            this.lbl_CountCourseProj.TabIndex = 15;
+            this.lbl_CountCourseProj.Text = "Обязательных курсовых проектов\r\n";
+            // 
+            // numUpDwn_CountCourseProj
+            // 
+            this.numUpDwn_CountCourseProj.Location = new System.Drawing.Point(603, 225);
+            this.numUpDwn_CountCourseProj.Name = "numUpDwn_CountCourseProj";
+            this.numUpDwn_CountCourseProj.Size = new System.Drawing.Size(44, 20);
+            this.numUpDwn_CountCourseProj.TabIndex = 14;
+            // 
+            // lbl_CountOffset
+            // 
+            this.lbl_CountOffset.AutoSize = true;
+            this.lbl_CountOffset.Location = new System.Drawing.Point(184, 225);
+            this.lbl_CountOffset.Name = "lbl_CountOffset";
+            this.lbl_CountOffset.Size = new System.Drawing.Size(124, 13);
+            this.lbl_CountOffset.TabIndex = 17;
+            this.lbl_CountOffset.Text = "Обязательных зачетов";
+            // 
+            // numUpDwn_CountOffset
+            // 
+            this.numUpDwn_CountOffset.Location = new System.Drawing.Point(330, 221);
+            this.numUpDwn_CountOffset.Name = "numUpDwn_CountOffset";
+            this.numUpDwn_CountOffset.Size = new System.Drawing.Size(44, 20);
+            this.numUpDwn_CountOffset.TabIndex = 16;
             // 
             // семестрыTableAdapter
             // 
@@ -250,91 +261,110 @@
             this.кодDataGridViewTextBoxColumn.HeaderText = "Код";
             this.кодDataGridViewTextBoxColumn.Name = "кодDataGridViewTextBoxColumn";
             this.кодDataGridViewTextBoxColumn.ReadOnly = true;
+            this.кодDataGridViewTextBoxColumn.Visible = false;
+            this.кодDataGridViewTextBoxColumn.Width = 51;
             // 
             // кодУчебногоПланаDataGridViewTextBoxColumn
             // 
             this.кодУчебногоПланаDataGridViewTextBoxColumn.DataPropertyName = "Код учебного плана";
             this.кодУчебногоПланаDataGridViewTextBoxColumn.HeaderText = "Код учебного плана";
             this.кодУчебногоПланаDataGridViewTextBoxColumn.Name = "кодУчебногоПланаDataGridViewTextBoxColumn";
+            this.кодУчебногоПланаDataGridViewTextBoxColumn.ReadOnly = true;
+            this.кодУчебногоПланаDataGridViewTextBoxColumn.Visible = false;
+            this.кодУчебногоПланаDataGridViewTextBoxColumn.Width = 132;
             // 
             // номерDataGridViewTextBoxColumn
             // 
             this.номерDataGridViewTextBoxColumn.DataPropertyName = "Номер";
             this.номерDataGridViewTextBoxColumn.HeaderText = "Номер";
             this.номерDataGridViewTextBoxColumn.Name = "номерDataGridViewTextBoxColumn";
+            this.номерDataGridViewTextBoxColumn.ReadOnly = true;
+            this.номерDataGridViewTextBoxColumn.Width = 66;
             // 
             // ковоНедельDataGridViewTextBoxColumn
             // 
             this.ковоНедельDataGridViewTextBoxColumn.DataPropertyName = "Ко-во недель";
             this.ковоНедельDataGridViewTextBoxColumn.HeaderText = "Ко-во недель";
             this.ковоНедельDataGridViewTextBoxColumn.Name = "ковоНедельDataGridViewTextBoxColumn";
+            this.ковоНедельDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ковоНедельDataGridViewTextBoxColumn.Width = 99;
             // 
             // обязательныхЧасовФизкультурыВНеделяDataGridViewTextBoxColumn
             // 
             this.обязательныхЧасовФизкультурыВНеделяDataGridViewTextBoxColumn.DataPropertyName = "Обязательных часов физкультуры в неделя";
             this.обязательныхЧасовФизкультурыВНеделяDataGridViewTextBoxColumn.HeaderText = "Обязательных часов физкультуры в неделя";
             this.обязательныхЧасовФизкультурыВНеделяDataGridViewTextBoxColumn.Name = "обязательныхЧасовФизкультурыВНеделяDataGridViewTextBoxColumn";
+            this.обязательныхЧасовФизкультурыВНеделяDataGridViewTextBoxColumn.ReadOnly = true;
+            this.обязательныхЧасовФизкультурыВНеделяDataGridViewTextBoxColumn.Width = 200;
             // 
             // обязательныхЭкзаменовDataGridViewTextBoxColumn
             // 
             this.обязательныхЭкзаменовDataGridViewTextBoxColumn.DataPropertyName = "Обязательных экзаменов";
             this.обязательныхЭкзаменовDataGridViewTextBoxColumn.HeaderText = "Обязательных экзаменов";
             this.обязательныхЭкзаменовDataGridViewTextBoxColumn.Name = "обязательныхЭкзаменовDataGridViewTextBoxColumn";
+            this.обязательныхЭкзаменовDataGridViewTextBoxColumn.ReadOnly = true;
+            this.обязательныхЭкзаменовDataGridViewTextBoxColumn.Width = 150;
             // 
             // обязательныхКурсовыхРаботDataGridViewTextBoxColumn
             // 
             this.обязательныхКурсовыхРаботDataGridViewTextBoxColumn.DataPropertyName = "Обязательных курсовых работ";
             this.обязательныхКурсовыхРаботDataGridViewTextBoxColumn.HeaderText = "Обязательных курсовых работ";
             this.обязательныхКурсовыхРаботDataGridViewTextBoxColumn.Name = "обязательныхКурсовыхРаботDataGridViewTextBoxColumn";
+            this.обязательныхКурсовыхРаботDataGridViewTextBoxColumn.ReadOnly = true;
+            this.обязательныхКурсовыхРаботDataGridViewTextBoxColumn.Width = 146;
             // 
             // обязательныхЗачетовDataGridViewTextBoxColumn
             // 
             this.обязательныхЗачетовDataGridViewTextBoxColumn.DataPropertyName = "Обязательных зачетов";
             this.обязательныхЗачетовDataGridViewTextBoxColumn.HeaderText = "Обязательных зачетов";
             this.обязательныхЗачетовDataGridViewTextBoxColumn.Name = "обязательныхЗачетовDataGridViewTextBoxColumn";
+            this.обязательныхЗачетовDataGridViewTextBoxColumn.ReadOnly = true;
+            this.обязательныхЗачетовDataGridViewTextBoxColumn.Width = 136;
             // 
             // обязательныхКурсовыхПроектовDataGridViewTextBoxColumn
             // 
             this.обязательныхКурсовыхПроектовDataGridViewTextBoxColumn.DataPropertyName = "Обязательных курсовых проектов";
             this.обязательныхКурсовыхПроектовDataGridViewTextBoxColumn.HeaderText = "Обязательных курсовых проектов";
             this.обязательныхКурсовыхПроектовDataGridViewTextBoxColumn.Name = "обязательныхКурсовыхПроектовDataGridViewTextBoxColumn";
+            this.обязательныхКурсовыхПроектовDataGridViewTextBoxColumn.ReadOnly = true;
+            this.обязательныхКурсовыхПроектовDataGridViewTextBoxColumn.Width = 146;
             // 
             // Semesters
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(505, 342);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.numericUpDown7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.numericUpDown6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.numericUpDown5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.numericUpDown4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.numericUpDown3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(737, 290);
+            this.Controls.Add(this.lbl_CountOffset);
+            this.Controls.Add(this.numUpDwn_CountOffset);
+            this.Controls.Add(this.lbl_CountCourseProj);
+            this.Controls.Add(this.numUpDwn_CountCourseProj);
+            this.Controls.Add(this.lbl_CountCourseWork);
+            this.Controls.Add(this.numUpDwn_CountCourseWork);
+            this.Controls.Add(this.lbl_CountExam);
+            this.Controls.Add(this.numUpDwn_CountExam);
+            this.Controls.Add(this.lbl_hoursOfSport);
+            this.Controls.Add(this.numUpDwn_hoursOfSport);
+            this.Controls.Add(this.lbl_countWeeks);
+            this.Controls.Add(this.numUpDwn_countWeeks);
+            this.Controls.Add(this.lbl_SemesterNum);
+            this.Controls.Add(this.numUpDwn_SemesterNum);
+            this.Controls.Add(this.btn_delete);
+            this.Controls.Add(this.btn_update);
+            this.Controls.Add(this.btn_insert);
+            this.Controls.Add(this.dtGrdVw);
             this.Name = "Semesters";
             this.Text = "Semesters";
             this.Load += new System.EventHandler(this.Semesters_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGrdVw)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.семестрыBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_SemesterNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_countWeeks)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_hoursOfSport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_CountExam)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_CountCourseWork)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_CountCourseProj)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_CountOffset)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -342,24 +372,24 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.NumericUpDown numericUpDown5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown numericUpDown6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.NumericUpDown numericUpDown7;
+        private System.Windows.Forms.DataGridView dtGrdVw;
+        private System.Windows.Forms.Button btn_insert;
+        private System.Windows.Forms.Button btn_update;
+        private System.Windows.Forms.Button btn_delete;
+        private System.Windows.Forms.NumericUpDown numUpDwn_SemesterNum;
+        private System.Windows.Forms.Label lbl_SemesterNum;
+        private System.Windows.Forms.Label lbl_countWeeks;
+        private System.Windows.Forms.NumericUpDown numUpDwn_countWeeks;
+        private System.Windows.Forms.Label lbl_hoursOfSport;
+        private System.Windows.Forms.NumericUpDown numUpDwn_hoursOfSport;
+        private System.Windows.Forms.Label lbl_CountExam;
+        private System.Windows.Forms.NumericUpDown numUpDwn_CountExam;
+        private System.Windows.Forms.Label lbl_CountCourseWork;
+        private System.Windows.Forms.NumericUpDown numUpDwn_CountCourseWork;
+        private System.Windows.Forms.Label lbl_CountCourseProj;
+        private System.Windows.Forms.NumericUpDown numUpDwn_CountCourseProj;
+        private System.Windows.Forms.Label lbl_CountOffset;
+        private System.Windows.Forms.NumericUpDown numUpDwn_CountOffset;
         private UchPlanDataSet uchPlanDataSet;
         private System.Windows.Forms.BindingSource семестрыBindingSource;
         private UchPlanDataSetTableAdapters.СеместрыTableAdapter семестрыTableAdapter;
