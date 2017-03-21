@@ -30,13 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.cmbBx_nameDiscipline = new System.Windows.Forms.ComboBox();
+            this.дисциплиныBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uchPlanDataSet = new SomeDataBaseEditor.UchPlanDataSet();
             this.lbl_nameDiscipline = new System.Windows.Forms.Label();
             this.txtBx_shifrDiscipline = new System.Windows.Forms.TextBox();
             this.lbl_shifrDiscipline = new System.Windows.Forms.Label();
             this.cmbBx_kafedra = new System.Windows.Forms.ComboBox();
+            this.кафедрыBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lbl_kafedra = new System.Windows.Forms.Label();
             this.lbl_typeDiscipline = new System.Windows.Forms.Label();
             this.cmbBx_typeDiscipline = new System.Windows.Forms.ComboBox();
+            this.типыДисциплинBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lbl_hoursAuditor = new System.Windows.Forms.Label();
             this.numUpDwn_hoursAuditor = new System.Windows.Forms.NumericUpDown();
             this.numUpDwn_hoursSamost = new System.Windows.Forms.NumericUpDown();
@@ -49,9 +53,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_go_semesters = new System.Windows.Forms.Button();
             this.dtGrdVw = new System.Windows.Forms.DataGridView();
-            this.дисциплинаКакЧастьУчебногоПланаBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.uchPlanDataSet = new SomeDataBaseEditor.UchPlanDataSet();
-            this.дисциплина_как_часть_учебного_планаTableAdapter = new SomeDataBaseEditor.UchPlanDataSetTableAdapters.Дисциплина_как_часть_учебного_планаTableAdapter();
             this.кодDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.кодУчебногоПланаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,22 +65,22 @@
             this.часыАудиторныеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.часыСамостоятельныеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.всегоЗЕТDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.дисциплиныBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.дисциплинаКакЧастьУчебногоПланаBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.дисциплина_как_часть_учебного_планаTableAdapter = new SomeDataBaseEditor.UchPlanDataSetTableAdapters.Дисциплина_как_часть_учебного_планаTableAdapter();
             this.дисциплиныTableAdapter = new SomeDataBaseEditor.UchPlanDataSetTableAdapters.ДисциплиныTableAdapter();
-            this.типыДисциплинBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.типы_дисциплинTableAdapter = new SomeDataBaseEditor.UchPlanDataSetTableAdapters.Типы_дисциплинTableAdapter();
-            this.кафедрыBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.кафедрыTableAdapter = new SomeDataBaseEditor.UchPlanDataSetTableAdapters.КафедрыTableAdapter();
+            this.btn_realizKompetenc = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.дисциплиныBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.кафедрыBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.типыДисциплинBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_hoursAuditor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_hoursSamost)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_vsegoZet)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGrdVw)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.дисциплинаКакЧастьУчебногоПланаBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.дисциплиныBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.типыДисциплинBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.кафедрыBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbBx_nameDiscipline
@@ -89,9 +90,19 @@
             this.cmbBx_nameDiscipline.FormattingEnabled = true;
             this.cmbBx_nameDiscipline.Location = new System.Drawing.Point(12, 379);
             this.cmbBx_nameDiscipline.Name = "cmbBx_nameDiscipline";
-            this.cmbBx_nameDiscipline.Size = new System.Drawing.Size(238, 21);
+            this.cmbBx_nameDiscipline.Size = new System.Drawing.Size(248, 21);
             this.cmbBx_nameDiscipline.TabIndex = 1;
             this.cmbBx_nameDiscipline.ValueMember = "Код";
+            // 
+            // дисциплиныBindingSource
+            // 
+            this.дисциплиныBindingSource.DataMember = "Дисциплины";
+            this.дисциплиныBindingSource.DataSource = this.uchPlanDataSet;
+            // 
+            // uchPlanDataSet
+            // 
+            this.uchPlanDataSet.DataSetName = "UchPlanDataSet";
+            this.uchPlanDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lbl_nameDiscipline
             // 
@@ -125,9 +136,14 @@
             this.cmbBx_kafedra.FormattingEnabled = true;
             this.cmbBx_kafedra.Location = new System.Drawing.Point(15, 472);
             this.cmbBx_kafedra.Name = "cmbBx_kafedra";
-            this.cmbBx_kafedra.Size = new System.Drawing.Size(194, 21);
+            this.cmbBx_kafedra.Size = new System.Drawing.Size(245, 21);
             this.cmbBx_kafedra.TabIndex = 5;
             this.cmbBx_kafedra.ValueMember = "Код";
+            // 
+            // кафедрыBindingSource
+            // 
+            this.кафедрыBindingSource.DataMember = "Кафедры";
+            this.кафедрыBindingSource.DataSource = this.uchPlanDataSet;
             // 
             // lbl_kafedra
             // 
@@ -157,6 +173,11 @@
             this.cmbBx_typeDiscipline.Size = new System.Drawing.Size(121, 21);
             this.cmbBx_typeDiscipline.TabIndex = 7;
             this.cmbBx_typeDiscipline.ValueMember = "Код";
+            // 
+            // типыДисциплинBindingSource
+            // 
+            this.типыДисциплинBindingSource.DataMember = "Типы дисциплин";
+            this.типыДисциплинBindingSource.DataSource = this.uchPlanDataSet;
             // 
             // lbl_hoursAuditor
             // 
@@ -244,9 +265,9 @@
             this.groupBox2.Controls.Add(this.numUpDwn_hoursSamost);
             this.groupBox2.Controls.Add(this.numUpDwn_hoursAuditor);
             this.groupBox2.Controls.Add(this.lbl_hoursAuditor);
-            this.groupBox2.Location = new System.Drawing.Point(292, 379);
+            this.groupBox2.Location = new System.Drawing.Point(292, 363);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 107);
+            this.groupBox2.Size = new System.Drawing.Size(200, 108);
             this.groupBox2.TabIndex = 24;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Расчасовка";
@@ -290,20 +311,6 @@
             this.dtGrdVw.Size = new System.Drawing.Size(584, 345);
             this.dtGrdVw.TabIndex = 26;
             this.dtGrdVw.SelectionChanged += new System.EventHandler(this.dtGrdVw_SelectionChanged);
-            // 
-            // дисциплинаКакЧастьУчебногоПланаBindingSource
-            // 
-            this.дисциплинаКакЧастьУчебногоПланаBindingSource.DataMember = "Дисциплина как часть учебного плана";
-            this.дисциплинаКакЧастьУчебногоПланаBindingSource.DataSource = this.uchPlanDataSet;
-            // 
-            // uchPlanDataSet
-            // 
-            this.uchPlanDataSet.DataSetName = "UchPlanDataSet";
-            this.uchPlanDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // дисциплина_как_часть_учебного_планаTableAdapter
-            // 
-            this.дисциплина_как_часть_учебного_планаTableAdapter.ClearBeforeFill = true;
             // 
             // кодDataGridViewTextBoxColumn
             // 
@@ -359,7 +366,7 @@
             this.кодовоеОбозначениеДисциплиныDataGridViewTextBoxColumn.HeaderText = "Кодовое обозначение дисциплины";
             this.кодовоеОбозначениеДисциплиныDataGridViewTextBoxColumn.Name = "кодовоеОбозначениеДисциплиныDataGridViewTextBoxColumn";
             this.кодовоеОбозначениеДисциплиныDataGridViewTextBoxColumn.ReadOnly = true;
-            this.кодовоеОбозначениеДисциплиныDataGridViewTextBoxColumn.Width = 133;
+            this.кодовоеОбозначениеДисциплиныDataGridViewTextBoxColumn.Width = 189;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -401,38 +408,42 @@
             this.всегоЗЕТDataGridViewTextBoxColumn.ReadOnly = true;
             this.всегоЗЕТDataGridViewTextBoxColumn.Width = 79;
             // 
-            // дисциплиныBindingSource
+            // дисциплинаКакЧастьУчебногоПланаBindingSource
             // 
-            this.дисциплиныBindingSource.DataMember = "Дисциплины";
-            this.дисциплиныBindingSource.DataSource = this.uchPlanDataSet;
+            this.дисциплинаКакЧастьУчебногоПланаBindingSource.DataMember = "Дисциплина как часть учебного плана";
+            this.дисциплинаКакЧастьУчебногоПланаBindingSource.DataSource = this.uchPlanDataSet;
+            // 
+            // дисциплина_как_часть_учебного_планаTableAdapter
+            // 
+            this.дисциплина_как_часть_учебного_планаTableAdapter.ClearBeforeFill = true;
             // 
             // дисциплиныTableAdapter
             // 
             this.дисциплиныTableAdapter.ClearBeforeFill = true;
             // 
-            // типыДисциплинBindingSource
-            // 
-            this.типыДисциплинBindingSource.DataMember = "Типы дисциплин";
-            this.типыДисциплинBindingSource.DataSource = this.uchPlanDataSet;
-            // 
             // типы_дисциплинTableAdapter
             // 
             this.типы_дисциплинTableAdapter.ClearBeforeFill = true;
             // 
-            // кафедрыBindingSource
-            // 
-            this.кафедрыBindingSource.DataMember = "Кафедры";
-            this.кафедрыBindingSource.DataSource = this.uchPlanDataSet;
-            // 
             // кафедрыTableAdapter
             // 
             this.кафедрыTableAdapter.ClearBeforeFill = true;
+            // 
+            // btn_realizKompetenc
+            // 
+            this.btn_realizKompetenc.Location = new System.Drawing.Point(292, 472);
+            this.btn_realizKompetenc.Name = "btn_realizKompetenc";
+            this.btn_realizKompetenc.Size = new System.Drawing.Size(200, 37);
+            this.btn_realizKompetenc.TabIndex = 15;
+            this.btn_realizKompetenc.Text = "Реализуемые компетенции дисциплины";
+            this.btn_realizKompetenc.UseVisualStyleBackColor = true;
             // 
             // DisciplineInAcademicPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(606, 515);
+            this.Controls.Add(this.btn_realizKompetenc);
             this.Controls.Add(this.dtGrdVw);
             this.Controls.Add(this.btn_go_semesters);
             this.Controls.Add(this.groupBox2);
@@ -450,6 +461,10 @@
             this.Name = "DisciplineInAcademicPlan";
             this.Text = "Дисциплины учебного плана";
             this.Load += new System.EventHandler(this.DisciplineInAcademicPlan_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.дисциплиныBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.кафедрыBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.типыДисциплинBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_hoursAuditor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_hoursSamost)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_vsegoZet)).EndInit();
@@ -457,10 +472,6 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGrdVw)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.дисциплинаКакЧастьУчебногоПланаBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.дисциплиныBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.типыДисциплинBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.кафедрыBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -513,5 +524,6 @@
         private UchPlanDataSetTableAdapters.Типы_дисциплинTableAdapter типы_дисциплинTableAdapter;
         private System.Windows.Forms.BindingSource кафедрыBindingSource;
         private UchPlanDataSetTableAdapters.КафедрыTableAdapter кафедрыTableAdapter;
+        private System.Windows.Forms.Button btn_realizKompetenc;
     }
 }

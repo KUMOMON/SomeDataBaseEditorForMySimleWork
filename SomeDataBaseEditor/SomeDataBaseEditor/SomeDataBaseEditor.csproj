@@ -136,10 +136,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UchPlanDataSet.cs">
-      <DependentUpon>UchPlanDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="UchPlanDataSet1.Designer.cs">
+    <Compile Include="static_methods.cs" />
+    <Compile Include="UchPlanDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UchPlanDataSet.xsd</DependentUpon>
@@ -216,7 +214,7 @@
     <None Include="UchPlanDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>UchPlanDataSet1.Designer.cs</LastGenOutput>
+      <LastGenOutput>UchPlanDataSet.Designer.cs</LastGenOutput>
     </None>
     <None Include="UchPlanDataSet.xss">
       <DependentUpon>UchPlanDataSet.xsd</DependentUpon>

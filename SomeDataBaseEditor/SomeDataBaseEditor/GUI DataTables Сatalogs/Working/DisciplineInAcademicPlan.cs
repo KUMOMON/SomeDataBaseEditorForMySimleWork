@@ -25,14 +25,14 @@ namespace SomeDataBaseEditor.GUI_DataTables.Working
 
         private void button4_Click(object sender, EventArgs e)
         {
-            /*
-            using (var form = new GUI_DataTables.Working.DisciplineAcademicPlaneInSemester(someIDFromAcademicPlan,someIDFromDisciplineAcademicPlan))
+            var DisciplineID = Convert.ToInt32(dtGrdVw.Rows[dtGrdVw.CurrentRow.Index].Cells[3].Value);
+            using (var form = new GUI_DataTables.Working.DisciplineAcademicPlaneInSemester(_academicPlanID,DisciplineID))
             {
                 this.Hide();
                 form.ShowDialog();
                 this.Show();
             }
-            */
+            
         }
 
         private void DisciplineInAcademicPlan_Load(object sender, EventArgs e)
