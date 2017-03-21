@@ -133,5 +133,14 @@ namespace SomeDataBaseEditor.GUI_DataTables.Working
 
             updateDataGridView();
         }
+
+        private void btn_realizKompetenc_Click(object sender, EventArgs e)
+        {
+            var curID = Convert.ToInt32(dtGrdVw.Rows[dtGrdVw.CurrentRow.Index].Cells[0].Value);
+
+            using (var form = new GUI_DataTables.Working.RealizCompetenceDiscipline(curID))
+                form.ShowDialog();
+
+        }
     }
 }
