@@ -49,28 +49,24 @@ namespace SomeDataBaseEditor.GUI_DataTables.Working
 
         private void EditorAcademicPlans_Load(object sender, EventArgs e)
         {
+            
             updateDataBaseInfo();
         }
 
         private void updateDataBaseInfo()
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "uchPlanDataSet1.Квалификации". При необходимости она может быть перемещена или удалена.
-            this.квалификацииTableAdapter1.Fill(this.uchPlanDataSet1.Квалификации);
+            //Предупреждение!: порядок загрузки имеет значение!
             // TODO: данная строка кода позволяет загрузить данные в таблицу "uchPlanDataSet1.Профили_подготовки". При необходимости она может быть перемещена или удалена.
             this.профили_подготовкиTableAdapter1.Fill(this.uchPlanDataSet1.Профили_подготовки);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "uchPlanDataSet1.Направления_подготовки". При необходимости она может быть перемещена или удалена.
-            this.направления_подготовкиTableAdapter1.Fill(this.uchPlanDataSet1.Направления_подготовки);
+
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "uchPlanDataSet1.Формы_обучения". При необходимости она может быть перемещена или удалена.
+            this.формы_обученияTableAdapter1.Fill(this.uchPlanDataSet1.Формы_обучения);
+
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "uchPlanDataSet1.Квалификации". При необходимости она может быть перемещена или удалена.
+            this.квалификацииTableAdapter1.Fill(this.uchPlanDataSet1.Квалификации);
+            
+
         }
 
-        private void cmbBx_Napravlenie_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if(cmbBx_Napravlenie.SelectedValue!=null)
-            профилиПодготовкиBindingSource.Filter = "[Код направления подготовки] = " + cmbBx_Napravlenie.SelectedValue;
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            профилиПодготовкиBindingSource.Filter = "";
-        }
     }
 }

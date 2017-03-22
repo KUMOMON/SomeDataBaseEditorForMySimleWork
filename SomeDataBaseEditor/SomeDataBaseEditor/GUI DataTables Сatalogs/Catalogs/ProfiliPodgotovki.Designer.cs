@@ -35,24 +35,15 @@
             this.btn_delete = new System.Windows.Forms.Button();
             this.txtBx = new System.Windows.Forms.TextBox();
             this.cmbBx = new System.Windows.Forms.ComboBox();
-            this.направленияПодготовкиBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.uchPlanDataSet1 = new SomeDataBaseEditor.UchPlanDataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.fKУчебныеПланыПрофилиПодготовкиBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.профилиПодготовкиBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uchPlanDataSet = new SomeDataBaseEditor.UchPlanDataSet();
-            this.fKУчебныеПланыПрофилиПодготовкиBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.профили_подготовкиTableAdapter1 = new SomeDataBaseEditor.UchPlanDataSetTableAdapters.Профили_подготовкиTableAdapter();
-            this.учебные_планыTableAdapter = new SomeDataBaseEditor.UchPlanDataSetTableAdapters.Учебные_планыTableAdapter();
+            this.направленияПодготовкиBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.направления_подготовкиTableAdapter = new SomeDataBaseEditor.UchPlanDataSetTableAdapters.Направления_подготовкиTableAdapter();
+            this.профили_подготовкиTableAdapter1 = new SomeDataBaseEditor.UchPlanDataSetTableAdapters.Профили_подготовкиTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.направленияПодготовкиBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKУчебныеПланыПрофилиПодготовкиBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.профилиПодготовкиBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKУчебныеПланыПрофилиПодготовкиBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.направленияПодготовкиBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -116,16 +107,6 @@
             this.cmbBx.TabIndex = 5;
             this.cmbBx.ValueMember = "Код";
             // 
-            // направленияПодготовкиBindingSource
-            // 
-            this.направленияПодготовкиBindingSource.DataMember = "Направления подготовки";
-            this.направленияПодготовкиBindingSource.DataSource = this.uchPlanDataSet1;
-            // 
-            // uchPlanDataSet1
-            // 
-            this.uchPlanDataSet1.DataSetName = "UchPlanDataSet";
-            this.uchPlanDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -144,37 +125,23 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Направление подготовки";
             // 
-            // fKУчебныеПланыПрофилиПодготовкиBindingSource
-            // 
-            this.fKУчебныеПланыПрофилиПодготовкиBindingSource.DataMember = "FK_Учебные планы_Профили подготовки";
-            this.fKУчебныеПланыПрофилиПодготовкиBindingSource.DataSource = this.профилиПодготовкиBindingSource;
-            // 
-            // профилиПодготовкиBindingSource
-            // 
-            this.профилиПодготовкиBindingSource.DataMember = "Профили подготовки";
-            this.профилиПодготовкиBindingSource.DataSource = this.uchPlanDataSet;
-            // 
             // uchPlanDataSet
             // 
             this.uchPlanDataSet.DataSetName = "UchPlanDataSet";
             this.uchPlanDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // fKУчебныеПланыПрофилиПодготовкиBindingSource1
+            // направленияПодготовкиBindingSource
             // 
-            this.fKУчебныеПланыПрофилиПодготовкиBindingSource1.DataMember = "FK_Учебные планы_Профили подготовки";
-            this.fKУчебныеПланыПрофилиПодготовкиBindingSource1.DataSource = this.профилиПодготовкиBindingSource;
-            // 
-            // профили_подготовкиTableAdapter1
-            // 
-            this.профили_подготовкиTableAdapter1.ClearBeforeFill = true;
-            // 
-            // учебные_планыTableAdapter
-            // 
-            this.учебные_планыTableAdapter.ClearBeforeFill = true;
+            this.направленияПодготовкиBindingSource.DataMember = "Направления подготовки";
+            this.направленияПодготовкиBindingSource.DataSource = this.uchPlanDataSet;
             // 
             // направления_подготовкиTableAdapter
             // 
             this.направления_подготовкиTableAdapter.ClearBeforeFill = true;
+            // 
+            // профили_подготовкиTableAdapter1
+            // 
+            this.профили_подготовкиTableAdapter1.ClearBeforeFill = true;
             // 
             // ProfiliPodgotovki
             // 
@@ -193,12 +160,8 @@
             this.Text = "Профили подготовки";
             this.Load += new System.EventHandler(this.ProfiliPodgotovki_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.направленияПодготовкиBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKУчебныеПланыПрофилиПодготовкиBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.профилиПодготовкиBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKУчебныеПланыПрофилиПодготовкиBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.направленияПодготовкиBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,14 +178,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn направлениеПодготовкиDataGridViewTextBoxColumn;
-        private UchPlanDataSetTableAdapters.Профили_подготовкиTableAdapter профили_подготовкиTableAdapter1;
-        private System.Windows.Forms.BindingSource профилиПодготовкиBindingSource;
         private UchPlanDataSet uchPlanDataSet;
-        private System.Windows.Forms.BindingSource fKУчебныеПланыПрофилиПодготовкиBindingSource;
-        private UchPlanDataSetTableAdapters.Учебные_планыTableAdapter учебные_планыTableAdapter;
-        private System.Windows.Forms.BindingSource fKУчебныеПланыПрофилиПодготовкиBindingSource1;
-        private UchPlanDataSet uchPlanDataSet1;
         private System.Windows.Forms.BindingSource направленияПодготовкиBindingSource;
         private UchPlanDataSetTableAdapters.Направления_подготовкиTableAdapter направления_подготовкиTableAdapter;
+        private UchPlanDataSetTableAdapters.Профили_подготовкиTableAdapter профили_подготовкиTableAdapter1;
     }
 }

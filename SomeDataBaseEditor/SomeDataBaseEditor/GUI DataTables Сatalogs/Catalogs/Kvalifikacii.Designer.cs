@@ -37,16 +37,16 @@
             this.btn_insert = new System.Windows.Forms.Button();
             this.dtGrdVw = new System.Windows.Forms.DataGridView();
             this.numUpDwn_years = new System.Windows.Forms.NumericUpDown();
+            this.uchPlanDataSet = new SomeDataBaseEditor.UchPlanDataSet();
+            this.квалификацииBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.квалификацииTableAdapter = new SomeDataBaseEditor.UchPlanDataSetTableAdapters.КвалификацииTableAdapter();
             this.кодDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.имяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.срокОбученияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.квалификацииBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.uchPlanDataSet = new SomeDataBaseEditor.UchPlanDataSet();
-            this.квалификацииTableAdapter = new SomeDataBaseEditor.UchPlanDataSetTableAdapters.КвалификацииTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dtGrdVw)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_years)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.квалификацииBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.квалификацииBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_years
@@ -106,6 +106,8 @@
             // 
             // dtGrdVw
             // 
+            this.dtGrdVw.AllowUserToAddRows = false;
+            this.dtGrdVw.AllowUserToDeleteRows = false;
             this.dtGrdVw.AutoGenerateColumns = false;
             this.dtGrdVw.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dtGrdVw.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -129,6 +131,20 @@
             this.numUpDwn_years.Name = "numUpDwn_years";
             this.numUpDwn_years.Size = new System.Drawing.Size(64, 20);
             this.numUpDwn_years.TabIndex = 16;
+            // 
+            // uchPlanDataSet
+            // 
+            this.uchPlanDataSet.DataSetName = "UchPlanDataSet";
+            this.uchPlanDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // квалификацииBindingSource
+            // 
+            this.квалификацииBindingSource.DataMember = "Квалификации";
+            this.квалификацииBindingSource.DataSource = this.uchPlanDataSet;
+            // 
+            // квалификацииTableAdapter
+            // 
+            this.квалификацииTableAdapter.ClearBeforeFill = true;
             // 
             // кодDataGridViewTextBoxColumn
             // 
@@ -154,20 +170,6 @@
             this.срокОбученияDataGridViewTextBoxColumn.ReadOnly = true;
             this.срокОбученияDataGridViewTextBoxColumn.Width = 97;
             // 
-            // квалификацииBindingSource
-            // 
-            this.квалификацииBindingSource.DataMember = "Квалификации";
-            this.квалификацииBindingSource.DataSource = this.uchPlanDataSet;
-            // 
-            // uchPlanDataSet
-            // 
-            this.uchPlanDataSet.DataSetName = "UchPlanDataSet";
-            this.uchPlanDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // квалификацииTableAdapter
-            // 
-            this.квалификацииTableAdapter.ClearBeforeFill = true;
-            // 
             // Kvalifikacii
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -186,8 +188,8 @@
             this.Load += new System.EventHandler(this.Kvalifikacii_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtGrdVw)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_years)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.квалификацииBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.квалификацииBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

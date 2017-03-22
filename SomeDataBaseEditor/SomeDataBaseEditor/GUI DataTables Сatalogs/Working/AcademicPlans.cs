@@ -52,6 +52,8 @@ namespace SomeDataBaseEditor.GUI_DataTables.Working
 
         private void AcademicPlans_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "uchPlanDataSet.Учебные_планы". При необходимости она может быть перемещена или удалена.
+            this.учебные_планыTableAdapter.Fill(this.uchPlanDataSet.Учебные_планы);
             UpdateDataGridView();
         }
 

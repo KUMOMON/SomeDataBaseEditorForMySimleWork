@@ -66,6 +66,10 @@ namespace SomeDataBaseEditor.GUI_DataTables.Working
             foreach (var i in new int[] { 0, 2 })
                 if (i < dtGrdVw.Columns.Count)
                     dtGrdVw.Columns[i].Visible = false;
+            if(dtGrdVw.Rows.Count>0)
+            {
+                dtGrdVw.Select();
+            }
         }
 
         /// <summary>
@@ -172,7 +176,7 @@ namespace SomeDataBaseEditor.GUI_DataTables.Working
             try
             {
                 дисциплина_как_часть_семестраTableAdapter1
-                    .Insert(SemesterID, DisciplineID, hoursAuditor, hoursPractic, hoursPractic);
+                    .Insert(SemesterID, DisciplineID, hoursAuditor, hoursPractic, hoursKSR);
             }
             catch (System.Data.SqlClient.SqlException)
             {
@@ -195,13 +199,13 @@ namespace SomeDataBaseEditor.GUI_DataTables.Working
             try
             {
                 дисциплина_как_часть_семестраTableAdapter1
-                    .Update(SemesterID, DisciplineID, hoursAuditor, hoursPractic, hoursPractic,curID);
+                    .Update(SemesterID, DisciplineID, hoursAuditor, hoursPractic, hoursKSR, curID);
             }
             catch (System.Data.SqlClient.SqlException)
             {
                 MessageBox.Show("Во время обновления записи произошла ошибка", "Ошибка обновления", MessageBoxButtons.OK);
             }
-
+            updateDataGridView();
         }
 
         private void btn_delete_Click(object sender, EventArgs e)
@@ -215,6 +219,7 @@ namespace SomeDataBaseEditor.GUI_DataTables.Working
             {
                 MessageBox.Show("Во время удаления записи произошла ошибка", "Ошибка удаления", MessageBoxButtons.OK);
             }
+            updateDataGridView();
         }
     }
 }

@@ -46,6 +46,8 @@
             // 
             // dtGrdVw
             // 
+            this.dtGrdVw.AllowUserToAddRows = false;
+            this.dtGrdVw.AllowUserToDeleteRows = false;
             this.dtGrdVw.AutoGenerateColumns = false;
             this.dtGrdVw.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGrdVw.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
