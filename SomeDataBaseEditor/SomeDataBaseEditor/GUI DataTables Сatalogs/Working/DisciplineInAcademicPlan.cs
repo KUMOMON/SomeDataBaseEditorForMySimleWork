@@ -98,7 +98,7 @@ namespace SomeDataBaseEditor.GUI_DataTables.Working
             var curID = Convert.ToInt32(dtGrdVw.Rows[dtGrdVw.CurrentRow.Index].Cells[0].Value);
 
             var DisciplineID = Convert.ToInt32(cmbBx_nameDiscipline.SelectedValue);
-            var DisciplineShifr = Convert.ToString(dtGrdVw.Rows[dtGrdVw.CurrentRow.Index].Cells[6].Value);
+            var DisciplineShifr = Convert.ToString(txtBx_shifrDiscipline.Text);
             var KafedraID = Convert.ToInt32(cmbBx_kafedra.SelectedValue);
             var typeDisciplineID = Convert.ToInt32(cmbBx_typeDiscipline.SelectedValue);
             var hoursAuditor = Convert.ToInt16(numUpDwn_hoursAuditor.Value);

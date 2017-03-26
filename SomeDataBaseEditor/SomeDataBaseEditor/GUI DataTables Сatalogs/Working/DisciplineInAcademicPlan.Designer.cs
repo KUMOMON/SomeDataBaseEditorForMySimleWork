@@ -85,14 +85,14 @@
             // 
             // cmbBx_nameDiscipline
             // 
-            this.cmbBx_nameDiscipline.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cmbBx_nameDiscipline.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbBx_nameDiscipline.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbBx_nameDiscipline.DataSource = this.дисциплиныBindingSource;
             this.cmbBx_nameDiscipline.DisplayMember = "Имя";
             this.cmbBx_nameDiscipline.FormattingEnabled = true;
             this.cmbBx_nameDiscipline.Location = new System.Drawing.Point(12, 379);
             this.cmbBx_nameDiscipline.Name = "cmbBx_nameDiscipline";
-            this.cmbBx_nameDiscipline.Size = new System.Drawing.Size(248, 21);
+            this.cmbBx_nameDiscipline.Size = new System.Drawing.Size(330, 21);
             this.cmbBx_nameDiscipline.TabIndex = 1;
             this.cmbBx_nameDiscipline.ValueMember = "Код";
             // 

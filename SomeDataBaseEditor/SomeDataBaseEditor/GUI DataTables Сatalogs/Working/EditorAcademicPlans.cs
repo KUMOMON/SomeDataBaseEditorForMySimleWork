@@ -50,21 +50,33 @@ namespace SomeDataBaseEditor.GUI_DataTables.Working
         private void EditorAcademicPlans_Load(object sender, EventArgs e)
         {
             
+
             updateDataBaseInfo();
         }
 
         private void updateDataBaseInfo()
         {
-            //Предупреждение!: порядок загрузки имеет значение!
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "uchPlanDataSet1.Профили_подготовки". При необходимости она может быть перемещена или удалена.
-            this.профили_подготовкиTableAdapter1.Fill(this.uchPlanDataSet1.Профили_подготовки);
+            #region Заполнение профили_подготовки comboBox
+            var query = "SELECT Код, Имя, [Код направления подготовки] FROM[Профили подготовки]";
+            var dt = helpers.GetDataTable(query);
+
+            cmbBx__Profil.DataSource = dt;
+            cmbBx__Profil.DisplayMember = "Имя";
+            cmbBx__Profil.ValueMember = "Код"; 
+            #endregion
+
+
 
             // TODO: данная строка кода позволяет загрузить данные в таблицу "uchPlanDataSet1.Формы_обучения". При необходимости она может быть перемещена или удалена.
             this.формы_обученияTableAdapter1.Fill(this.uchPlanDataSet1.Формы_обучения);
 
             // TODO: данная строка кода позволяет загрузить данные в таблицу "uchPlanDataSet1.Квалификации". При необходимости она может быть перемещена или удалена.
             this.квалификацииTableAdapter1.Fill(this.uchPlanDataSet1.Квалификации);
-            
+
+
+
+
+
 
         }
 

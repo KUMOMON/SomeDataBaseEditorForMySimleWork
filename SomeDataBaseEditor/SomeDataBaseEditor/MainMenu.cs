@@ -16,11 +16,6 @@ namespace SomeDataBaseEditor
             InitializeComponent();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         /// <summary>
         /// Справочник реализуемых компетенций дисциплинами
         /// </summary>

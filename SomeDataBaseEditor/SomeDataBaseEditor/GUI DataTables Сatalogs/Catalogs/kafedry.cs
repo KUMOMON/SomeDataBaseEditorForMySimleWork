@@ -18,7 +18,7 @@ namespace SomeDataBaseEditor.GUI_DataTables.Catalogs
         private void dtGrdVw_SelectionChanged(object sender, System.EventArgs e)
         {
             if(dtGrdVw.SelectedRows.Count>0)
-                txtBx.Text = Convert.ToString(dtGrdVw.Rows[dtGrdVw.CurrentRow.Index].Cells[1].Value);
+                cmbBx.Text = Convert.ToString(dtGrdVw.Rows[dtGrdVw.CurrentRow.Index].Cells[1].Value);
         }
 
         private void updateDataGridView()
@@ -31,7 +31,7 @@ namespace SomeDataBaseEditor.GUI_DataTables.Catalogs
         {
             try
             {
-                кафедрыTableAdapter.Insert(txtBx.Text);
+                кафедрыTableAdapter.Insert(cmbBx.Text);
             }
             catch (System.Data.SqlClient.SqlException sqlEx)
             {
@@ -45,7 +45,7 @@ namespace SomeDataBaseEditor.GUI_DataTables.Catalogs
             Int32 curID= Convert.ToInt32(dtGrdVw.Rows[dtGrdVw.CurrentRow.Index].Cells[0].Value);
             try
             {
-                кафедрыTableAdapter.Update(txtBx.Text,curID);
+                кафедрыTableAdapter.Update(cmbBx.Text,curID);
             }
             catch (System.Data.SqlClient.SqlException sqlEx)
             {

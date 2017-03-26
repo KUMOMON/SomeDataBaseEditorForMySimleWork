@@ -51,16 +51,27 @@ namespace SomeDataBaseEditor.GUI_DataTables.Working
         }
 
         private void AcademicPlans_Load(object sender, EventArgs e)
-        {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "uchPlanDataSet.Учебные_планы". При необходимости она может быть перемещена или удалена.
-            this.учебные_планыTableAdapter.Fill(this.uchPlanDataSet.Учебные_планы);
+        { 
             UpdateDataGridView();
         }
 
         private void UpdateDataGridView()
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "uchPlanDataSet.Учебные_планы". При необходимости она может быть перемещена или удалена.
-            this.учебные_планыTableAdapter.Fill(this.uchPlanDataSet.Учебные_планы);
+            dataGridView1.Columns.Clear();
+            var query = "SELECT [Учебные планы].Код, [Профили подготовки].Имя AS [Профиль подогтовки], Квалификации.Имя AS Квалификация, Квалификации.[Срок обучения], [Учебные планы].[Дата утверждения],"
+                         + " [Учебные планы].[Кто утвердил], [Формы обучения].Имя AS [Форма обучения], [Учебные планы].[Код профиля подготовки], [Учебные планы].[Код квалификации],"
+                         + " [Учебные планы].[Код формы обучения]"
+                         + " FROM [Учебные планы] "
+                         + " INNER JOIN [Профили подготовки] ON [Учебные планы].[Код профиля подготовки] = [Профили подготовки].Код "
+                         + " INNER JOIN [Формы обучения] ON [Учебные планы].[Код формы обучения] = [Формы обучения].Код "
+                         + " INNER JOIN Квалификации ON [Учебные планы].[Код квалификации] = Квалификации.Код";
+
+            var table = helpers.GetDataTable(query);
+
+            dataGridView1.DataSource = table;
+
+            foreach(int i in new int[] {0,7,8,9})
+                dataGridView1.Columns[i].Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -102,11 +113,11 @@ namespace SomeDataBaseEditor.GUI_DataTables.Working
         private void button2_Click(object sender, EventArgs e)
         {
             var curID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value);
-            var profilID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[2].Value);
-            var kvalificaziyaID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[4].Value);
-            var dateVerefication = Convert.ToDateTime(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[5].Value);
-            var nameVerefication = Convert.ToString(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[6].Value);
-            var formEduID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[8].Value);
+            var profilID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[7].Value);
+            var kvalificaziyaID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[8].Value);
+            var dateVerefication = Convert.ToDateTime(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[4].Value);
+            var nameVerefication = Convert.ToString(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[5].Value);
+            var formEduID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[9].Value);
            
             using (var form = new SomeDataBaseEditor.GUI_DataTables.Working.EditorAcademicPlans())
             {
