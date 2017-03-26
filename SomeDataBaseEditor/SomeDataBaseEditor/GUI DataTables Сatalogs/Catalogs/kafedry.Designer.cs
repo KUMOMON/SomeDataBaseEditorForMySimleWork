@@ -32,13 +32,13 @@
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_update = new System.Windows.Forms.Button();
             this.btn_insert = new System.Windows.Forms.Button();
-            this.txtBx = new System.Windows.Forms.TextBox();
             this.dtGrdVw = new System.Windows.Forms.DataGridView();
             this.кодDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.имяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.кафедрыBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uchPlanDataSet = new SomeDataBaseEditor.UchPlanDataSet();
             this.кафедрыTableAdapter = new SomeDataBaseEditor.UchPlanDataSetTableAdapters.КафедрыTableAdapter();
+            this.cmbBx = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtGrdVw)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.кафедрыBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).BeginInit();
@@ -73,13 +73,6 @@
             this.btn_insert.Text = "Insert";
             this.btn_insert.UseVisualStyleBackColor = true;
             this.btn_insert.Click += new System.EventHandler(this.btn_insert_Click);
-            // 
-            // txtBx
-            // 
-            this.txtBx.Location = new System.Drawing.Point(12, 350);
-            this.txtBx.Name = "txtBx";
-            this.txtBx.Size = new System.Drawing.Size(352, 20);
-            this.txtBx.TabIndex = 17;
             // 
             // dtGrdVw
             // 
@@ -132,15 +125,28 @@
             // 
             this.кафедрыTableAdapter.ClearBeforeFill = true;
             // 
+            // cmbBx
+            // 
+            this.cmbBx.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbBx.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbBx.DataSource = this.кафедрыBindingSource;
+            this.cmbBx.DisplayMember = "Имя";
+            this.cmbBx.FormattingEnabled = true;
+            this.cmbBx.Location = new System.Drawing.Point(12, 349);
+            this.cmbBx.Name = "cmbBx";
+            this.cmbBx.Size = new System.Drawing.Size(352, 21);
+            this.cmbBx.TabIndex = 21;
+            this.cmbBx.ValueMember = "Код";
+            // 
             // kafedry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(376, 430);
+            this.ClientSize = new System.Drawing.Size(379, 430);
+            this.Controls.Add(this.cmbBx);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_update);
             this.Controls.Add(this.btn_insert);
-            this.Controls.Add(this.txtBx);
             this.Controls.Add(this.dtGrdVw);
             this.Name = "kafedry";
             this.Text = "Список кафедр";
@@ -149,7 +155,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.кафедрыBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -158,12 +163,12 @@
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Button btn_update;
         private System.Windows.Forms.Button btn_insert;
-        private System.Windows.Forms.TextBox txtBx;
         private System.Windows.Forms.DataGridView dtGrdVw;
         private UchPlanDataSet uchPlanDataSet;
         private System.Windows.Forms.BindingSource кафедрыBindingSource;
         private UchPlanDataSetTableAdapters.КафедрыTableAdapter кафедрыTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn имяDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ComboBox cmbBx;
     }
 }

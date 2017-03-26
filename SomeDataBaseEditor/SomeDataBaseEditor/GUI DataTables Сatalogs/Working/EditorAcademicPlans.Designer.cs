@@ -32,7 +32,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.cmbBx__Profil = new System.Windows.Forms.ComboBox();
+            this.uchPlanDataSet1 = new SomeDataBaseEditor.UchPlanDataSet();
             this.cmbBx_kvalifikacia = new System.Windows.Forms.ComboBox();
+            this.квалификацииBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dtTmPcker_DateVerefic = new System.Windows.Forms.DateTimePicker();
             this.lbl_Profil = new System.Windows.Forms.Label();
             this.txtBx_NameVerefic = new System.Windows.Forms.TextBox();
@@ -41,20 +43,13 @@
             this.lbl_NameVerefic = new System.Windows.Forms.Label();
             this.lbl_EduForm = new System.Windows.Forms.Label();
             this.cmbBx_EduForm = new System.Windows.Forms.ComboBox();
-            this.lbl_Napravlenie = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.cmbBx_Napravlenie = new System.Windows.Forms.ComboBox();
-            this.uchPlanDataSet1 = new SomeDataBaseEditor.UchPlanDataSet();
-            this.направленияПодготовкиBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.направления_подготовкиTableAdapter1 = new SomeDataBaseEditor.UchPlanDataSetTableAdapters.Направления_подготовкиTableAdapter();
-            this.профилиПодготовкиBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.профили_подготовкиTableAdapter1 = new SomeDataBaseEditor.UchPlanDataSetTableAdapters.Профили_подготовкиTableAdapter();
-            this.квалификацииBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.формыОбученияBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.квалификацииTableAdapter1 = new SomeDataBaseEditor.UchPlanDataSetTableAdapters.КвалификацииTableAdapter();
+            this.формы_обученияTableAdapter1 = new SomeDataBaseEditor.UchPlanDataSetTableAdapters.Формы_обученияTableAdapter();
+            this.профили_подготовкиTableAdapter = new SomeDataBaseEditor.UchPlanDataSetTableAdapters.Профили_подготовкиTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.направленияПодготовкиBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.профилиПодготовкиBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.квалификацииBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.формыОбученияBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -79,8 +74,9 @@
             // 
             // cmbBx__Profil
             // 
-            this.cmbBx__Profil.DataSource = this.профилиПодготовкиBindingSource;
-            this.cmbBx__Profil.DisplayMember = "Имя";
+            this.cmbBx__Profil.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbBx__Profil.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbBx__Profil.DisplayMember = "Код";
             this.cmbBx__Profil.FormattingEnabled = true;
             this.cmbBx__Profil.Location = new System.Drawing.Point(21, 67);
             this.cmbBx__Profil.Name = "cmbBx__Profil";
@@ -88,8 +84,15 @@
             this.cmbBx__Profil.TabIndex = 2;
             this.cmbBx__Profil.ValueMember = "Код";
             // 
+            // uchPlanDataSet1
+            // 
+            this.uchPlanDataSet1.DataSetName = "UchPlanDataSet";
+            this.uchPlanDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // cmbBx_kvalifikacia
             // 
+            this.cmbBx_kvalifikacia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbBx_kvalifikacia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbBx_kvalifikacia.DataSource = this.квалификацииBindingSource;
             this.cmbBx_kvalifikacia.DisplayMember = "Имя";
             this.cmbBx_kvalifikacia.FormattingEnabled = true;
@@ -98,6 +101,11 @@
             this.cmbBx_kvalifikacia.Size = new System.Drawing.Size(354, 21);
             this.cmbBx_kvalifikacia.TabIndex = 3;
             this.cmbBx_kvalifikacia.ValueMember = "Код";
+            // 
+            // квалификацииBindingSource
+            // 
+            this.квалификацииBindingSource.DataMember = "Квалификации";
+            this.квалификацииBindingSource.DataSource = this.uchPlanDataSet1;
             // 
             // dtTmPcker_DateVerefic
             // 
@@ -162,7 +170,10 @@
             // 
             // cmbBx_EduForm
             // 
-            this.cmbBx_EduForm.DisplayMember = "Код";
+            this.cmbBx_EduForm.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbBx_EduForm.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbBx_EduForm.DataSource = this.формыОбученияBindingSource;
+            this.cmbBx_EduForm.DisplayMember = "Имя";
             this.cmbBx_EduForm.FormattingEnabled = true;
             this.cmbBx_EduForm.Location = new System.Drawing.Point(21, 213);
             this.cmbBx_EduForm.Name = "cmbBx_EduForm";
@@ -170,77 +181,28 @@
             this.cmbBx_EduForm.TabIndex = 10;
             this.cmbBx_EduForm.ValueMember = "Код";
             // 
-            // lbl_Napravlenie
+            // формыОбученияBindingSource
             // 
-            this.lbl_Napravlenie.AutoSize = true;
-            this.lbl_Napravlenie.Location = new System.Drawing.Point(18, 5);
-            this.lbl_Napravlenie.Name = "lbl_Napravlenie";
-            this.lbl_Napravlenie.Size = new System.Drawing.Size(116, 13);
-            this.lbl_Napravlenie.TabIndex = 13;
-            this.lbl_Napravlenie.Text = "Фильтр направления";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(353, 20);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(22, 21);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "X";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // cmbBx_Napravlenie
-            // 
-            this.cmbBx_Napravlenie.DataSource = this.направленияПодготовкиBindingSource;
-            this.cmbBx_Napravlenie.DisplayMember = "Имя";
-            this.cmbBx_Napravlenie.FormattingEnabled = true;
-            this.cmbBx_Napravlenie.Location = new System.Drawing.Point(21, 21);
-            this.cmbBx_Napravlenie.Name = "cmbBx_Napravlenie";
-            this.cmbBx_Napravlenie.Size = new System.Drawing.Size(319, 21);
-            this.cmbBx_Napravlenie.TabIndex = 12;
-            this.cmbBx_Napravlenie.ValueMember = "Код";
-            this.cmbBx_Napravlenie.SelectedValueChanged += new System.EventHandler(this.cmbBx_Napravlenie_SelectedValueChanged);
-            // 
-            // uchPlanDataSet1
-            // 
-            this.uchPlanDataSet1.DataSetName = "UchPlanDataSet";
-            this.uchPlanDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // направленияПодготовкиBindingSource
-            // 
-            this.направленияПодготовкиBindingSource.DataMember = "Направления подготовки";
-            this.направленияПодготовкиBindingSource.DataSource = this.uchPlanDataSet1;
-            // 
-            // направления_подготовкиTableAdapter1
-            // 
-            this.направления_подготовкиTableAdapter1.ClearBeforeFill = true;
-            // 
-            // профилиПодготовкиBindingSource
-            // 
-            this.профилиПодготовкиBindingSource.DataMember = "Профили подготовки";
-            this.профилиПодготовкиBindingSource.DataSource = this.uchPlanDataSet1;
-            // 
-            // профили_подготовкиTableAdapter1
-            // 
-            this.профили_подготовкиTableAdapter1.ClearBeforeFill = true;
-            // 
-            // квалификацииBindingSource
-            // 
-            this.квалификацииBindingSource.DataMember = "Квалификации";
-            this.квалификацииBindingSource.DataSource = this.uchPlanDataSet1;
+            this.формыОбученияBindingSource.DataMember = "Формы обучения";
+            this.формыОбученияBindingSource.DataSource = this.uchPlanDataSet1;
             // 
             // квалификацииTableAdapter1
             // 
             this.квалификацииTableAdapter1.ClearBeforeFill = true;
             // 
+            // формы_обученияTableAdapter1
+            // 
+            this.формы_обученияTableAdapter1.ClearBeforeFill = true;
+            // 
+            // профили_подготовкиTableAdapter
+            // 
+            this.профили_подготовкиTableAdapter.ClearBeforeFill = true;
+            // 
             // EditorAcademicPlans
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(422, 321);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.lbl_Napravlenie);
-            this.Controls.Add(this.cmbBx_Napravlenie);
+            this.ClientSize = new System.Drawing.Size(422, 307);
             this.Controls.Add(this.lbl_EduForm);
             this.Controls.Add(this.cmbBx_EduForm);
             this.Controls.Add(this.lbl_NameVerefic);
@@ -259,9 +221,8 @@
             this.Text = "EditorAcademicPlans";
             this.Load += new System.EventHandler(this.EditorAcademicPlans_Load);
             ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.направленияПодготовкиBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.профилиПодготовкиBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.квалификацииBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.формыОбученияBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -282,19 +243,14 @@
         private System.Windows.Forms.Label lbl_EduForm;
         private System.Windows.Forms.ComboBox cmbBx_EduForm;
         private UchPlanDataSet uchPlanDataSet;
-        private UchPlanDataSetTableAdapters.Профили_подготовкиTableAdapter профили_подготовкиTableAdapter;
-        private System.Windows.Forms.Label lbl_Napravlenie;
         private UchPlanDataSetTableAdapters.Направления_подготовкиTableAdapter направления_подготовкиTableAdapter;
-        private System.Windows.Forms.Button button3;
         private UchPlanDataSetTableAdapters.КвалификацииTableAdapter квалификацииTableAdapter;
-        private System.Windows.Forms.ComboBox cmbBx_Napravlenie;
         private UchPlanDataSetTableAdapters.Формы_обученияTableAdapter формы_обученияTableAdapter;
         private UchPlanDataSet uchPlanDataSet1;
-        private System.Windows.Forms.BindingSource направленияПодготовкиBindingSource;
-        private UchPlanDataSetTableAdapters.Направления_подготовкиTableAdapter направления_подготовкиTableAdapter1;
-        private System.Windows.Forms.BindingSource профилиПодготовкиBindingSource;
-        private UchPlanDataSetTableAdapters.Профили_подготовкиTableAdapter профили_подготовкиTableAdapter1;
         private System.Windows.Forms.BindingSource квалификацииBindingSource;
         private UchPlanDataSetTableAdapters.КвалификацииTableAdapter квалификацииTableAdapter1;
+        private System.Windows.Forms.BindingSource формыОбученияBindingSource;
+        private UchPlanDataSetTableAdapters.Формы_обученияTableAdapter формы_обученияTableAdapter1;
+        private UchPlanDataSetTableAdapters.Профили_подготовкиTableAdapter профили_подготовкиTableAdapter;
     }
 }

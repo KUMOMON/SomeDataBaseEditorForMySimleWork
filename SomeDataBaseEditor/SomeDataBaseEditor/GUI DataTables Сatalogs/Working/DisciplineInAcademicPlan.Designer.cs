@@ -85,12 +85,14 @@
             // 
             // cmbBx_nameDiscipline
             // 
+            this.cmbBx_nameDiscipline.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbBx_nameDiscipline.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbBx_nameDiscipline.DataSource = this.дисциплиныBindingSource;
             this.cmbBx_nameDiscipline.DisplayMember = "Имя";
             this.cmbBx_nameDiscipline.FormattingEnabled = true;
             this.cmbBx_nameDiscipline.Location = new System.Drawing.Point(12, 379);
             this.cmbBx_nameDiscipline.Name = "cmbBx_nameDiscipline";
-            this.cmbBx_nameDiscipline.Size = new System.Drawing.Size(248, 21);
+            this.cmbBx_nameDiscipline.Size = new System.Drawing.Size(330, 21);
             this.cmbBx_nameDiscipline.TabIndex = 1;
             this.cmbBx_nameDiscipline.ValueMember = "Код";
             // 
@@ -131,6 +133,8 @@
             // 
             // cmbBx_kafedra
             // 
+            this.cmbBx_kafedra.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cmbBx_kafedra.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbBx_kafedra.DataSource = this.кафедрыBindingSource;
             this.cmbBx_kafedra.DisplayMember = "Имя";
             this.cmbBx_kafedra.FormattingEnabled = true;
@@ -191,6 +195,11 @@
             // numUpDwn_hoursAuditor
             // 
             this.numUpDwn_hoursAuditor.Location = new System.Drawing.Point(133, 23);
+            this.numUpDwn_hoursAuditor.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
             this.numUpDwn_hoursAuditor.Name = "numUpDwn_hoursAuditor";
             this.numUpDwn_hoursAuditor.Size = new System.Drawing.Size(61, 20);
             this.numUpDwn_hoursAuditor.TabIndex = 10;
@@ -198,6 +207,11 @@
             // numUpDwn_hoursSamost
             // 
             this.numUpDwn_hoursSamost.Location = new System.Drawing.Point(133, 47);
+            this.numUpDwn_hoursSamost.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
             this.numUpDwn_hoursSamost.Name = "numUpDwn_hoursSamost";
             this.numUpDwn_hoursSamost.Size = new System.Drawing.Size(61, 20);
             this.numUpDwn_hoursSamost.TabIndex = 12;
@@ -214,6 +228,11 @@
             // numUpDwn_vsegoZet
             // 
             this.numUpDwn_vsegoZet.Location = new System.Drawing.Point(133, 73);
+            this.numUpDwn_vsegoZet.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
             this.numUpDwn_vsegoZet.Name = "numUpDwn_vsegoZet";
             this.numUpDwn_vsegoZet.Size = new System.Drawing.Size(61, 20);
             this.numUpDwn_vsegoZet.TabIndex = 14;
@@ -229,7 +248,7 @@
             // 
             // btn_insert
             // 
-            this.btn_insert.Location = new System.Drawing.Point(508, 363);
+            this.btn_insert.Location = new System.Drawing.Point(627, 363);
             this.btn_insert.Name = "btn_insert";
             this.btn_insert.Size = new System.Drawing.Size(91, 32);
             this.btn_insert.TabIndex = 15;
@@ -239,7 +258,7 @@
             // 
             // btn_delete
             // 
-            this.btn_delete.Location = new System.Drawing.Point(508, 439);
+            this.btn_delete.Location = new System.Drawing.Point(627, 439);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(91, 32);
             this.btn_delete.TabIndex = 16;
@@ -249,7 +268,7 @@
             // 
             // btn_update
             // 
-            this.btn_update.Location = new System.Drawing.Point(508, 401);
+            this.btn_update.Location = new System.Drawing.Point(627, 401);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(91, 32);
             this.btn_update.TabIndex = 17;
@@ -265,7 +284,7 @@
             this.groupBox2.Controls.Add(this.numUpDwn_hoursSamost);
             this.groupBox2.Controls.Add(this.numUpDwn_hoursAuditor);
             this.groupBox2.Controls.Add(this.lbl_hoursAuditor);
-            this.groupBox2.Location = new System.Drawing.Point(292, 363);
+            this.groupBox2.Location = new System.Drawing.Point(348, 363);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 108);
             this.groupBox2.TabIndex = 24;
@@ -274,7 +293,7 @@
             // 
             // btn_go_semesters
             // 
-            this.btn_go_semesters.Location = new System.Drawing.Point(508, 477);
+            this.btn_go_semesters.Location = new System.Drawing.Point(627, 477);
             this.btn_go_semesters.Name = "btn_go_semesters";
             this.btn_go_semesters.Size = new System.Drawing.Size(91, 32);
             this.btn_go_semesters.TabIndex = 25;
@@ -308,7 +327,7 @@
             this.dtGrdVw.Name = "dtGrdVw";
             this.dtGrdVw.ReadOnly = true;
             this.dtGrdVw.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtGrdVw.Size = new System.Drawing.Size(584, 345);
+            this.dtGrdVw.Size = new System.Drawing.Size(860, 345);
             this.dtGrdVw.TabIndex = 26;
             this.dtGrdVw.SelectionChanged += new System.EventHandler(this.dtGrdVw_SelectionChanged);
             // 
@@ -431,7 +450,7 @@
             // 
             // btn_realizKompetenc
             // 
-            this.btn_realizKompetenc.Location = new System.Drawing.Point(292, 472);
+            this.btn_realizKompetenc.Location = new System.Drawing.Point(348, 475);
             this.btn_realizKompetenc.Name = "btn_realizKompetenc";
             this.btn_realizKompetenc.Size = new System.Drawing.Size(200, 37);
             this.btn_realizKompetenc.TabIndex = 15;
@@ -443,7 +462,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(606, 515);
+            this.ClientSize = new System.Drawing.Size(882, 515);
             this.Controls.Add(this.btn_realizKompetenc);
             this.Controls.Add(this.dtGrdVw);
             this.Controls.Add(this.btn_go_semesters);

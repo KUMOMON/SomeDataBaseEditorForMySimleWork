@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.учебныеПланыBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uchPlanDataSet = new SomeDataBaseEditor.UchPlanDataSet();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -38,18 +36,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.учебные_планыTableAdapter = new SomeDataBaseEditor.UchPlanDataSetTableAdapters.Учебные_планыTableAdapter();
-            this.кодDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.профильПодогтовкиDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.кодПрофиляПодготовкиDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.квалификацияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.кодКвалификацииDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.датаУтвержденияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ктоУтвердилDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.формаОбученияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.кодФормыОбученияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.срокОбученияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.учебныеПланыBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,22 +44,9 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.кодDataGridViewTextBoxColumn,
-            this.профильПодогтовкиDataGridViewTextBoxColumn,
-            this.кодПрофиляПодготовкиDataGridViewTextBoxColumn,
-            this.квалификацияDataGridViewTextBoxColumn,
-            this.кодКвалификацииDataGridViewTextBoxColumn,
-            this.датаУтвержденияDataGridViewTextBoxColumn,
-            this.ктоУтвердилDataGridViewTextBoxColumn,
-            this.формаОбученияDataGridViewTextBoxColumn,
-            this.кодФормыОбученияDataGridViewTextBoxColumn,
-            this.срокОбученияDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.учебныеПланыBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
@@ -80,11 +54,6 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(927, 352);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // учебныеПланыBindingSource
-            // 
-            this.учебныеПланыBindingSource.DataMember = "Учебные планы";
-            this.учебныеПланыBindingSource.DataSource = this.uchPlanDataSet;
             // 
             // uchPlanDataSet
             // 
@@ -145,90 +114,6 @@
             // 
             this.учебные_планыTableAdapter.ClearBeforeFill = true;
             // 
-            // кодDataGridViewTextBoxColumn
-            // 
-            this.кодDataGridViewTextBoxColumn.DataPropertyName = "Код";
-            this.кодDataGridViewTextBoxColumn.HeaderText = "Код";
-            this.кодDataGridViewTextBoxColumn.Name = "кодDataGridViewTextBoxColumn";
-            this.кодDataGridViewTextBoxColumn.ReadOnly = true;
-            this.кодDataGridViewTextBoxColumn.Visible = false;
-            this.кодDataGridViewTextBoxColumn.Width = 51;
-            // 
-            // профильПодогтовкиDataGridViewTextBoxColumn
-            // 
-            this.профильПодогтовкиDataGridViewTextBoxColumn.DataPropertyName = "Профиль подогтовки";
-            this.профильПодогтовкиDataGridViewTextBoxColumn.HeaderText = "Профиль подогтовки";
-            this.профильПодогтовкиDataGridViewTextBoxColumn.Name = "профильПодогтовкиDataGridViewTextBoxColumn";
-            this.профильПодогтовкиDataGridViewTextBoxColumn.ReadOnly = true;
-            this.профильПодогтовкиDataGridViewTextBoxColumn.Width = 127;
-            // 
-            // кодПрофиляПодготовкиDataGridViewTextBoxColumn
-            // 
-            this.кодПрофиляПодготовкиDataGridViewTextBoxColumn.DataPropertyName = "Код профиля подготовки";
-            this.кодПрофиляПодготовкиDataGridViewTextBoxColumn.HeaderText = "Код профиля подготовки";
-            this.кодПрофиляПодготовкиDataGridViewTextBoxColumn.Name = "кодПрофиляПодготовкиDataGridViewTextBoxColumn";
-            this.кодПрофиляПодготовкиDataGridViewTextBoxColumn.ReadOnly = true;
-            this.кодПрофиляПодготовкиDataGridViewTextBoxColumn.Visible = false;
-            this.кодПрофиляПодготовкиDataGridViewTextBoxColumn.Width = 145;
-            // 
-            // квалификацияDataGridViewTextBoxColumn
-            // 
-            this.квалификацияDataGridViewTextBoxColumn.DataPropertyName = "Квалификация";
-            this.квалификацияDataGridViewTextBoxColumn.HeaderText = "Квалификация";
-            this.квалификацияDataGridViewTextBoxColumn.Name = "квалификацияDataGridViewTextBoxColumn";
-            this.квалификацияDataGridViewTextBoxColumn.ReadOnly = true;
-            this.квалификацияDataGridViewTextBoxColumn.Width = 107;
-            // 
-            // кодКвалификацииDataGridViewTextBoxColumn
-            // 
-            this.кодКвалификацииDataGridViewTextBoxColumn.DataPropertyName = "Код квалификации";
-            this.кодКвалификацииDataGridViewTextBoxColumn.HeaderText = "Код квалификации";
-            this.кодКвалификацииDataGridViewTextBoxColumn.Name = "кодКвалификацииDataGridViewTextBoxColumn";
-            this.кодКвалификацииDataGridViewTextBoxColumn.ReadOnly = true;
-            this.кодКвалификацииDataGridViewTextBoxColumn.Visible = false;
-            this.кодКвалификацииDataGridViewTextBoxColumn.Width = 117;
-            // 
-            // датаУтвержденияDataGridViewTextBoxColumn
-            // 
-            this.датаУтвержденияDataGridViewTextBoxColumn.DataPropertyName = "Дата утверждения";
-            this.датаУтвержденияDataGridViewTextBoxColumn.HeaderText = "Дата утверждения";
-            this.датаУтвержденияDataGridViewTextBoxColumn.Name = "датаУтвержденияDataGridViewTextBoxColumn";
-            this.датаУтвержденияDataGridViewTextBoxColumn.ReadOnly = true;
-            this.датаУтвержденияDataGridViewTextBoxColumn.Width = 116;
-            // 
-            // ктоУтвердилDataGridViewTextBoxColumn
-            // 
-            this.ктоУтвердилDataGridViewTextBoxColumn.DataPropertyName = "Кто утвердил";
-            this.ктоУтвердилDataGridViewTextBoxColumn.HeaderText = "Кто утвердил";
-            this.ктоУтвердилDataGridViewTextBoxColumn.Name = "ктоУтвердилDataGridViewTextBoxColumn";
-            this.ктоУтвердилDataGridViewTextBoxColumn.ReadOnly = true;
-            this.ктоУтвердилDataGridViewTextBoxColumn.Width = 91;
-            // 
-            // формаОбученияDataGridViewTextBoxColumn
-            // 
-            this.формаОбученияDataGridViewTextBoxColumn.DataPropertyName = "Форма обучения";
-            this.формаОбученияDataGridViewTextBoxColumn.HeaderText = "Форма обучения";
-            this.формаОбученияDataGridViewTextBoxColumn.Name = "формаОбученияDataGridViewTextBoxColumn";
-            this.формаОбученияDataGridViewTextBoxColumn.ReadOnly = true;
-            this.формаОбученияDataGridViewTextBoxColumn.Width = 108;
-            // 
-            // кодФормыОбученияDataGridViewTextBoxColumn
-            // 
-            this.кодФормыОбученияDataGridViewTextBoxColumn.DataPropertyName = "Код формы обучения";
-            this.кодФормыОбученияDataGridViewTextBoxColumn.HeaderText = "Код формы обучения";
-            this.кодФормыОбученияDataGridViewTextBoxColumn.Name = "кодФормыОбученияDataGridViewTextBoxColumn";
-            this.кодФормыОбученияDataGridViewTextBoxColumn.ReadOnly = true;
-            this.кодФормыОбученияDataGridViewTextBoxColumn.Visible = false;
-            this.кодФормыОбученияDataGridViewTextBoxColumn.Width = 127;
-            // 
-            // срокОбученияDataGridViewTextBoxColumn
-            // 
-            this.срокОбученияDataGridViewTextBoxColumn.DataPropertyName = "Срок обучения";
-            this.срокОбученияDataGridViewTextBoxColumn.HeaderText = "Срок обучения";
-            this.срокОбученияDataGridViewTextBoxColumn.Name = "срокОбученияDataGridViewTextBoxColumn";
-            this.срокОбученияDataGridViewTextBoxColumn.ReadOnly = true;
-            this.срокОбученияDataGridViewTextBoxColumn.Width = 97;
-            // 
             // AcademicPlans
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -244,7 +129,6 @@
             this.Text = "Academic_plans";
             this.Load += new System.EventHandler(this.AcademicPlans_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.учебныеПланыBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).EndInit();
             this.ResumeLayout(false);
 
@@ -259,17 +143,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button6;
         private UchPlanDataSet uchPlanDataSet;
-        private System.Windows.Forms.BindingSource учебныеПланыBindingSource;
         private UchPlanDataSetTableAdapters.Учебные_планыTableAdapter учебные_планыTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn профильПодогтовкиDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn кодПрофиляПодготовкиDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn квалификацияDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn кодКвалификацииDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn датаУтвержденияDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ктоУтвердилDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn формаОбученияDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn кодФормыОбученияDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn срокОбученияDataGridViewTextBoxColumn;
     }
 }
