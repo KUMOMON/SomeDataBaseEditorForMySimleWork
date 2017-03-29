@@ -37,7 +37,9 @@
             this.cmbBx_FormControl = new System.Windows.Forms.ComboBox();
             this.формыКонтроляBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBx_Hours = new System.Windows.Forms.GroupBox();
+            this.numUpDwn_hoursLab = new System.Windows.Forms.NumericUpDown();
             this.numUpDwn_hoursKSR = new System.Windows.Forms.NumericUpDown();
+            this.lbl_hoursLab = new System.Windows.Forms.Label();
             this.numUpDwn_hoursPract = new System.Windows.Forms.NumericUpDown();
             this.numUpDwn_hoursAuditor = new System.Windows.Forms.NumericUpDown();
             this.lbl_hoursKSR = new System.Windows.Forms.Label();
@@ -59,6 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.uchPlanDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.формыКонтроляBindingSource)).BeginInit();
             this.groupBx_Hours.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_hoursLab)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_hoursKSR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_hoursPract)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_hoursAuditor)).BeginInit();
@@ -113,7 +116,7 @@
             this.cmbBx_FormControl.DataSource = this.формыКонтроляBindingSource;
             this.cmbBx_FormControl.DisplayMember = "Имя";
             this.cmbBx_FormControl.FormattingEnabled = true;
-            this.cmbBx_FormControl.Location = new System.Drawing.Point(6, 94);
+            this.cmbBx_FormControl.Location = new System.Drawing.Point(6, 126);
             this.cmbBx_FormControl.Name = "cmbBx_FormControl";
             this.cmbBx_FormControl.Size = new System.Drawing.Size(140, 21);
             this.cmbBx_FormControl.TabIndex = 25;
@@ -126,7 +129,9 @@
             // 
             // groupBx_Hours
             // 
+            this.groupBx_Hours.Controls.Add(this.numUpDwn_hoursLab);
             this.groupBx_Hours.Controls.Add(this.numUpDwn_hoursKSR);
+            this.groupBx_Hours.Controls.Add(this.lbl_hoursLab);
             this.groupBx_Hours.Controls.Add(this.numUpDwn_hoursPract);
             this.groupBx_Hours.Controls.Add(this.numUpDwn_hoursAuditor);
             this.groupBx_Hours.Controls.Add(this.lbl_hoursKSR);
@@ -134,21 +139,37 @@
             this.groupBx_Hours.Controls.Add(this.lbl_hoursAuditor);
             this.groupBx_Hours.Location = new System.Drawing.Point(17, 216);
             this.groupBx_Hours.Name = "groupBx_Hours";
-            this.groupBx_Hours.Size = new System.Drawing.Size(251, 109);
+            this.groupBx_Hours.Size = new System.Drawing.Size(251, 142);
             this.groupBx_Hours.TabIndex = 28;
             this.groupBx_Hours.TabStop = false;
             this.groupBx_Hours.Text = "Часы";
             // 
+            // numUpDwn_hoursLab
+            // 
+            this.numUpDwn_hoursLab.Location = new System.Drawing.Point(168, 51);
+            this.numUpDwn_hoursLab.Name = "numUpDwn_hoursLab";
+            this.numUpDwn_hoursLab.Size = new System.Drawing.Size(73, 20);
+            this.numUpDwn_hoursLab.TabIndex = 7;
+            // 
             // numUpDwn_hoursKSR
             // 
-            this.numUpDwn_hoursKSR.Location = new System.Drawing.Point(168, 70);
+            this.numUpDwn_hoursKSR.Location = new System.Drawing.Point(168, 111);
             this.numUpDwn_hoursKSR.Name = "numUpDwn_hoursKSR";
             this.numUpDwn_hoursKSR.Size = new System.Drawing.Size(73, 20);
             this.numUpDwn_hoursKSR.TabIndex = 5;
             // 
+            // lbl_hoursLab
+            // 
+            this.lbl_hoursLab.AutoSize = true;
+            this.lbl_hoursLab.Location = new System.Drawing.Point(6, 45);
+            this.lbl_hoursLab.Name = "lbl_hoursLab";
+            this.lbl_hoursLab.Size = new System.Drawing.Size(82, 26);
+            this.lbl_hoursLab.TabIndex = 6;
+            this.lbl_hoursLab.Text = "лабораторных \r\nработ";
+            // 
             // numUpDwn_hoursPract
             // 
-            this.numUpDwn_hoursPract.Location = new System.Drawing.Point(168, 44);
+            this.numUpDwn_hoursPract.Location = new System.Drawing.Point(168, 82);
             this.numUpDwn_hoursPract.Name = "numUpDwn_hoursPract";
             this.numUpDwn_hoursPract.Size = new System.Drawing.Size(73, 20);
             this.numUpDwn_hoursPract.TabIndex = 4;
@@ -163,7 +184,7 @@
             // lbl_hoursKSR
             // 
             this.lbl_hoursKSR.AutoSize = true;
-            this.lbl_hoursKSR.Location = new System.Drawing.Point(6, 70);
+            this.lbl_hoursKSR.Location = new System.Drawing.Point(6, 108);
             this.lbl_hoursKSR.Name = "lbl_hoursKSR";
             this.lbl_hoursKSR.Size = new System.Drawing.Size(123, 26);
             this.lbl_hoursKSR.TabIndex = 2;
@@ -172,7 +193,7 @@
             // lbl_hoursPract
             // 
             this.lbl_hoursPract.AutoSize = true;
-            this.lbl_hoursPract.Location = new System.Drawing.Point(7, 46);
+            this.lbl_hoursPract.Location = new System.Drawing.Point(7, 84);
             this.lbl_hoursPract.Name = "lbl_hoursPract";
             this.lbl_hoursPract.Size = new System.Drawing.Size(56, 13);
             this.lbl_hoursPract.TabIndex = 1;
@@ -189,7 +210,7 @@
             // 
             // btn_insert
             // 
-            this.btn_insert.Location = new System.Drawing.Point(12, 338);
+            this.btn_insert.Location = new System.Drawing.Point(12, 364);
             this.btn_insert.Name = "btn_insert";
             this.btn_insert.Size = new System.Drawing.Size(56, 26);
             this.btn_insert.TabIndex = 29;
@@ -199,7 +220,7 @@
             // 
             // btn_update
             // 
-            this.btn_update.Location = new System.Drawing.Point(185, 338);
+            this.btn_update.Location = new System.Drawing.Point(185, 364);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(56, 26);
             this.btn_update.TabIndex = 30;
@@ -209,7 +230,7 @@
             // 
             // btn_delete
             // 
-            this.btn_delete.Location = new System.Drawing.Point(397, 338);
+            this.btn_delete.Location = new System.Drawing.Point(397, 364);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(56, 26);
             this.btn_delete.TabIndex = 31;
@@ -230,7 +251,7 @@
             this.lstBx_ControlInSemestr.FormattingEnabled = true;
             this.lstBx_ControlInSemestr.Location = new System.Drawing.Point(6, 19);
             this.lstBx_ControlInSemestr.Name = "lstBx_ControlInSemestr";
-            this.lstBx_ControlInSemestr.Size = new System.Drawing.Size(140, 69);
+            this.lstBx_ControlInSemestr.Size = new System.Drawing.Size(140, 95);
             this.lstBx_ControlInSemestr.TabIndex = 32;
             // 
             // формы_Контроля_В_СеместреTableAdapter
@@ -239,7 +260,7 @@
             // 
             // btn_addFormControl
             // 
-            this.btn_addFormControl.Location = new System.Drawing.Point(3, 122);
+            this.btn_addFormControl.Location = new System.Drawing.Point(3, 154);
             this.btn_addFormControl.Name = "btn_addFormControl";
             this.btn_addFormControl.Size = new System.Drawing.Size(63, 23);
             this.btn_addFormControl.TabIndex = 34;
@@ -249,7 +270,7 @@
             // 
             // btn_delFormControl
             // 
-            this.btn_delFormControl.Location = new System.Drawing.Point(83, 122);
+            this.btn_delFormControl.Location = new System.Drawing.Point(83, 154);
             this.btn_delFormControl.Name = "btn_delFormControl";
             this.btn_delFormControl.Size = new System.Drawing.Size(63, 23);
             this.btn_delFormControl.TabIndex = 35;
@@ -265,7 +286,7 @@
             this.groupBox1.Controls.Add(this.btn_addFormControl);
             this.groupBox1.Location = new System.Drawing.Point(300, 173);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(153, 152);
+            this.groupBox1.Size = new System.Drawing.Size(153, 185);
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Формы контроля";
@@ -278,7 +299,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(467, 373);
+            this.ClientSize = new System.Drawing.Size(467, 400);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_update);
@@ -297,6 +318,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.формыКонтроляBindingSource)).EndInit();
             this.groupBx_Hours.ResumeLayout(false);
             this.groupBx_Hours.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_hoursLab)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_hoursKSR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_hoursPract)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDwn_hoursAuditor)).EndInit();
@@ -341,5 +363,7 @@
         private System.Windows.Forms.Button btn_delFormControl;
         private System.Windows.Forms.GroupBox groupBox1;
         private UchPlanDataSetTableAdapters.Дисциплина_как_часть_семестраTableAdapter дисциплина_как_часть_семестраTableAdapter1;
+        private System.Windows.Forms.NumericUpDown numUpDwn_hoursLab;
+        private System.Windows.Forms.Label lbl_hoursLab;
     }
 }

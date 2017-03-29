@@ -52,7 +52,7 @@ namespace SomeDataBaseEditor.GUI_DataTables.Working
             * Часы КСР
             */
             string query = "SELECT [Дисциплина как часть семестра].Код, Семестры.Номер AS [Номер семестра], [Дисциплина как часть семестра].[Код семестра], [Дисциплина как часть семестра].[Часы лекций],"
-                         + " [Дисциплина как часть семестра].[Часы практики], [Дисциплина как часть семестра].[Часы КСР]"
+                         + " [Дисциплина как часть семестра].[Часы лабораторные],[Дисциплина как часть семестра].[Часы практики], [Дисциплина как часть семестра].[Часы КСР]"
                          + " FROM Семестры"
                          + " INNER JOIN [Дисциплина как часть семестра] ON Семестры.Код = [Дисциплина как часть семестра].[Код семестра]"
                          + " WHERE (Семестры.[Код учебного плана] = " + _academicPlanID + ") AND([Дисциплина как часть семестра].[Код Дисциплины] = " + _currentDisciplineID + ")";
@@ -66,10 +66,9 @@ namespace SomeDataBaseEditor.GUI_DataTables.Working
             foreach (var i in new int[] { 0, 2 })
                 if (i < dtGrdVw.Columns.Count)
                     dtGrdVw.Columns[i].Visible = false;
-            if(dtGrdVw.Rows.Count>0)
-            {
+
+            if (dtGrdVw.Rows.Count>0)
                 dtGrdVw.Select();
-            }
         }
 
         /// <summary>
@@ -112,10 +111,12 @@ namespace SomeDataBaseEditor.GUI_DataTables.Working
                 cmbBx_SemesterNum.SelectedValue = dtGrdVw.Rows[dtGrdVw.CurrentRow.Index].Cells[2].Value;
                 //кол-ве часов аудиторных
                 numUpDwn_hoursAuditor.Value = Convert.ToInt16(dtGrdVw.Rows[dtGrdVw.CurrentRow.Index].Cells[3].Value);
+                //кол-ве часов лабораторных
+                numUpDwn_hoursLab.Value = Convert.ToInt16(dtGrdVw.Rows[dtGrdVw.CurrentRow.Index].Cells[4].Value);
                 //кол-ве часов практики
-                numUpDwn_hoursPract.Value = Convert.ToInt16(dtGrdVw.Rows[dtGrdVw.CurrentRow.Index].Cells[4].Value);
+                numUpDwn_hoursPract.Value = Convert.ToInt16(dtGrdVw.Rows[dtGrdVw.CurrentRow.Index].Cells[5].Value);
                 //кол-ве часов КСР (контрольные и самостаятельные работы)
-                numUpDwn_hoursKSR.Value = Convert.ToInt16(dtGrdVw.Rows[dtGrdVw.CurrentRow.Index].Cells[5].Value);
+                numUpDwn_hoursKSR.Value = Convert.ToInt16(dtGrdVw.Rows[dtGrdVw.CurrentRow.Index].Cells[6].Value);
                 //формах контроля
                 updateListBoxFormsControls();
             }
@@ -169,14 +170,15 @@ namespace SomeDataBaseEditor.GUI_DataTables.Working
             var SemesterID = Convert.ToInt32(cmbBx_SemesterNum.SelectedValue);
             var DisciplineID = Convert.ToInt32(_currentDisciplineID);
             var hoursAuditor = Convert.ToInt16(numUpDwn_hoursAuditor.Value);
+            var hoursLab = Convert.ToInt16(numUpDwn_hoursLab.Value);
             var hoursPractic = Convert.ToInt16(numUpDwn_hoursPract.Value);
             var hoursKSR = Convert.ToInt16(numUpDwn_hoursKSR.Value);
-
+            
 
             try
             {
                 дисциплина_как_часть_семестраTableAdapter1
-                    .Insert(SemesterID, DisciplineID, hoursAuditor, hoursPractic, hoursKSR);
+                    .Insert(SemesterID, DisciplineID, hoursAuditor, hoursPractic, hoursKSR,hoursLab);
             }
             catch (System.Data.SqlClient.SqlException)
             {
@@ -192,14 +194,14 @@ namespace SomeDataBaseEditor.GUI_DataTables.Working
             var SemesterID = Convert.ToInt32(cmbBx_SemesterNum.SelectedValue);
             var DisciplineID = Convert.ToInt32(_currentDisciplineID);
             var hoursAuditor = Convert.ToInt16(numUpDwn_hoursAuditor.Value);
+            var hoursLab = Convert.ToInt16(numUpDwn_hoursLab.Value);
             var hoursPractic = Convert.ToInt16(numUpDwn_hoursPract.Value);
             var hoursKSR = Convert.ToInt16(numUpDwn_hoursKSR.Value);
-
 
             try
             {
                 дисциплина_как_часть_семестраTableAdapter1
-                    .Update(SemesterID, DisciplineID, hoursAuditor, hoursPractic, hoursKSR, curID);
+                    .Update(SemesterID, DisciplineID, hoursAuditor, hoursPractic, hoursKSR,hoursLab, curID);
             }
             catch (System.Data.SqlClient.SqlException)
             {
